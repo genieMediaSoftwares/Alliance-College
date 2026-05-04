@@ -8,6 +8,14 @@ import Admissions from "./pages/Admissions";
 import Courses from "./pages/Courses";
 import Gallery from "./pages/Gallery";
 import NewsEvents from "./pages/NewsEvents";
+import Placements from "./pages/Placements";
+import Campus from "./pages/Campus";
+import Mba from "./pages/Mba";
+import Bba from "./pages/Bba";
+import Diploma from "./pages/Diploma";
+import HotelManagement from "./pages/HotelManagement";
+import PrivacyPolicy from "./components/PrivacyPolicy";
+import Terms from "./components/Terms";
 
 function App() {
   return (
@@ -17,10 +25,19 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/admissions" element={<Admissions />} />
+        {/* <Route path="/admissions" element={<Admissions />} /> */}
         <Route path="/courses" element={<Courses />} />
-        <Route path="/gallery" element={<Gallery />} />
-        <Route path="/news-events" element={<NewsEvents />} />
+        {/* <Route path="/gallery" element={<Gallery />} /> */}
+        {/* <Route path="/news-events" element={<NewsEvents />} /> */}
+        <Route path="/placements" element={<Placements />} />
+        <Route path="/campus" element={<Campus />} />
+        <Route path="/courses/mba" element={<Mba />} />
+        <Route path="/courses/bba" element={<Bba />} />
+        <Route path="/courses/hotel-management" element={<HotelManagement />} />
+        <Route path="/courses/diploma" element={<Diploma />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/terms" element={<Terms />} />
+
       </Routes>
       <Footer />
     </>

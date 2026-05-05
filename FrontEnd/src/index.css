@@ -7,3 +7,9 @@
 html, body {
   overflow-x: hidden;
 }
+html {
+  font-size: clamp(13px, 1.2vw, 16px);
+}
+.container-main {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}

@@ -21,6 +21,7 @@ function App() {
   return (
     <>
       <Navbar />
+      <div className="pt-[100px] sm:pt-[100px] lg:pt-[110px]"></div>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />

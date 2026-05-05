@@ -77,8 +77,7 @@ const Navbar = () => {
     path === "/" ? location.pathname === "/" : location.pathname.startsWith(path);
 
   return (
-    <header className="w-full sticky top-0 z-50">
-
+<header className="w-full fixed top-0 left-0 z-50">
 
       <div className="w-full bg-[#0d1b4b] text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2 flex flex-col sm:flex-row items-center justify-between gap-1 sm:gap-0">

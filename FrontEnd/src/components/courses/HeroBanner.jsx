@@ -21,7 +21,7 @@ export default function HeroBanner() {
         className="absolute inset-0"
         style={{
           background:
-            "linear-gradient(to right, rgba(6,43,107,0.93) 48%, rgba(6,43,107,0.55) 100%)",
+            "linear-gradient(to right, rgba(3, 29, 73, 0.93) 48%, rgba(6,43,107,0.55) 100%)",
         }}
       />
 

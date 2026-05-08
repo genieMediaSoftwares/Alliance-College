@@ -359,7 +359,7 @@ export default function About() {
             className="font-semibold mb-4"
             style={{
               color: C.accentYellow,
-              fontSize: "clamp(1rem, 2.5vw, 1.2rem)",
+              
             }}
           >
             Empowering Futures. Enriching Lives.

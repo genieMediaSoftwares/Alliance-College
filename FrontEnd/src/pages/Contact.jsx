@@ -215,7 +215,7 @@ export default function Contact() {
             style={{ color: C.white, fontSize: "clamp(1.9rem,5vw,2.75rem)", lineHeight: 1.15 }}>
             Contact Us
           </h1>
-          <p style={{ color: "#D1D5DB", fontSize: 15, maxWidth: 420, lineHeight: 1.65 }}>
+          <p style={{ color: "#D1D5DB", maxWidth: 420, lineHeight: 1.65 }}>
             We're here to help and answer any questions you might have. We look forward to hearing from you!
           </p>
         </div>

@@ -64,15 +64,22 @@ export default function HeroSection() {
                 </div>
             </div>
 
-            <div className="hidden md:block absolute top-0 right-0 w-[52%] h-full">
+            <div className="hidden md:block absolute inset-0">
+
+                {/* Background Image */}
                 <div
-                    className="absolute inset-0 bg-cover bg-right-top"
+                    className="absolute top-0 right-0 w-[58%] h-full bg-cover bg-center"
                     style={{
                         backgroundImage:
-                            "url('https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=1400&q=100')",
+                            "url('https://www.alliancemgt.org/img/slider/6.jpg')",
                     }}
                 />
-                <div className="absolute inset-0 bg-gradient-to-l from-transparent via-white/20 to-white/95" />
+
+                {/* Smooth Blend Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-r from-[#f8fbff] via-[#f8fbff]/85 via-35% to-transparent" />
+
+                {/* Soft Blur Blend */}
+                <div className="absolute left-[42%] top-0 h-full w-[18%] bg-white/40 blur-3xl" />
             </div>
 
             <div className="absolute bottom-[-40px] md:bottom-[-60px] left-0 right-0 flex justify-center md:justify-end pb-4 sm:pb-6 z-20 px-3 md:px-10">

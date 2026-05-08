@@ -38,28 +38,29 @@ const StarIcon = ({ className }) => <MdStar className={className} />;
 const MenuIcon = ({ className }) => <MdMenu className={className} />;
 const XIcon = ({ className }) => <MdClose className={className} />;
 const IMAGES = {
-  hero: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=900&q=80",
-  campus: "https://images.unsplash.com/photo-1562774053-701939374585?w=800&q=80",
-  foodLab: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&q=80",
-  bakeryLab: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80",
-  frontOffice: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&q=80",
-  housekeeping: "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=600&q=80",
+  hero: "https://www.alliancemgt.org/img/slider/6.jpg",
+  campus: "https://www.alliancemgt.org/img/Image01.jpg",
+  foodLab: "https://alliancedegreecollege.com/assets/images/foodproductionlab.jpg",
+  bakeryLab: "https://alliancedegreecollege.com/assets/images/g51.jpeg",
+  frontOffice: "https://alliancedegreecollege.com/assets/images/facility3.jpg",
+  housekeeping: "https://alliancedegreecollege.com/assets/images/facility4.jpg",
   classroom: "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=600&q=80",
-  restaurant: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&q=80",
-  faculty1: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&q=80",
-  faculty2: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80",
-  faculty3: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&q=80",
-  faculty4: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&q=80",
-  testi1: "https://images.unsplash.com/photo-1566492031773-4f4e44671857?w=200&q=80",
+  restaurant: "https://alliancedegreecollege.com/assets/images/f&bservicelab.jpg",
+  faculty1: "https://alliancedegreecollege.com/assets/images/faculty/f1.jpg",
+  faculty2: "https://alliancedegreecollege.com/assets/images/faculty/f2.jpg",
+  faculty3: "https://alliancedegreecollege.com/assets/images/faculty/f3.jpeg",
+  faculty4: "https://alliancedegreecollege.com/assets/images/faculty/f4.jpg",
+  testi1: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&q=80",
   testi2: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&q=80",
   testi3: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&q=80",
-  gallery1: "https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?w=700&q=80",
-  gallery2: "https://images.unsplash.com/photo-1627556704302-624286467c65?w=500&q=80",
-  gallery3: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=500&q=80",
-  gallery4: "https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?w=400&q=80",
-  gallery5: "https://images.unsplash.com/photo-1560523160-754a9e25c68f?w=400&q=80",
-  gallery6: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=400&q=80",
-  gallery7: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=400&q=80",
+  gallery1: "https://alliancedegreecollege.com/assets/images/gallery10.jpg",
+  gallery2: "https://alliancedegreecollege.com/assets/images/g11.jpg",
+  gallery3: "https://alliancedegreecollege.com/assets/images/g13.jpg",
+  gallery4: "https://alliancedegreecollege.com/assets/images/g25.jpg",
+  gallery5: "https://alliancedegreecollege.com/assets/images/g42.jpg",
+  gallery6: "https://alliancedegreecollege.com/assets/images/g40.jpg",
+  gallery7: "https://alliancedegreecollege.com/assets/images/g22.jpg",
+  gallery8: "https://alliancedegreecollege.com/assets/images/g45.jpg"
 };
 
 const heroStats = [
@@ -101,19 +102,50 @@ const labs = [
 ];
 
 const facultyMembers = [
-  { name: "Dr. Ramesh Babu", role: "Director", qual: "Ph.D in Management", image: IMAGES.faculty1 },
-  { name: "Chef K. Srinivas", role: "Head - Culinary Arts", qual: "20+ Years Experience", image: IMAGES.faculty2 },
-  { name: "Mrs. P. Lavanya", role: "HOD - BBA", qual: "MBA, Ph.D", image: IMAGES.faculty3 },
-  { name: "Mr. M. Naresh", role: "Placement Director", qual: "15+ Years Experience", image: IMAGES.faculty4 },
+  { name: "Dr. Kolla Satish Kumar", role: "Secretary & Correspondentr", qual: "", image: IMAGES.faculty1 },
+  { name: "Mr. KARTIKESWAR PANDA", role: "Academic Director", qual: "", image: IMAGES.faculty2 },
+  { name: "B SRINIVASA RAO", role: "Principal", qual: "", image: IMAGES.faculty3 },
+  { name: "M Jaya Sree", role: "Vice Principal (Business Management)", qual: "", image: IMAGES.faculty4 },
 ];
 
 const placerCompanies = [
-  { label: "TAJ", sub: "Hotels", style: "font-bold text-xl tracking-[3px] text-gray-800", serif: true },
-  { label: "ITC", sub: "Hotels", style: "font-bold text-base tracking-widest text-[#c8a050]" },
-  { label: "HYATT", sub: "Hotels", style: "font-bold text-base tracking-[2px] text-gray-800" },
-  { label: "Radisson", sub: "Hotels", style: "font-bold text-sm italic text-[#cc0000]" },
-  { label: "NOVOTEL", sub: "Hotels", style: "font-bold text-xs tracking-widest text-[#0055a5]" },
-  { label: "SriLankan", sub: "Airlines", style: "font-bold text-xs text-[#003580]" },
+  {
+    label: "Accor",
+    image:
+      "https://alliancedegreecollege.com/assets/images/placement/accor.png",
+    style: "font-bold text-xl tracking-[3px] text-gray-800",
+    serif: true,
+  },
+  {
+    label: "The Park Hotel",
+    image:
+      "https://alliancedegreecollege.com/assets/images/placement/park.png",
+    style: "font-bold text-base tracking-widest text-[#c8a050]",
+  },
+  {
+    label: "Grand Mercure",
+    image:
+      "https://alliancedegreecollege.com/assets/images/placement/mercure.png",
+    style: "font-bold text-base tracking-[2px] text-gray-800",
+  },
+  {
+    label: "Radisson",
+    image:
+      "https://alliancedegreecollege.com/assets/images/placement/radi.png",
+    style: "font-bold text-sm italic text-[#cc0000]",
+  },
+  {
+    label: "NOVOTEL",
+    image:
+      "https://alliancedegreecollege.com/assets/images/placement/novo.png",
+    style: "font-bold text-xs tracking-widest text-[#0055a5]",
+  },
+  {
+    label: "Mariot",
+    image:
+      "https://alliancedegreecollege.com/assets/images/placement/mariot.png",
+    style: "font-bold text-xs text-[#003580]",
+  },
 ];
 
 const testimonials = [
@@ -362,7 +394,7 @@ export default function Home() {
 
           {/* BUTTON */}
           <div className="mt-8 flex justify-center">
-            <button  onClick={() => navigate("/campus")} className="bg-[#0D1F3C] hover:bg-[#1a3a6b] text-white font-semibold px-6 sm:px-8 py-2.5 sm:py-3 rounded-lg text-xs sm:text-sm transition-colors">
+            <button onClick={() => navigate("/campus")} className="bg-[#0D1F3C] hover:bg-[#1a3a6b] text-white font-semibold px-6 sm:px-8 py-2.5 sm:py-3 rounded-lg text-xs sm:text-sm transition-colors">
               Explore Campus
             </button>
           </div>
@@ -456,19 +488,21 @@ export default function Home() {
           </div>
 
           {/* COMPANY LOGOS */}
-          <div className="flex flex-wrap justify-center gap-3 sm:gap-4 mb-6">
+          <div className="flex flex-wrap justify-center gap-4 sm:gap-5 mb-6">
             {placerCompanies.map((c, i) => (
               <div
                 key={i}
-                className="bg-white rounded-lg px-4 py-3 w-[90px] sm:w-[110px] flex flex-col items-center justify-center shadow-sm"
+                className="bg-[#F7F7F7] rounded-xl w-[140px] sm:w-[150px] h-[82px] flex flex-col items-center justify-center shadow-sm"
               >
-                <span
-                  className={`text-xs sm:text-sm font-semibold ${c.style}`}
-                  style={{ fontFamily: c.serif ? "Georgia, serif" : undefined }}
-                >
-                  {c.label}
-                </span>
-                <span className="text-[10px] text-gray-500 mt-0.5">
+                {/* Company Logo */}
+                <img
+                  src={c.image}
+                  alt={c.label}
+                  className="h-7 sm:h-8 object-contain mb-1"
+                />
+
+                {/* Company Type */}
+                <span className="text-[11px] sm:text-xs text-gray-500">
                   {c.sub}
                 </span>
               </div>
@@ -681,7 +715,7 @@ export default function Home() {
               IMAGES.gallery5,
               IMAGES.gallery6,
               IMAGES.gallery7,
-              IMAGES.gallery7,
+              IMAGES.gallery8,
             ].map((src, i) => (
               <div key={i} className="w-full aspect-square rounded-lg overflow-hidden">
                 <img
@@ -699,7 +733,7 @@ export default function Home() {
 
           {/* BUTTON */}
           <div className="mt-8 flex justify-center">
-            <button  onClick={() => navigate("/about")} className="bg-[#0D1F3C] hover:bg-[#1a3a6b] text-white font-semibold px-10 py-3 rounded-lg text-sm transition-colors">
+            <button onClick={() => navigate("/about")} className="bg-[#0D1F3C] hover:bg-[#1a3a6b] text-white font-semibold px-10 py-3 rounded-lg text-sm transition-colors">
               View More
             </button>
           </div>

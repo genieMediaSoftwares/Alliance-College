@@ -44,7 +44,7 @@ const navLinks = [
   { label: "Home",       path: "/",           dropdown: null },
   { label: "Courses",    path: "/courses",    dropdown: courseDropdown },
   { label: "Placements", path: "/placements", dropdown: null },
-  { label: "About Us",   path: "/about",      dropdown: null },
+  { label: "About Us",   path: "/aboutus",      dropdown: null },
   { label: "Campus",     path: "/campus",     dropdown: null },
   { label: "Contact",    path: "/contact",    dropdown: null },
 ];

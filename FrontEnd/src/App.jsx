@@ -16,6 +16,7 @@ import Diploma from "./pages/Diploma";
 import HotelManagement from "./pages/HotelManagement";
 import PrivacyPolicy from "./components/PrivacyPolicy";
 import Terms from "./components/Terms";
+import CoursesPage from "./pages/CoursesPage";
 
 function App() {
   return (
@@ -24,10 +25,10 @@ function App() {
       <div className="pt-[100px] sm:pt-[100px] lg:pt-[110px]"></div>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
+        <Route path="/aboutus" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         {/* <Route path="/admissions" element={<Admissions />} /> */}
-        <Route path="/courses" element={<Courses />} />
+        <Route path="/courses" element={<CoursesPage />} />
         {/* <Route path="/gallery" element={<Gallery />} /> */}
         {/* <Route path="/news-events" element={<NewsEvents />} /> */}
         <Route path="/placements" element={<Placements />} />

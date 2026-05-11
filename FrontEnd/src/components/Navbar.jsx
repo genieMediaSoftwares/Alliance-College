@@ -189,7 +189,7 @@ const Navbar = () => {
 
             <div className="flex items-center gap-2 sm:gap-3">
               <Link
-                to="/apply"
+                to="/applynow"
                 className="hidden sm:inline-flex items-center justify-center px-4 sm:px-5 py-2 sm:py-2.5 bg-[#f5c518] text-[#0d1b4b] font-bold text-[13px] sm:text-sm rounded-lg hover:bg-[#e0b300] active:scale-95 transition-all duration-200 shadow-sm whitespace-nowrap"
               >
                 Apply Now

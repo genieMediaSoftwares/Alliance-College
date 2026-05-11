@@ -17,6 +17,7 @@ import HotelManagement from "./pages/HotelManagement";
 import PrivacyPolicy from "./components/PrivacyPolicy";
 import Terms from "./components/Terms";
 import CoursesPage from "./pages/CoursesPage";
+import ApplyNow from "./pages/ApplyNow";
 
 function App() {
   return (
@@ -31,6 +32,8 @@ function App() {
         <Route path="/courses" element={<CoursesPage />} />
         {/* <Route path="/gallery" element={<Gallery />} /> */}
         {/* <Route path="/news-events" element={<NewsEvents />} /> */}
+
+        <Route path="/applynow" element={<ApplyNow/>} />
         <Route path="/placements" element={<Placements />} />
         <Route path="/campus" element={<Campus />} />
         <Route path="/courses/mba" element={<Mba />} />

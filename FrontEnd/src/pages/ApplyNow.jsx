@@ -762,7 +762,7 @@ export default function ApplyNow() {
         <img src="https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1400&q=75"
              alt="Campus" className="absolute inset-0 w-full h-full object-cover object-center"/>
         <div className="absolute inset-0"
-             style={{ background:"linear-gradient(to right,rgba(6,43,107,0.93) 45%,rgba(6,43,107,0.5) 100%)" }}/>
+             style={{ background:"linear-gradient(to right,rgba(2, 29, 75, 0.93) 45%,rgba(6,43,107,0.5) 100%)" }}/>
         <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-10 sm:pb-14">
           <nav className="flex items-center gap-1.5 mb-5 flex-wrap">
             <Home size={13} color="#9CA3AF"/>

@@ -30,7 +30,7 @@ import {
   UserRound,
   ShoppingBag,
 } from "lucide-react";
-
+import { useNavigate } from "react-router-dom";
 const NAV_BLUE = "#0F2B5B";
 
 /* ── Social icon SVGs (removed from lucide-react in v0.3+) ── */
@@ -70,6 +70,7 @@ const ICON_BLUE = "#1B4F9C";
 
 /* ─────────────────────────── HERO ─────────────────────────── */
 function Hero() {
+  const navigate = useNavigate()
   return (
     <section className="relative overflow-hidden" style={{ minHeight: 380 }}>
       {/* Background image */}
@@ -141,17 +142,20 @@ function Hero() {
 
             <div className="flex flex-wrap justify-center lg:justify-start gap-3">
               <button
-                className="px-7 py-2.5 font-bold rounded transition-all hover:brightness-110 active:scale-95 shadow-lg"
+                className="px-7 py-2.5 font-bold rounded transition-all hover:brightness-110 active:scale-95 shadow-lg" onClick={() => { navigate("/applynow") }}
                 style={{ background: GOLD, color: "#fff", fontSize: "0.9rem" }}
               >
                 Apply Now
               </button>
-              <button
-                className="px-6 py-2.5 font-semibold rounded border-2 border-white text-white flex items-center gap-2 transition-all hover:bg-white hover:text-[#0F2B5B] active:scale-95"
-                style={{ fontSize: "0.9rem" }}
-              >
-                <Download size={15} /> Download Brochure
-              </button>
+              <a href="/Brochure.pdf" download="Brochure.pdf">
+                <button
+                  className="px-6 py-2.5 font-semibold rounded border-2 border-white text-white flex items-center gap-2 transition-all hover:bg-white hover:text-[#0F2B5B] active:scale-95"
+                  style={{ fontSize: "0.9rem" }}
+                >
+                  <Download size={15} />
+                  Download Brochure
+                </button>
+              </a>
             </div>
           </div>
         </div>
@@ -550,17 +554,20 @@ const galleryItems = [
   },
 ];
 
+
 function GalleryCard({ label, img }) {
   return (
-    <div className="flex-shrink-0 w-56 sm:w-auto snap-start">
-      <div className="rounded-xl overflow-hidden aspect-[4/3] bg-gray-100">
+    <div className="flex-shrink-0 w-72 sm:w-auto snap-start">
+      <div className="rounded-xl overflow-hidden bg-gray-100"
+        style={{ height: "220px" }}>
         <img
           src={img}
           alt={label}
           className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
         />
       </div>
-      <p className="text-center text-gray-600 mt-2 font-medium" style={{ fontSize: "0.78rem" }}>
+      <p className="text-center text-gray-600 mt-2 font-medium"
+        style={{ fontSize: "0.82rem" }}>
         {label}
       </p>
     </div>
@@ -569,20 +576,21 @@ function GalleryCard({ label, img }) {
 
 function Gallery() {
   const [startIdx, setStartIdx] = useState(0);
-  const visible = 5;
+  const desktopVisible = 3;
   const mobileVisible = 3;
 
   const prev = () => setStartIdx((p) => Math.max(0, p - 1));
   const next = () =>
-    setStartIdx((p) => Math.min(galleryItems.length - mobileVisible, p + 1));
+    setStartIdx((p) => Math.min(galleryItems.length - desktopVisible, p + 1));
 
-  const visibleDesktop = galleryItems;
+  const visibleSlice = galleryItems.slice(startIdx, startIdx + desktopVisible);
   const visibleMobile = galleryItems.slice(startIdx, startIdx + mobileVisible);
 
   return (
     <section className="py-14 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="font-bold mb-8" style={{ color: NAV_BLUE, fontSize: "1.4rem" }}>
+        <h2 className="font-bold mb-8"
+          style={{ color: NAV_BLUE, fontSize: "1.4rem" }}>
           Gallery
         </h2>
 
@@ -594,8 +602,8 @@ function Gallery() {
             ))}
           </div>
 
-          {/* Tablet: 3 with arrows */}
-          <div className="hidden sm:flex lg:hidden items-center gap-3">
+          {/* Tablet + Desktop: 3 items with arrows */}
+          <div className="hidden sm:flex items-center gap-3">
             <button
               onClick={prev}
               disabled={startIdx === 0}
@@ -603,37 +611,14 @@ function Gallery() {
             >
               <ChevronLeft size={20} color="#374151" />
             </button>
-            <div className="flex-1 grid grid-cols-3 gap-4">
-              {visibleMobile.map(({ label, img }) => (
+            <div className="flex-1 grid grid-cols-3 gap-5">
+              {visibleSlice.map(({ label, img }) => (
                 <GalleryCard key={label} label={label} img={img} />
               ))}
             </div>
             <button
               onClick={next}
-              disabled={startIdx >= galleryItems.length - mobileVisible}
-              className="p-2 rounded-full border border-gray-200 hover:bg-gray-50 disabled:opacity-30 flex-shrink-0"
-            >
-              <ChevronRight size={20} color="#374151" />
-            </button>
-          </div>
-
-          {/* Desktop: all 5 */}
-          <div className="hidden lg:flex items-center gap-3">
-            <button
-              onClick={prev}
-              disabled={startIdx === 0}
-              className="p-2 rounded-full border border-gray-200 hover:bg-gray-50 disabled:opacity-30 flex-shrink-0"
-            >
-              <ChevronLeft size={20} color="#374151" />
-            </button>
-            <div className="flex-1 grid grid-cols-5 gap-4">
-              {visibleDesktop.map(({ label, img }) => (
-                <GalleryCard key={label} label={label} img={img} />
-              ))}
-            </div>
-            <button
-              onClick={() => {}}
-              disabled
+              disabled={startIdx >= galleryItems.length - desktopVisible}
               className="p-2 rounded-full border border-gray-200 hover:bg-gray-50 disabled:opacity-30 flex-shrink-0"
             >
               <ChevronRight size={20} color="#374151" />
@@ -644,7 +629,6 @@ function Gallery() {
     </section>
   );
 }
-
 /* ─────────────────────── FAQ ─────────────────────── */
 const faqs = [
   {

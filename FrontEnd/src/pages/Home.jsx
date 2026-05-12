@@ -602,7 +602,7 @@ export default function Home() {
                 </select>
                 <ChevronDown className="w-4 h-4 text-gray-400 absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none" />
               </div>
-              <button type="submit"
+              <button type="submit" onClick={()=>{navigate("/applynow")}}
                 className={`px-8 py-3 rounded-lg font-bold text-sm transition-all whitespace-nowrap ${submitted ? "bg-green-500 text-white" : "bg-[#F5A800] hover:bg-[#e09800] text-white"}`}>
                 {submitted ? "✓ Submitted!" : "Apply Now"}
               </button>
@@ -733,7 +733,7 @@ export default function Home() {
 
           {/* BUTTON */}
           <div className="mt-8 flex justify-center">
-            <button onClick={() => navigate("/about")} className="bg-[#0D1F3C] hover:bg-[#1a3a6b] text-white font-semibold px-10 py-3 rounded-lg text-sm transition-colors">
+            <button onClick={() => navigate("/aboutus")} className="bg-[#0D1F3C] hover:bg-[#1a3a6b] text-white font-semibold px-10 py-3 rounded-lg text-sm transition-colors">
               View More
             </button>
           </div>

@@ -1,7 +1,8 @@
 // src/components/courses/CounselorCTA.jsx
 import { MessageCircle, Download, BookOpen } from "lucide-react";
-
+import { useNavigate } from "react-router-dom";
 export default function CounselorCTA() {
+  const navigate=useNavigate()
   return (
     <div className="
       bg-[#F0F5FF] border border-[#D1E3FF] rounded-2xl
@@ -34,7 +35,7 @@ export default function CounselorCTA() {
           hover:bg-[#062B6B] hover:text-white
           font-semibold px-5 py-2.5 rounded-lg text-sm
           transition-all duration-200 whitespace-nowrap
-        ">
+        " onClick={()=>{navigate("/contact")}}>
           <MessageCircle size={15} strokeWidth={2} />
           Talk to Counselor
         </button>

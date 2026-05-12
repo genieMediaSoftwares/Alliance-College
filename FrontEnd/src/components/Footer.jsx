@@ -3,7 +3,7 @@ import { Phone, Mail, MapPin } from "lucide-react";
 
 const quickLinks = [
   { label: "Home", path: "/" },
-  { label: "About Us", path: "/about" },
+  { label: "About Us", path: "/aboutus" },
   { label: "Courses", path: "/courses" },
   { label: "Placements", path: "/placements" },
   { label: "Campus", path: "/campus" },
@@ -34,7 +34,7 @@ const Footer = () => {
 
           <div className="flex flex-col gap-2 lg:w-[240px] flex-shrink-0">
             <Link to="/" onClick={scrollTop} className="flex items-center gap-2 w-fit">
-              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ44veK2Tk0lozmp3CJr65qDwVxINsnujrMHg&s" alt="Alliance Degree College"
+              <img src="Alliance College lg.jpeg" alt="Alliance Degree College"
                 className="h-7 sm:h-12 w-auto object-contain" />
               <div className="flex flex-col leading-tight">
                 <span className="text-sm sm:text-2xl font-black tracking-widest text-white uppercase">

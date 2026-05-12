@@ -18,7 +18,6 @@ import PrivacyPolicy from "./components/PrivacyPolicy";
 import Terms from "./components/Terms";
 import CoursesPage from "./pages/CoursesPage";
 import ApplyNow from "./pages/ApplyNow";
-
 function App() {
   return (
     <>
@@ -42,7 +41,7 @@ function App() {
         <Route path="/courses/diploma" element={<Diploma />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/terms" element={<Terms />} />
-
+        <Route path="/gallery" element={<Gallery/>}/>
       </Routes>
       <Footer />
     </>

@@ -9,7 +9,7 @@ import {
     FaChartLine,
     FaTrophy,
 } from "react-icons/fa";
-
+import { useNavigate } from "react-router-dom";
 const stats = [
     { icon: <FaGraduationCap className="text-yellow-400 text-xl sm:text-2xl md:text-3xl" />, value: "5000+", label: "Students Trained" },
     { icon: <FaUsers className="text-yellow-400 text-xl sm:text-2xl md:text-3xl" />, value: "100+", label: "Recruiters" },
@@ -24,6 +24,7 @@ const badges = [
 ];
 
 export default function HeroSection() {
+    const navigate = useNavigate()
     return (
         <section className="relative w-full min-h-[220px] sm:min-h-[420px] md:min-h-[400px] bg-gradient-to-r from-white via-blue-50 to-blue-100 overflow-visible font-sans pb-24 sm:pb-28 md:pb-28">            {/* Content wrapper */}
             <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-12 md:py-16">
@@ -40,14 +41,18 @@ export default function HeroSection() {
                     </p>
 
                     <div className="flex flex-wrap gap-3 sm:gap-4 mb-6 sm:mb-8 justify-center md:justify-start">
-                        <button className="flex items-center gap-2 bg-yellow-400 hover:bg-yellow-500 text-[#1a2e6e] font-bold px-5 sm:px-6 py-2.5 sm:py-3 rounded-md text-sm shadow-md transition-colors duration-200">
+                        <button className="flex items-center gap-2 bg-yellow-400 hover:bg-yellow-500 text-[#1a2e6e] font-bold px-5 sm:px-6 py-2.5 sm:py-3 rounded-md text-sm shadow-md transition-colors duration-200" onClick={() => { navigate("/applynow") }}>
                             <FaUserGraduate className="text-sm sm:text-base" />
                             Apply Now
                         </button>
-                        <button className="flex items-center gap-2 bg-white hover:bg-gray-50 text-[#1a2e6e] font-semibold border border-gray-300 px-5 sm:px-6 py-2.5 sm:py-3 rounded-md text-sm shadow-sm transition-colors duration-200">
+                        <a
+                            href="/Brochure.pdf"
+                            download="Brochure.pdf"
+                            className="flex items-center gap-2 bg-white hover:bg-gray-50 text-[#1a2e6e] font-semibold border border-gray-300 px-5 sm:px-6 py-2.5 sm:py-3 rounded-md text-sm shadow-sm transition-colors duration-200 no-underline"
+                        >
                             <FaDownload className="text-sm sm:text-base" />
                             Download Brochure
-                        </button>
+                        </a>
                     </div>
 
                     <div className="flex flex-wrap gap-4 sm:gap-6 justify-center md:justify-start">

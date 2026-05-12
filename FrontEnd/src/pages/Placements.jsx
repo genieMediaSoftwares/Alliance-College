@@ -13,7 +13,7 @@ import {
   Home,
   ArrowRight,UserCircle2 
 } from "lucide-react";
-
+import { useNavigate } from "react-router-dom";
 // ─── DATA ────────────────────────────────────────────────────────────────────
 
 const heroStats = [
@@ -95,6 +95,7 @@ const colorMap = {
 // ─── COMPONENTS ──────────────────────────────────────────────────────────────
 
 function StatBadge({ icon: Icon, value, label }) {
+  const navigate=useNavigate()
   return (
     <div className="flex items-center gap-3 px-6 py-5 flex-1 min-w-[140px]">
       <div className="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center shrink-0">
@@ -234,6 +235,7 @@ function TestimonialCard({ name, course, text, company, companyLogo, companyColo
 // ─── MAIN PAGE ────────────────────────────────────────────────────────────────
 
 export default function Placements() {
+  const navigate=useNavigate()
   return (
     <div className="min-h-screen bg-gray-50" style={{ fontFamily: "'Plus Jakarta Sans', 'Segoe UI', sans-serif" }}>
       <style>{`@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');`}</style>
@@ -385,7 +387,7 @@ export default function Placements() {
 
           {/* CTA button */}
           <button
-            className="shrink-0 px-7 py-3 rounded-xl text-sm font-bold text-gray-900 shadow-lg hover:brightness-105 active:scale-95 transition-all duration-200 whitespace-nowrap"
+            className="shrink-0 px-7 py-3 rounded-xl text-sm font-bold text-gray-900 shadow-lg hover:brightness-105 active:scale-95 transition-all duration-200 whitespace-nowrap"  onClick={()=>{navigate("/applynow")}}
             style={{ background: "linear-gradient(135deg, #f59e0b, #d97706)" }}
           >
             Apply Now

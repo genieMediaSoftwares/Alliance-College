@@ -47,6 +47,7 @@ const navLinks = [
   { label: "About Us",   path: "/aboutus",      dropdown: null },
   { label: "Campus",     path: "/campus",     dropdown: null },
   { label: "Contact",    path: "/contact",    dropdown: null },
+   { label: "Gallery",    path: "/gallery",    dropdown: null },
 ];
 
 const Navbar = () => {
@@ -101,7 +102,7 @@ const Navbar = () => {
 
             <Link to="/" className="flex-shrink-0 flex items-center gap-2 sm:gap-2.5">
               <img
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ44veK2Tk0lozmp3CJr65qDwVxINsnujrMHg&s"
+                src="Alliance Logos.png"
                 alt="Alliance Degree College"
                 className="h-10 sm:h-12 lg:h-14 w-auto object-contain"
               />

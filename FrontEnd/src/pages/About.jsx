@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { Flag, BookOpen, Building2, Users, Trophy } from "lucide-react";
-
+import { useNavigate } from "react-router-dom";
 // ─── Google Fonts injection ──────────────────────────────────────────────────
 function usePoppins() {
   useEffect(() => {
@@ -301,6 +301,7 @@ const IconCircle = ({ children, bg = C.lightBlue, size = 52 }) => (
 // ─── Main component ───────────────────────────────────────────────────────────
 
 export default function About() {
+  const navigate=useNavigate()
   usePoppins();
 
   const poppins = { fontFamily: "'Poppins', sans-serif" };
@@ -386,11 +387,11 @@ export default function About() {
             {/* Left — campus photo */}
             <div className="w-full lg:w-[44%] flex-shrink-0">
               <div
-                className="rounded-xl overflow-hidden shadow-md"
+                className="overflow-hidden"
                 style={{ height: "clamp(220px, 30vw, 300px)" }}
               >
                 <img
-                  src="https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=800&q=80"
+                  src="/Alliance college (2).png"
                   alt="Alliance Campus"
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
                 />
@@ -750,7 +751,7 @@ export default function About() {
               Join a community that inspires you to learn, grow and succeed.
             </p>
             <button
-              className="inline-flex items-center gap-2 font-bold rounded-lg px-8 py-3 transition-all hover:brightness-105 active:scale-95"
+              className="inline-flex items-center gap-2 font-bold rounded-lg px-8 py-3 transition-all hover:brightness-105 active:scale-95"  onClick={()=>{navigate("/applynow")}}
               style={{
                 backgroundColor: C.accentYellow,
                 color: C.primaryBlue,

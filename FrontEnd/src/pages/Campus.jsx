@@ -13,10 +13,12 @@ import {
   Mic2,
   HeartPulse,
   ChevronRight,
+  ChevronLeft,
   Images,
   UserCircle2,
 } from "lucide-react";
-
+import { useNavigate } from "react-router-dom";
+import { useRef } from "react";
 // ─── DATA ────────────────────────────────────────────────────────────────────
 
 const heroStats = [
@@ -90,6 +92,14 @@ const galleryImages = [
 // ─── MAIN PAGE ────────────────────────────────────────────────────────────────
 
 export default function Campus() {
+  const galleryRef = useRef(null);
+
+  const scrollGallery = (dir) => {
+    if (galleryRef.current) {
+      galleryRef.current.scrollBy({ left: dir * 300, behavior: "smooth" });
+    }
+  };
+  const navigate = useNavigate()
   return (
     <div
       className="min-h-screen bg-gray-50"
@@ -122,15 +132,15 @@ export default function Campus() {
           </nav>
           <h1 className="font-extrabold mb-3"
             style={{ color: "#FFFFFF", fontSize: "clamp(1.9rem,5vw,2.75rem)", lineHeight: 1.15 }}>
-           Our Campus
+            Our Campus
           </h1>
           <p className="text-blue-200 text-lg font-semibold mb-3">
-                A place to learn, grow and succeed
-              </p>
-              <p className="text-blue-300 text-sm sm:text-base leading-relaxed max-w-md">
-                Our state-of-the-art campus is designed to provide a conducive environment
-                for learning, innovation and overall development.
-              </p>
+            A place to learn, grow and succeed
+          </p>
+          <p className="text-blue-300 text-sm sm:text-base leading-relaxed max-w-md">
+            Our state-of-the-art campus is designed to provide a conducive environment
+            for learning, innovation and overall development.
+          </p>
 
         </div>
       </section>
@@ -214,20 +224,53 @@ export default function Campus() {
         </div>
 
         {/* Gallery grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 mb-8">
-          {galleryImages.map((img, i) => (
-            <div
-              key={i}
-              className="gallery-item rounded-xl overflow-hidden h-32 sm:h-36 lg:h-32 cursor-pointer shadow-sm hover:shadow-md transition-shadow duration-200"
-            >
-              <img
-                src={img.src}
-                alt={img.alt}
-                className="gallery-img w-full h-full object-cover"
-              />
-            </div>
-          ))}
-        </div>
+     <div className="relative group">
+  {/* Left Arrow — hidden on mobile, shows on hover on desktop */}
+  <button
+    onClick={() => scrollGallery(-1)}
+    className="hidden sm:flex absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-10 
+               w-9 h-9 items-center justify-center rounded-full bg-white border border-gray-200 
+               shadow-md hover:bg-gray-50 active:scale-95 transition-all
+               opacity-0 group-hover:opacity-100"
+  >
+    <ChevronLeft size={18} color="#374151" />
+  </button>
+
+  {/* Scrollable Gallery */}
+  <div
+    ref={galleryRef}
+    className="flex gap-3 sm:gap-4 overflow-x-auto pb-3 snap-x snap-mandatory scrollbar-hide 
+               px-1 sm:px-2"
+  >
+    {galleryImages.map((img, i) => (
+      <div
+        key={i}
+        className="gallery-item flex-shrink-0 snap-start rounded-xl overflow-hidden 
+                   cursor-pointer shadow-sm hover:shadow-md transition-all duration-300
+                   w-44 h-36
+                   sm:w-60 sm:h-48
+                   lg:w-72 lg:h-56"
+      >
+        <img
+          src={img.src}
+          alt={img.alt}
+          className="gallery-img w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+        />
+      </div>
+    ))}
+  </div>
+
+  {/* Right Arrow */}
+  <button
+    onClick={() => scrollGallery(1)}
+    className="hidden sm:flex absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-10 
+               w-9 h-9 items-center justify-center rounded-full bg-white border border-gray-200 
+               shadow-md hover:bg-gray-50 active:scale-95 transition-all
+               opacity-0 group-hover:opacity-100"
+  >
+    <ChevronRight size={18} color="#374151" />
+  </button>
+</div>
 
         {/* View Gallery button */}
         <div className="flex justify-center">
@@ -267,7 +310,7 @@ export default function Campus() {
 
           {/* CTA button */}
           <button
-            className="shrink-0 px-7 py-3 rounded-xl text-sm font-bold text-gray-900 shadow-lg hover:brightness-105 active:scale-95 transition-all duration-200 whitespace-nowrap"
+            className="shrink-0 px-7 py-3 rounded-xl text-sm font-bold text-gray-900 shadow-lg hover:brightness-105 active:scale-95 transition-all duration-200 whitespace-nowrap" onClick={() => { navigate("/contact") }}
             style={{ background: "linear-gradient(135deg, #f59e0b, #d97706)" }}
           >
             Book a Visit

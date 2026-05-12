@@ -21,21 +21,22 @@ import {
   Phone,
   Mail,
 } from "lucide-react";
-
-const NAV_BLUE  = "#0F2B5B";
-const GOLD      = "#F5A623";
-const LIGHT_BG  = "#F5F7FA";
+import { useNavigate } from "react-router-dom";
+const NAV_BLUE = "#0F2B5B";
+const GOLD = "#F5A623";
+const LIGHT_BG = "#F5F7FA";
 const ICON_BLUE = "#1B4F9C";
 
 /* ── Inline Social SVG Icons ── */
-const FacebookIcon  = () => (<svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>);
-const TwitterIcon   = () => (<svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>);
-const InstagramIcon = () => (<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/></svg>);
-const LinkedinIcon  = () => (<svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>);
-const YoutubeIcon   = () => (<svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="white"/></svg>);
+const FacebookIcon = () => (<svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" /></svg>);
+const TwitterIcon = () => (<svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z" /></svg>);
+const InstagramIcon = () => (<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5" /><circle cx="12" cy="12" r="4" /><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" /></svg>);
+const LinkedinIcon = () => (<svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z" /><rect x="2" y="9" width="4" height="12" /><circle cx="4" cy="4" r="2" /></svg>);
+const YoutubeIcon = () => (<svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z" /><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="white" /></svg>);
 
 /* ─────────────────────────── HERO ─────────────────────────── */
 function Hero() {
+  const navigate = useNavigate()
   return (
     <section className="relative overflow-hidden" style={{ minHeight: 400 }}>
       {/* BG image */}
@@ -84,10 +85,10 @@ function Hero() {
 
             <div className="flex flex-wrap justify-center lg:justify-start gap-5 mb-8">
               {[
-                { icon: <Clock size={17} />,         label: "Duration",    value: "2 Years" },
-                { icon: <Briefcase size={17} />,      label: "Mode",        value: "Full Time" },
-                { icon: <GraduationCap size={17} />,  label: "Eligibility", value: "Graduation" },
-                { icon: <Users size={17} />,          label: "Intake",      value: "60 Students" },
+                { icon: <Clock size={17} />, label: "Duration", value: "2 Years" },
+                { icon: <Briefcase size={17} />, label: "Mode", value: "Full Time" },
+                { icon: <GraduationCap size={17} />, label: "Eligibility", value: "Graduation" },
+                { icon: <Users size={17} />, label: "Intake", value: "60 Students" },
               ].map(({ icon, label, value }) => (
                 <div key={label} className="flex items-center gap-2">
                   <div className="text-blue-300">{icon}</div>
@@ -101,17 +102,20 @@ function Hero() {
 
             <div className="flex flex-wrap justify-center lg:justify-start gap-3">
               <button
-                className="px-7 py-2.5 font-bold rounded transition-all hover:brightness-110 active:scale-95 shadow-lg"
+                className="px-7 py-2.5 font-bold rounded transition-all hover:brightness-110 active:scale-95 shadow-lg" onClick={() => { navigate("/applynow") }}
                 style={{ background: GOLD, color: "#fff", fontSize: "0.9rem" }}
               >
                 Apply Now
               </button>
-              <button
-                className="px-6 py-2.5 font-semibold rounded border-2 border-white text-white flex items-center gap-2 transition-all hover:bg-white hover:text-[#0F2B5B] active:scale-95"
-                style={{ fontSize: "0.9rem" }}
-              >
-                <Download size={15} /> Download Brochure
-              </button>
+              <a href="/Brochure.pdf" download="Brochure.pdf">
+                <button
+                  className="px-6 py-2.5 font-semibold rounded border-2 border-white text-white flex items-center gap-2 transition-all hover:bg-white hover:text-[#0F2B5B] active:scale-95"
+                  style={{ fontSize: "0.9rem" }}
+                >
+                  <Download size={15} />
+                  Download Brochure
+                </button>
+              </a>
             </div>
           </div>
         </div>
@@ -123,9 +127,9 @@ function Hero() {
 /* ─────────────────────────── ABOUT ─────────────────────────── */
 function AboutMBA() {
   const cards = [
-    { icon: <Building2 size={26} color={ICON_BLUE} />, label: "Affiliation",       value: "Andhra University" },
-    { icon: <Award size={26} color={ICON_BLUE} />,     label: "Approval",          value: "AICTE Approved" },
-    { icon: <Network size={26} color={ICON_BLUE} />,   label: "Industry Exposure", value: "100+ Corporate Tie-ups" },
+    { icon: <Building2 size={26} color={ICON_BLUE} />, label: "Affiliation", value: "Andhra University" },
+    { icon: <Award size={26} color={ICON_BLUE} />, label: "Approval", value: "AICTE Approved" },
+    { icon: <Network size={26} color={ICON_BLUE} />, label: "Industry Exposure", value: "100+ Corporate Tie-ups" },
   ];
 
   return (
@@ -165,18 +169,18 @@ function AboutMBA() {
 /* ─────────────────────── PROGRAM + SPECIALIZATIONS ─────────────────────── */
 function ProgramAndSpec() {
   const overview = [
-    ["Duration",    "2 Years"],
-    ["Mode",        "Full Time"],
+    ["Duration", "2 Years"],
+    ["Mode", "Full Time"],
     ["Eligibility", "Graduation in any stream with 50% marks"],
-    ["Intake",      "60 Students"],
-    ["Campus",      "Visakhapatnam, Andhra Pradesh"],
+    ["Intake", "60 Students"],
+    ["Campus", "Visakhapatnam, Andhra Pradesh"],
   ];
 
   const specs = [
     { icon: <TrendingUp size={30} color={ICON_BLUE} />, label: "Finance" },
-    { icon: <Megaphone size={30} color={ICON_BLUE} />,  label: "Marketing" },
-    { icon: <UserCheck size={30} color={ICON_BLUE} />,  label: "Human Resources" },
-    { icon: <BarChart3 size={30} color={ICON_BLUE} />,  label: "Business Analytics" },
+    { icon: <Megaphone size={30} color={ICON_BLUE} />, label: "Marketing" },
+    { icon: <UserCheck size={30} color={ICON_BLUE} />, label: "Human Resources" },
+    { icon: <BarChart3 size={30} color={ICON_BLUE} />, label: "Business Analytics" },
   ];
 
   return (
@@ -225,12 +229,12 @@ function ProgramAndSpec() {
 /* ─────────────────────── CURRICULUM ─────────────────────── */
 const curriculum = {
   "Year 1": [
-    { sem: "Semester 1", subjects: ["Principles of Management","Financial Accounting","Business Economics","Marketing Management"] },
-    { sem: "Semester 2", subjects: ["Organizational Behavior","Business Law","Cost Accounting","Statistics for Management"] },
+    { sem: "Semester 1", subjects: ["Principles of Management", "Financial Accounting", "Business Economics", "Marketing Management"] },
+    { sem: "Semester 2", subjects: ["Organizational Behavior", "Business Law", "Cost Accounting", "Statistics for Management"] },
   ],
   "Year 2": [
-    { sem: "Semester 3", subjects: ["Business Communication","Strategic Management","Financial Management","Research Methodology"] },
-    { sem: "Semester 4", subjects: ["Operations Management","Entrepreneurship Development","International Business","Project Work"] },
+    { sem: "Semester 3", subjects: ["Business Communication", "Strategic Management", "Financial Management", "Research Methodology"] },
+    { sem: "Semester 4", subjects: ["Operations Management", "Entrepreneurship Development", "International Business", "Project Work"] },
   ],
 };
 
@@ -282,9 +286,9 @@ function CareerWhyTestimonials() {
 
   const careers = [
     { icon: <TrendingUp size={20} color={ICON_BLUE} />, role: "Business Analyst" },
-    { icon: <Megaphone size={20} color={ICON_BLUE} />,  role: "Marketing Manager" },
-    { icon: <UserCheck size={20} color={ICON_BLUE} />,  role: "HR Manager" },
-    { icon: <BarChart3 size={20} color={ICON_BLUE} />,  role: "Financial Consultant" },
+    { icon: <Megaphone size={20} color={ICON_BLUE} />, role: "Marketing Manager" },
+    { icon: <UserCheck size={20} color={ICON_BLUE} />, role: "HR Manager" },
+    { icon: <BarChart3 size={20} color={ICON_BLUE} />, role: "Financial Consultant" },
   ];
 
   const whyPoints = [
@@ -297,15 +301,21 @@ function CareerWhyTestimonials() {
   ];
 
   const testimonials = [
-    { text: "The MBA program at Alliance helped me gain the confidence and skills to grow in my career.",
-      name: "Rahul Verma",  batch: "MBA Batch 2023",
-      photo: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&q=80" },
-    { text: "World-class faculty and an industry-focused curriculum gave me an edge in campus placements.",
+    {
+      text: "The MBA program at Alliance helped me gain the confidence and skills to grow in my career.",
+      name: "Rahul Verma", batch: "MBA Batch 2023",
+      photo: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&q=80"
+    },
+    {
+      text: "World-class faculty and an industry-focused curriculum gave me an edge in campus placements.",
       name: "Priya Sharma", batch: "MBA Batch 2022",
-      photo: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80" },
-    { text: "The exposure I got through corporate tie-ups was invaluable for my professional growth.",
-      name: "Anil Kumar",   batch: "MBA Batch 2023",
-      photo: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80" },
+      photo: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80"
+    },
+    {
+      text: "The exposure I got through corporate tie-ups was invaluable for my professional growth.",
+      name: "Anil Kumar", batch: "MBA Batch 2023",
+      photo: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80"
+    },
   ];
 
   return (
@@ -397,112 +407,113 @@ function CareerWhyTestimonials() {
 
 /* ─────────────────────── GALLERY ─────────────────────── */
 const galleryItems = [
-  { label: "Classroom Learning",   img: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=700&q=85" },
-  { label: "Group Discussion",     img: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=700&q=85" },
+  { label: "Classroom Learning", img: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=700&q=85" },
+  { label: "Group Discussion", img: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=700&q=85" },
   { label: "Seminars & Workshops", img: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=700&q=85" },
-  { label: "Campus Events",        img: "https://images.unsplash.com/photo-1562774053-701939374585?w=700&q=85" },
-  { label: "Placement Drive",      img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=700&q=85" },
+  { label: "Campus Events", img: "https://images.unsplash.com/photo-1562774053-701939374585?w=700&q=85" },
+  { label: "Placement Drive", img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=700&q=85" },
 ];
 
 function GalleryCard({ label, img }) {
   return (
-    <div className="flex flex-col gap-2">
-      <div className="rounded-xl overflow-hidden bg-gray-100 group" style={{ aspectRatio: "7/6" }}>
+    <div className="flex-shrink-0 w-72 sm:w-auto snap-start">
+      <div className="rounded-xl overflow-hidden bg-gray-100"
+        style={{ height: "220px" }}>
         <img
           src={img}
           alt={label}
-          className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+          className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
         />
       </div>
-      <p className="text-center text-gray-600 font-medium" style={{ fontSize: "0.78rem" }}>{label}</p>
+      <p className="text-center text-gray-600 mt-2 font-medium"
+        style={{ fontSize: "0.82rem" }}>
+        {label}
+      </p>
     </div>
   );
 }
 
 function Gallery() {
   const [startIdx, setStartIdx] = useState(0);
-  const tabletVisible = 3;
+  const desktopVisible = 3;
+  const mobileVisible = 3;
 
   const prev = () => setStartIdx((p) => Math.max(0, p - 1));
-  const next = (max) => setStartIdx((p) => Math.min(galleryItems.length - max, p + 1));
+  const next = () =>
+    setStartIdx((p) => Math.min(galleryItems.length - desktopVisible, p + 1));
+
+  const visibleSlice = galleryItems.slice(startIdx, startIdx + desktopVisible);
+  const visibleMobile = galleryItems.slice(startIdx, startIdx + mobileVisible);
 
   return (
     <section className="py-14 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="font-bold mb-8" style={{ color: NAV_BLUE, fontSize: "1.5rem" }}>Gallery</h2>
+        <h2 className="font-bold mb-8"
+          style={{ color: NAV_BLUE, fontSize: "1.4rem" }}>
+          Gallery
+        </h2>
 
-        {/* ── DESKTOP: all 5 equal columns with side arrows ── */}
-        <div className="hidden lg:flex items-center gap-4">
-          <button
-            onClick={prev}
-            disabled={startIdx === 0}
-            className="w-9 h-9 rounded-full border border-gray-200 bg-white flex items-center justify-center flex-shrink-0 hover:bg-gray-50 disabled:opacity-30 transition-all shadow-sm"
-          >
-            <ChevronLeft size={18} color="#374151" />
-          </button>
-          <div className="flex-1 grid grid-cols-5 gap-4">
+        <div className="relative">
+          {/* Mobile: horizontal scroll */}
+          <div className="flex sm:hidden gap-4 overflow-x-auto pb-4 snap-x snap-mandatory">
             {galleryItems.map(({ label, img }) => (
               <GalleryCard key={label} label={label} img={img} />
             ))}
           </div>
-          <button
-            disabled
-            className="w-9 h-9 rounded-full border border-gray-200 bg-white flex items-center justify-center flex-shrink-0 opacity-30 shadow-sm"
-          >
-            <ChevronRight size={18} color="#374151" />
-          </button>
-        </div>
 
-        {/* ── TABLET: 3 visible with working arrows ── */}
-        <div className="hidden sm:flex lg:hidden items-center gap-4">
-          <button
-            onClick={prev}
-            disabled={startIdx === 0}
-            className="w-9 h-9 rounded-full border border-gray-200 bg-white flex items-center justify-center flex-shrink-0 hover:bg-gray-50 disabled:opacity-30 transition-all shadow-sm"
-          >
-            <ChevronLeft size={18} color="#374151" />
-          </button>
-          <div className="flex-1 grid grid-cols-3 gap-4">
-            {galleryItems.slice(startIdx, startIdx + tabletVisible).map(({ label, img }) => (
-              <GalleryCard key={label} label={label} img={img} />
-            ))}
-          </div>
-          <button
-            onClick={() => next(tabletVisible)}
-            disabled={startIdx >= galleryItems.length - tabletVisible}
-            className="w-9 h-9 rounded-full border border-gray-200 bg-white flex items-center justify-center flex-shrink-0 hover:bg-gray-50 disabled:opacity-30 transition-all shadow-sm"
-          >
-            <ChevronRight size={18} color="#374151" />
-          </button>
-        </div>
-
-        {/* ── MOBILE: horizontal scroll ── */}
-        <div className="flex sm:hidden gap-4 overflow-x-auto pb-3 snap-x snap-mandatory">
-          {galleryItems.map(({ label, img }) => (
-            <div key={label} className="flex-shrink-0 w-64 snap-start">
-              <GalleryCard label={label} img={img} />
+          {/* Tablet + Desktop: 3 items with arrows */}
+          <div className="hidden sm:flex items-center gap-3">
+            <button
+              onClick={prev}
+              disabled={startIdx === 0}
+              className="p-2 rounded-full border border-gray-200 hover:bg-gray-50 disabled:opacity-30 flex-shrink-0"
+            >
+              <ChevronLeft size={20} color="#374151" />
+            </button>
+            <div className="flex-1 grid grid-cols-3 gap-5">
+              {visibleSlice.map(({ label, img }) => (
+                <GalleryCard key={label} label={label} img={img} />
+              ))}
             </div>
-          ))}
+            <button
+              onClick={next}
+              disabled={startIdx >= galleryItems.length - desktopVisible}
+              className="p-2 rounded-full border border-gray-200 hover:bg-gray-50 disabled:opacity-30 flex-shrink-0"
+            >
+              <ChevronRight size={20} color="#374151" />
+            </button>
+          </div>
         </div>
       </div>
     </section>
   );
 }
-
 /* ─────────────────────── FAQ ─────────────────────── */
 const faqs = [
-  { q: "What is the eligibility for MBA?",
-    a: "Candidates must hold a graduation degree in any stream with a minimum of 50% marks from a recognized university." },
-  { q: "How can I apply for the MBA program?",
-    a: "You can apply online through our website or visit the campus directly. Click the Apply Now button on this page to begin." },
-  { q: "Is the MBA program AICTE approved?",
-    a: "Yes, our MBA program is approved by AICTE, ensuring quality education standards and national recognition." },
-  { q: "Does the college provide internship opportunities?",
-    a: "Yes, the college has tie-ups with 100+ corporate partners. Students are assisted in securing internships through our placement cell." },
-  { q: "What are the placement opportunities?",
-    a: "Our placement cell actively facilitates campus recruitments. Students have been placed across Finance, Marketing, HR, and Analytics roles." },
-  { q: "What is the fee structure for MBA?",
-    a: "Please download the brochure or contact our admissions office for the latest fee structure, scholarships, and financial aid options." },
+  {
+    q: "What is the eligibility for MBA?",
+    a: "Candidates must hold a graduation degree in any stream with a minimum of 50% marks from a recognized university."
+  },
+  {
+    q: "How can I apply for the MBA program?",
+    a: "You can apply online through our website or visit the campus directly. Click the Apply Now button on this page to begin."
+  },
+  {
+    q: "Is the MBA program AICTE approved?",
+    a: "Yes, our MBA program is approved by AICTE, ensuring quality education standards and national recognition."
+  },
+  {
+    q: "Does the college provide internship opportunities?",
+    a: "Yes, the college has tie-ups with 100+ corporate partners. Students are assisted in securing internships through our placement cell."
+  },
+  {
+    q: "What are the placement opportunities?",
+    a: "Our placement cell actively facilitates campus recruitments. Students have been placed across Finance, Marketing, HR, and Analytics roles."
+  },
+  {
+    q: "What is the fee structure for MBA?",
+    a: "Please download the brochure or contact our admissions office for the latest fee structure, scholarships, and financial aid options."
+  },
 ];
 
 function FAQItem({ q, a }) {
@@ -525,7 +536,7 @@ function FAQItem({ q, a }) {
 }
 
 function FAQ() {
-  const left  = faqs.slice(0, 3);
+  const left = faqs.slice(0, 3);
   const right = faqs.slice(3);
   return (
     <section style={{ background: LIGHT_BG }} className="py-14">

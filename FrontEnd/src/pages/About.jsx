@@ -224,13 +224,13 @@ const infoCards = [
 const stats = [
   { Icon: GradCapIcon, value: "5000+", label: "Students Trained" },
   { Icon: UsersIcon, value: "100+", label: "Recruiters" },
-  { Icon: AwardIcon, value: "20 LPA", label: "Highest Package" },
-  { Icon: TrophyIcon, value: "15+", label: "Years of Excellence" },
+  { Icon: AwardIcon, value: "26 LPA", label: "Highest Package" },
+  { Icon: TrophyIcon, value: "22+", label: "Years of Excellence" },
 ];
 
 const journey = [
   {
-    year: "2009",
+    year: "2004",
     desc: "Alliance Degree College was established with a vision to deliver quality education.",
     Icon: Flag,
   },
@@ -250,7 +250,7 @@ const journey = [
     Icon: Users,
   },
   {
-    year: "2024",
+    year: "2026",
     desc: "Continuing our legacy of excellence and shaping future leaders.",
     Icon: Trophy,
   },

@@ -462,11 +462,11 @@ export default function Home() {
           </div>
 
           {/* BUTTON */}
-          <div className="mt-8 flex justify-center">
+          {/* <div className="mt-8 flex justify-center">
             <button className="border-2 border-[#0D1F3C] text-[#0D1F3C] hover:bg-[#0D1F3C] hover:text-white font-semibold px-6 sm:px-8 py-2.5 sm:py-3 rounded-lg text-xs sm:text-sm transition-all">
               View All Faculty
             </button>
-          </div>
+          </div> */}
 
         </div>
       </section>

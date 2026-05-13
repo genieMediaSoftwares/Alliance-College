@@ -34,8 +34,12 @@ const Footer = () => {
 
           <div className="flex flex-col gap-2 lg:w-[240px] flex-shrink-0">
             <Link to="/" onClick={scrollTop} className="flex items-center gap-2 w-fit">
-              <img src="Alliance College lg.jpeg" alt="Alliance Degree College"
-                className="h-7 sm:h-12 w-auto object-contain" />
+            
+                  <img
+                src="Alliance footer.png"
+                alt="Alliance Degree College"
+                className="h-10 sm:h-12 lg:h-14 w-auto object-contain"
+              />
               <div className="flex flex-col leading-tight">
                 <span className="text-sm sm:text-2xl font-black tracking-widest text-white uppercase">
                   ALLIANCE

@@ -275,7 +275,7 @@ export default function Campus() {
         {/* View Gallery button */}
         <div className="flex justify-center">
           <button
-            className="flex items-center gap-2 px-8 py-3 rounded-xl text-sm font-semibold text-white shadow-md hover:opacity-90 active:scale-95 transition-all duration-200"
+            className="flex items-center gap-2 px-8 py-3 rounded-xl text-sm font-semibold text-white shadow-md hover:opacity-90 active:scale-95 transition-all duration-200" onClick={()=>{navigate("/gallery")}}
             style={{ background: "linear-gradient(135deg, #0f1f3d, #1b3a6b)" }}
           >
             <Images className="w-4 h-4" />

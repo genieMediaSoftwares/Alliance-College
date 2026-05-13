@@ -9,7 +9,7 @@ import {
   Info, Upload, AlertCircle, Send, AlertTriangle, X,
 } from "lucide-react";
 
-
+import { useNavigate } from "react-router-dom";
 function usePoppins() {
   useEffect(() => {
     if (document.getElementById("poppins-font")) return;
@@ -366,8 +366,8 @@ const ProgressSidebar = ({ active }) => (
   </div>
 );
 
-const NeedHelpCard = () => (
-  <div className="rounded-2xl border mt-4 p-5" style={{backgroundColor:"#EFF6FF", borderColor:"#BFDBFE"}}>
+const NeedHelpCard = ({ navigate }) => (
+    <div className="rounded-2xl border mt-4 p-5" style={{backgroundColor:"#EFF6FF", borderColor:"#BFDBFE"}}>
     <h3 className="font-bold text-[15px] mb-1" style={{color:C.textDark}}>Need Help?</h3>
     <p className="text-[12px] mb-4" style={{color:C.textGray}}>Our admission counselors are here to help you.</p>
     <div className="flex flex-col gap-3 mb-4">
@@ -385,7 +385,7 @@ const NeedHelpCard = () => (
         </div>
       ))}
     </div>
-    <button className="w-full flex items-center justify-center gap-2 py-2.5 rounded-xl text-[13px] font-semibold transition-all hover:opacity-90"
+    <button className="w-full flex items-center justify-center gap-2 py-2.5 rounded-xl text-[13px] font-semibold transition-all hover:opacity-90" onClick={()=>{navigate("/contact")}}
             style={{backgroundColor:C.primary, color:C.white}}>
       <MessageCircle size={15} strokeWidth={2}/> Talk to Counselor
     </button>
@@ -662,6 +662,7 @@ const initAdditional  = { emergName:"",relation:"",emergPhone:"",emergAlt:"",eme
 // MAIN COMPONENT
 // ══════════════════════════════════════════════════════════════════════════════
 export default function ApplyNow() {
+  const navigate=useNavigate()
   usePoppins();
 
   const formTopRef = useRef(null);
@@ -856,14 +857,14 @@ export default function ApplyNow() {
               {/* ── Sidebar ──────────────────────────────────────────── */}
               <div className="hidden lg:flex flex-col w-72 xl:w-80 flex-shrink-0">
                 <ProgressSidebar active={activeStep}/>
-                <NeedHelpCard/>
+               <NeedHelpCard navigate={navigate} />
               </div>
             </div>
 
             {/* Mobile sidebar below form */}
             <div className="lg:hidden mt-6 flex flex-col gap-4">
               <ProgressSidebar active={activeStep}/>
-              <NeedHelpCard/>
+             <NeedHelpCard navigate={navigate} />
             </div>
           </>
         )}

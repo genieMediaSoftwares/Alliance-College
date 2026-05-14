@@ -4,30 +4,47 @@ import './DomeGallery.css';
 
 const DEFAULT_IMAGES = [
   {
-    src: 'https://images.unsplash.com/photo-1755331039789-7e5680e26e8f?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    alt: 'Abstract art'
+    src: 'https://www.geniemedia.in/Images/Img1.jpeg',
+    alt: 'Img1'
   },
   {
-    src: 'https://images.unsplash.com/photo-1755569309049-98410b94f66d?q=80&w=772&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    alt: 'Modern sculpture'
+    src: 'https://www.geniemedia.in/Images/Img2.jpeg',
+    alt: 'Img2'
   },
   {
-    src: 'https://images.unsplash.com/photo-1755497595318-7e5e3523854f?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    alt: 'Digital artwork'
+    src: 'https://www.geniemedia.in/Images/Img3.jpeg',
+    alt: 'Img3'
   },
   {
-    src: 'https://images.unsplash.com/photo-1755353985163-c2a0fe5ac3d8?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    alt: 'Contemporary art'
+    src: 'https://www.geniemedia.in/Images/Img4.jpeg',
+    alt: 'Img4'
   },
   {
-    src: 'https://images.unsplash.com/photo-1745965976680-d00be7dc0377?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    alt: 'Geometric pattern'
+    src: 'https://www.geniemedia.in/Images/Img5.jpeg',
+    alt: 'Img5'
   },
   {
-    src: 'https://images.unsplash.com/photo-1752588975228-21f44630bb3c?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    alt: 'Textured surface'
+    src: 'https://www.geniemedia.in/Images/Img6.jpeg',
+    alt: 'Img6',
   },
-  { src: 'https://pbs.twimg.com/media/Gyla7NnXMAAXSo_?format=jpg&name=large', alt: 'Social media image' }
+  { src: 'https://www.geniemedia.in/Images/Img7.jpeg', alt: 'Img7' },
+  { src: 'https://www.geniemedia.in/Images/Img8.jpeg', alt: 'Img8' },
+  { src: 'https://www.geniemedia.in/Images/Img9.jpeg', alt: 'Img9' },
+  { src: 'https://www.geniemedia.in/Images/Img10.jpeg', alt: 'Img10' },
+  { src: 'https://www.geniemedia.in/Images/Img11.jpeg', alt: 'Img11' },
+  { src: 'https://www.geniemedia.in/Images/Img12.jpeg', alt: 'Img12' },
+  { src: 'https://www.geniemedia.in/Images/Img13.jpeg', alt: 'Img13' },
+  { src: 'https://www.geniemedia.in/Images/Img14.jpeg', alt: 'Img14' },
+  { src: 'https://www.geniemedia.in/Images/Img15.jpeg', alt: 'Img15' },
+  { src: 'https://www.geniemedia.in/Images/Img16.jpeg', alt: 'Img16' },
+  { src: 'https://www.geniemedia.in/Images/Img17.jpeg', alt: 'Img17' },
+  { src: 'https://www.geniemedia.in/Images/Img18.jpeg', alt: 'Img18' },
+  { src: 'https://www.geniemedia.in/Images/Img19.jpeg', alt: 'Img19' },
+  { src: 'https://www.geniemedia.in/Images/Img20.jpeg', alt: 'Img20' },
+
+
+
+
 ];
 
 const DEFAULTS = {

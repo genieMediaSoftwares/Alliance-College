@@ -4,8 +4,14 @@
 @tailwind components;
 @tailwind utilities;
 
-html, body {
+
+html,
+body {
   overflow-x: hidden;
+}
+
+* {
+  box-sizing: border-box;
 }
 html {
   font-size: clamp(13px, 1.2vw, 16px);

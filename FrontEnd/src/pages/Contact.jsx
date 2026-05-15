@@ -80,8 +80,8 @@ const contactInfo = [
   {
     Icon: Phone,
     label: "Phone",
-    value: "0891-2951555, 94900 89077",
-    link: "tel:9490089077",
+    value: "9848127344",
+    link: "tel:9848127344",
     color: "#3B82F6",
     bg: "#EFF6FF",
   },
@@ -447,7 +447,7 @@ export default function Contact() {
               </div>
             </div>
             <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
-               <a href="tel:08912951555">
+               <a href="tel:9848127344">
               <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
                 <div style={{ width: 36, height: 36, borderRadius: "50%", backgroundColor: C.lightBlue,
                   display: "flex", alignItems: "center", justifyContent: "center" }}>
@@ -455,11 +455,11 @@ export default function Contact() {
                 </div>
                 <div>
                  <div style={{ color: C.grayText, fontSize: 11, fontWeight: 500 }}>Call Us Now</div>
-                  <div style={{ color: C.primaryBlue, fontSize: 16, fontWeight: 700 }}>0891-2951555</div> 
+                  <div style={{ color: C.primaryBlue, fontSize: 16, fontWeight: 700 }}>9848127344</div> 
                 </div>
               </div>
               </a>
-              <a href="https://wa.me/919490089077" target="_blank" rel="noopener noreferrer"
+              <a href="https://wa.me/919848127344" target="_blank" rel="noopener noreferrer"
                 style={{ display: "flex", alignItems: "center", gap: 8,
                   backgroundColor: C.primaryBlue, color: C.white, borderRadius: 12,
                   padding: "12px 20px", fontSize: 14, fontWeight: 600,

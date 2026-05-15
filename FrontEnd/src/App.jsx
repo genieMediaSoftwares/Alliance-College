@@ -18,6 +18,7 @@ import PrivacyPolicy from "./components/PrivacyPolicy";
 import Terms from "./components/Terms";
 import CoursesPage from "./pages/CoursesPage";
 import ApplyNow from "./pages/ApplyNow";
+import SocialMedia from "./components/SocialMedia";
 function App() {
   return (
     <>
@@ -43,6 +44,7 @@ function App() {
         <Route path="/terms" element={<Terms />} />
         <Route path="/gallery" element={<Gallery/>}/>
       </Routes>
+      <SocialMedia/>
       <Footer />
     </>
   );

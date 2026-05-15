@@ -19,7 +19,7 @@ const courseLinks = [
 
 const socialLinks = [
   { label: "Facebook", href: "https://www.facebook.com/www.alliancemgt.org/", iconUrl: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/facebook.svg", bg: "#1877F2" },
-  { label: "Instagram", href: "https://www.instagram.com/alliance_college_vizag", iconUrl: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/instagram.svg", bg: "radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%)" },
+  { label: "Instagram", href: "https://www.instagram.com/alliancecollegevizag/", iconUrl: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/instagram.svg", bg: "radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%)" },
   { label: "YouTube", href: "https://www.youtube.com/@alliancecollegevizag639", iconUrl: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/youtube.svg", bg: "#FF0000" },
   { label: "LinkedIn", href: "https://www.linkedin.com/in/alliance-college-vizag-a451a821a/", iconUrl: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/linkedin.svg", bg: "#0A66C2" },
 ];
@@ -34,8 +34,8 @@ const Footer = () => {
 
           <div className="flex flex-col gap-2 lg:w-[240px] flex-shrink-0">
             <Link to="/" onClick={scrollTop} className="flex items-center gap-2 w-fit">
-            
-                  <img
+
+              <img
                 src="Alliance footer.png"
                 alt="Alliance Degree College"
                 className="h-10 sm:h-12 lg:h-14 w-auto object-contain"
@@ -116,33 +116,45 @@ const Footer = () => {
               <ul className="flex flex-col gap-1 sm:gap-3 text-[9px] sm:text-sm leading-tight">
 
                 <li className="flex items-start gap-1">
-                  <Phone size={10} className="text-[#f5c518] mt-[2px]" />
+                  <Phone size={12} className="text-[#f5c518] mt-[2px]" />
                   <div className="flex flex-col gap-[2px]">
-                    <a href="tel:08912656555" className="text-gray-400 hover:text-white">
-                      0891-265 6555
+                    <a href="tel:8885066502" className="text-gray-400 hover:text-white">
+                      8885066502
                     </a>
-                    <a href="tel:9490089077" className="text-gray-400 hover:text-white">
-                      94900 89077
+                    <a href="tel:9848127344" className="text-gray-400 hover:text-white">
+                      9848127344
                     </a>
                   </div>
                 </li>
 
                 <li className="flex items-start gap-1">
-                  <Mail size={10} className="text-[#f5c518] mt-[2px]" />
+                  <Mail size={12} className="text-[#f5c518] mt-[2px]" />
                   <a
                     href="mailto:info@alliancedegreecollege.com"
                     className="text-gray-400 hover:text-white break-all"
                   >
-                    info@alliancedegreecollege.com
+                    alliancehotelmgt@yahoo.com
                   </a>
                 </li>
 
-                <li className="flex items-start gap-1">
-                  <MapPin size={10} className="text-[#f5c518] mt-[2px]" />
-                  <Link to="/contact" onClick={scrollTop} className="text-gray-400 hover:text-white">
-                    Visakhapatnam, A.P., India
-                  </Link>
-                </li>
+              <li className="flex items-start gap-2">
+  
+  <MapPin
+    size={12}
+    className="text-[#f5c518] mt-1 flex-shrink-0"
+  />
+
+  <a
+    href="https://www.google.com/maps?q=Dr.+V.S,+54-11-40/1,+Krishna+College+Road,+Bhanu+Nagar,+Maddilapalem,+Visakhapatnam,+Andhra+Pradesh+530022"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="text-gray-400 hover:text-white leading-relaxed"
+  >
+    Dr. V.S, 54-11-40/1, Krishna College Road, Bhanu Nagar,
+    Maddilapalem, Visakhapatnam, Andhra Pradesh 530022
+  </a>
+
+</li>
 
               </ul>
             </div>

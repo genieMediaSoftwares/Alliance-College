@@ -86,11 +86,11 @@ const Navbar = () => {
             Admissions Open 2024-25 &nbsp;|&nbsp; Limited Seats, Enroll Now!
           </p>
           <a
-            href="tel:08912951555"
+            href="tel:9848127344"
             className="flex items-center gap-1.5 text-[11px] sm:text-xs md:text-sm font-medium whitespace-nowrap hover:text-[#f5c518] transition-colors duration-200 flex-shrink-0"
           >
             <PhoneIcon />
-            <span>0891-2951555, 94900 89077</span>
+            <span>8885066502, 9848127344</span>
           </a>
         </div>
       </div>

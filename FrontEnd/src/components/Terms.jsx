@@ -19,15 +19,13 @@ import {
 const NAVY = "#0A1F44";
 const GOLD = "#F5A623";
 
-/* ── Stats Data ─────────────────────────────────────────── */
 const stats = [
   { icon: GraduationCap, value: "5000+", label: "Students Trained" },
-  { icon: Users,         value: "100+",  label: "Recruiters"       },
-  { icon: TrendingUp,    value: "20 LPA",label: "Highest Package"  },
-  { icon: Trophy,        value: "15+",   label: "Years of Excellence" },
+  { icon: Users, value: "100+", label: "Recruiters" },
+  { icon: TrendingUp, value: "20 LPA", label: "Highest Package" },
+  { icon: Trophy, value: "23+", label: "Years of Excellence" },
 ];
 
-/* ── Terms Sections ─────────────────────────────────────── */
 const terms = [
   {
     icon: FileText,
@@ -66,50 +64,44 @@ const terms = [
   },
 ];
 
-/* ── Gallery Images ─────────────────────────────────────── */
 const galleryImages = [
   {
-    src: "https://images.unsplash.com/photo-1562774053-701939374585?w=600&q=80",
+    src: "https://alliancemgt.org/Alliance%20Images/Alliance%20college%20(2).png",
     alt: "College Building",
   },
   {
-    src: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=600&q=80",
+    src: "https://alliancemgt.org/Alliance%20Images/Img30.jpeg",
     alt: "Campus Life",
   },
   {
-    src: "https://i.pinimg.com/736x/e5/83/50/e583508d50e353c778aa63840373ed27.jpg",
+    src: "https://alliancemgt.org/Alliance%20Images/Img35.jpeg",
     alt: "Students",
   },
   {
-    src: "https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=600&q=80",
+    src: "https://alliancemgt.org/Alliance%20Images/Img32.jpeg",
     alt: "Classroom",
   },
   {
-    src: "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=600&q=80",
+    src: "https://alliancemgt.org/Alliance%20Images/Img27.jpeg",
     alt: "Library",
   },
   {
-    src: "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=600&q=80",
+    src: "https://alliancemgt.org/Alliance%20Images/Img4.jpeg",
     alt: "Lab",
   },
 ];
 
-/* ════════════════════════════════════════════════════════════
-   MAIN COMPONENT
-════════════════════════════════════════════════════════════ */
+
 export default function Terms() {
   return (
     <div className="min-h-screen bg-white font-sans">
 
-      {/* ── Hero ──────────────────────────────────────────────── */}
       <section className="relative min-h-[320px] sm:min-h-[380px] flex items-end overflow-hidden">
-        {/* Background image */}
         <img
-          src="https://images.unsplash.com/photo-1562774053-701939374585?w=1400&q=80"
+          src="https://alliancemgt.org/Alliance%20Images/alliancebg.avif"
           alt="Alliance Degree College campus"
           className="absolute inset-0 w-full h-full object-cover object-center"
         />
-        {/* Gradient overlay — left-heavy navy */}
         <div
           className="absolute inset-0"
           style={{
@@ -118,9 +110,7 @@ export default function Terms() {
           }}
         />
 
-        {/* Content */}
         <div className="relative z-10 w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
-          {/* Breadcrumb */}
           <nav className="flex items-center gap-1 mb-4 text-white/70 text-sm flex-wrap">
             <span>Home</span>
             <ChevronRight size={14} className="flex-shrink-0" />
@@ -140,7 +130,6 @@ export default function Terms() {
         </div>
       </section>
 
-      {/* ── Stats Bar ─────────────────────────────────────────── */}
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 -mt-1">
         <div className="rounded-xl shadow-xl border border-gray-100 grid grid-cols-2 sm:grid-cols-4 gap-0 overflow-hidden bg-white">
           {stats.map(({ icon: Icon, value, label }, i) => (
@@ -166,7 +155,6 @@ export default function Terms() {
         </div>
       </div>
 
-      {/* ── Terms Sections ────────────────────────────────────── */}
       <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
         <div className="flex flex-col gap-4">
           {terms.map(({ icon: Icon, title, body }, i) => (
@@ -174,7 +162,6 @@ export default function Terms() {
               key={i}
               className="flex items-start gap-4 sm:gap-6 bg-white border border-gray-100 rounded-xl p-5 sm:p-6 shadow-sm hover:shadow-md transition-shadow duration-200"
             >
-              {/* Icon box */}
               <div
                 className="flex-shrink-0 w-12 h-12 sm:w-14 sm:h-14 rounded-xl flex items-center justify-center"
                 style={{ background: "#EFF6FF" }}
@@ -196,7 +183,6 @@ export default function Terms() {
             </div>
           ))}
 
-          {/* Contact Card */}
           <div
             className="flex items-start gap-4 sm:gap-6 rounded-xl p-5 sm:p-6"
             style={{ background: "#F0F4FF" }}
@@ -218,14 +204,14 @@ export default function Terms() {
                 If you have any questions about these Terms and Conditions,
                 please contact us at{" "}
                 <a
-                  href="mailto:info@alliancedegreecollege.edu.in"
+                  href="mailto:alliancesince2003@gmail.com"
                   className="text-blue-600 underline underline-offset-2"
                 >
-                  info@alliancedegreecollege.edu.in
+                  alliancesince2003@gmail.com
                 </a>{" "}
                 or call us at{" "}
                 <a href="tel:08912951555" className="text-gray-700 font-medium">
-                  0891-2951555
+                  8885066502
                 </a>
                 .
               </p>
@@ -234,7 +220,6 @@ export default function Terms() {
         </div>
       </section>
 
-      {/* ── Campus Gallery ────────────────────────────────────── */}
       <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-12 sm:pb-16">
         <h2
           className="font-bold text-gray-900 mb-2"
@@ -262,15 +247,12 @@ export default function Terms() {
         </div>
       </section>
 
-      {/* ── Bottom CTA Banner ─────────────────────────────────── */}
       <section className="px-4 sm:px-6 lg:px-8 pb-10 max-w-6xl mx-auto">
         <div
           className="rounded-2xl flex flex-col sm:flex-row items-center justify-between gap-6 px-6 sm:px-10 py-8 sm:py-10"
           style={{ background: NAVY }}
         >
-          {/* Icon + Text */}
           <div className="flex items-center gap-5">
-            {/* Person icon inside gold ring */}
             <div
               className="flex-shrink-0 w-16 h-16 rounded-full border-2 flex items-center justify-center"
               style={{ borderColor: GOLD }}
@@ -291,9 +273,8 @@ export default function Terms() {
             </div>
           </div>
 
-          {/* CTA Button */}
           <a
-            href="tel:08912951555"
+            href="tel:8885066502"
             className="flex-shrink-0 flex items-center gap-2 font-bold text-gray-900 rounded-lg px-7 py-3 sm:py-3.5 transition-opacity hover:opacity-90 whitespace-nowrap"
             style={{
               background: GOLD,

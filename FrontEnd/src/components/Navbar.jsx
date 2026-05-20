@@ -34,10 +34,35 @@ const CloseIcon = () => (
 );
 
 const courseDropdown = [
-  { label: "MBA",              path: "/courses/mba",              desc: "Master of Business Administration" },
-  { label: "BBA",              path: "/courses/bba",              desc: "Bachelor of Business Administration" },
-  { label: "Hotel Management", path: "/courses/hotel-management", desc: "Hospitality & Tourism" },
-  { label: "Diploma Courses",  path: "/courses/diploma",          desc: "Short-term Skill Programs" },
+  {
+    label: "BHM (Hons)",
+    path: "/courses/bhm",
+    desc: "Bachelor of Hotel Management (Honours)",
+  },
+
+  {
+    label: "BBA (Hons)",
+    path: "/courses/bba",
+    desc: "Bachelor of Business Administration (Honours)",
+  },
+
+  {
+    label: "MBA",
+    path: "/courses/mba",
+    desc: "Master of Business Administration",
+  },
+
+  {
+    label: "Diploma in HM",
+    path: "/courses/diploma-hm",
+    desc: "Diploma in Hotel Management",
+  },
+
+  {
+    label: "PGDHM",
+    path: "/courses/pgdhm",
+    desc: "Post Graduate Diploma in Hotel Management",
+  },
 ];
 
 const navLinks = [
@@ -83,7 +108,7 @@ const Navbar = () => {
       <div className="w-full bg-[#0d1b4b] text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2 flex flex-col sm:flex-row items-center justify-between gap-1 sm:gap-0">
           <p className="text-[11px] sm:text-xs md:text-sm font-medium tracking-wide text-center sm:text-left w-full sm:w-auto">
-            Admissions Open 2024-25 &nbsp;|&nbsp; Limited Seats, Enroll Now!
+            Admissions Open 2026-27 &nbsp;|&nbsp; Limited Seats, Enroll Now!
           </p>
           <a
             href="tel:9848127344"
@@ -102,16 +127,16 @@ const Navbar = () => {
 
             <Link to="/" className="flex-shrink-0 flex items-center gap-2 sm:gap-2.5">
               <img
-                src="Alliance Logos.png"
+                src="https://alliancemgt.org/Alliance%20Images/Alliance%20Logos.png"
                 alt="Alliance Degree College"
                 className="h-10 sm:h-12 lg:h-14 w-auto object-contain"
               />
               <div className="flex flex-col leading-tight">
                 <span className="text-base sm:text-xl lg:text-2xl font-black tracking-[0.1em] text-[#0d1b4b] uppercase">
-                  ALLIANCE
+                  ALLIANCE COLLEGE
                 </span>
                 <span className="text-[8px] sm:text-[10px] lg:text-xs tracking-[0.18em] text-[#0d1b4b] font-semibold uppercase">
-                  DEGREE COLLEGE
+                  OF HOTEL MANAGEMENT
                 </span>
               </div>
             </Link>

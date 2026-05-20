@@ -1,60 +1,59 @@
-
-
 import { useEffect, useState } from "react";
+import emailjs from "@emailjs/browser";
 import {
   MapPin, Phone, Mail, Clock, Globe, Send, Shield,
   ChevronDown, ChevronRight, Home, MessageCircle,
-  PhoneCall, HelpCircle, Navigation, CheckCircle,
+  PhoneCall, HelpCircle, Navigation, CheckCircle, Award,
+  Briefcase,
+  Users,
+  Building2,
 } from "lucide-react";
 
-// ─── Google Fonts ─────────────────────────────────────────────────────────────
 function usePoppins() {
   useEffect(() => {
     if (document.getElementById("poppins-font")) return;
     const link = document.createElement("link");
-    link.id   = "poppins-font";
-    link.rel  = "stylesheet";
+    link.id = "poppins-font";
+    link.rel = "stylesheet";
     link.href = "https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap";
     document.head.appendChild(link);
   }, []);
 }
 
-// ─── Colors ───────────────────────────────────────────────────────────────────
 const C = {
-  primaryBlue:   "#0D1B3D",
+  primaryBlue: "#0D1B3D",
   secondaryBlue: "#1E3A8A",
-  accentYellow:  "#FBBF24",
-  lightBlue:     "#EFF6FF",
-  grayText:      "#4B5563",
-  lightGray:     "#F3F4F6",
-  borderGray:    "#E5E7EB",
-  white:         "#FFFFFF",
+  accentYellow: "#FBBF24",
+  lightBlue: "#EFF6FF",
+  grayText: "#4B5563",
+  lightGray: "#F3F4F6",
+  borderGray: "#E5E7EB",
+  white: "#FFFFFF",
 };
 
-// ─── Social SVGs (safe alternative to removed lucide exports) ─────────────────
 const FbSvg = () => (
   <svg width="14" height="14" viewBox="0 0 24 24" fill="white">
-    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
   </svg>
 );
 const IgSvg = () => (
   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
-    <circle cx="12" cy="12" r="4"/>
-    <circle cx="17.5" cy="6.5" r="1" fill="white" stroke="none"/>
+    <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+    <circle cx="12" cy="12" r="4" />
+    <circle cx="17.5" cy="6.5" r="1" fill="white" stroke="none" />
   </svg>
 );
 const YtSvg = () => (
   <svg width="14" height="14" viewBox="0 0 24 24" fill="white">
-    <path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/>
-    <polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="#0D1B3D"/>
+    <path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z" />
+    <polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="#0D1B3D" />
   </svg>
 );
 const LiSvg = () => (
   <svg width="14" height="14" viewBox="0 0 24 24" fill="white">
-    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
-    <rect x="2" y="9" width="4" height="12"/>
-    <circle cx="4" cy="4" r="2"/>
+    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+    <rect x="2" y="9" width="4" height="12" />
+    <circle cx="4" cy="4" r="2" />
   </svg>
 );
 
@@ -65,13 +64,12 @@ const socialLinks = [
   { Svg: LiSvg, href: "#" },
 ];
 
-// ─── Data ─────────────────────────────────────────────────────────────────────
 const contactInfo = [
   {
     Icon: MapPin,
     label: "Address",
     value:
-      "D.No. 15-9-20, New Resapuvanipalem,\nVisakhapatnam – 530013, A.P., India",
+      "Dr. V.S, 54-11-40/1, Krishna College Road, Bhanu Nagar, Maddilapalem, Visakhapatnam, Andhra Pradesh 530022",
     link: "https://maps.google.com/?q=Alliance+Degree+College+Visakhapatnam",
     color: "#F59E0B",
     bg: "#FFF7ED",
@@ -85,12 +83,19 @@ const contactInfo = [
     color: "#3B82F6",
     bg: "#EFF6FF",
   },
-
+  {
+    Icon: Phone,
+    label: "Alternate Phone",
+    value: "8885066502",
+    link: "tel:8885066502",
+    color: "#2563EB",
+    bg: "#DBEAFE",
+  },
   {
     Icon: Mail,
     label: "Email",
-    value: "info@alliancedegreecollege.com",
-    link: "mailto:info@alliancedegreecollege.com",
+    value: "alliancesince2003@gmail.com",
+    link: "mailto:alliancesince2003@gmail.com",
     color: "#8B5CF6",
     bg: "#F5F3FF",
   },
@@ -115,25 +120,34 @@ const contactInfo = [
 ];
 
 const faqs = [
-  { q: "What courses does Alliance Degree College offer?",
-    a: "We offer MBA, BBA, B.Sc Hotel Management, and various Diploma programs in Culinary Arts, Front Office, and Housekeeping." },
-  { q: "What is the admission process?",
-    a: "Fill out the online application form, submit required documents, attend counselling, and confirm your seat with fee payment." },
-  { q: "What are the admission requirements?",
-    a: "Candidates must have passed 10+2 (any stream) for UG programs. For MBA, a graduation degree is required." },
-  { q: "Do you provide placement assistance?",
-    a: "Yes! We provide 100% placement assistance with connections to 100+ top recruiters including Taj Hotels, ITC, Hyatt and more." },
+  {
+    q: "What courses does Alliance College of Hotel Management offer?",
+    a: "We offer MBA, BBA, B.Sc Hotel Management, and various Diploma programs in Culinary Arts, Front Office, and Housekeeping."
+  },
+  {
+    q: "What is the admission process?",
+    a: "Fill out the online application form, submit required documents, attend counselling, and confirm your seat with fee payment."
+  },
+  {
+    q: "What are the admission requirements?",
+    a: "Candidates must have passed 10+2 (any stream) for UG programs. For MBA, a graduation degree is required."
+  },
+  {
+    q: "Do you provide placement assistance?",
+    a: "Yes! We provide 100% placement assistance with connections to 100+ top recruiters including Taj Hotels, ITC, Hyatt and more."
+  },
 ];
 
-const subjectOptions   = ["Select a subject","Admission Enquiry","Course Information","Placement Information","Campus Visit","Other"];
-const footerQuickLinks = ["Home","About Us","Courses","Placements","Campus","Contact Us"];
-const footerCourses    = ["MBA","BBA","Hotel Management","Diploma Courses"];
-const footerResources  = ["Brochure","FAQs","Gallery","News & Events"];
+const subjectOptions = ["Select a subject", "Admission Enquiry", "Course Information", "Placement Information", "Campus Visit", "Other"];
+const footerQuickLinks = ["Home", "About Us", "Courses", "Placements", "Campus", "Contact Us"];
+const footerCourses = ["MBA", "BBA", "Hotel Management", "Diploma Courses"];
+const footerResources = ["Brochure", "FAQs", "Gallery", "News & Events"];
 
-// ─── Helpers ──────────────────────────────────────────────────────────────────
 const IconBadge = ({ Icon, color, bg, size = 42 }) => (
-  <div style={{ width: size, height: size, borderRadius: "50%", backgroundColor: bg,
-    flexShrink: 0, display: "flex", alignItems: "center", justifyContent: "center" }}>
+  <div style={{
+    width: size, height: size, borderRadius: "50%", backgroundColor: bg,
+    flexShrink: 0, display: "flex", alignItems: "center", justifyContent: "center"
+  }}>
     <Icon size={16} color={color} strokeWidth={2} />
   </div>
 );
@@ -151,20 +165,25 @@ const baseInput = {
   fontFamily: "'Poppins',sans-serif", transition: "border-color .2s",
 };
 const onFocus = (e) => (e.target.style.borderColor = C.secondaryBlue);
-const onBlur  = (e) => (e.target.style.borderColor = C.borderGray);
+const onBlur = (e) => (e.target.style.borderColor = C.borderGray);
 
-// ─── FAQ item ────────────────────────────────────────────────────────────────
 const FaqItem = ({ q, a }) => {
   const [open, setOpen] = useState(false);
   return (
-    <div style={{ border: `1.5px solid ${open ? C.secondaryBlue : C.borderGray}`,
-      borderRadius: 12, overflow: "hidden", backgroundColor: C.white, transition: "border-color .2s" }}>
+    <div style={{
+      border: `1.5px solid ${open ? C.secondaryBlue : C.borderGray}`,
+      borderRadius: 12, overflow: "hidden", backgroundColor: C.white, transition: "border-color .2s"
+    }}>
       <button onClick={() => setOpen(!open)}
-        style={{ width: "100%", display: "flex", alignItems: "center", justifyContent: "space-between",
+        style={{
+          width: "100%", display: "flex", alignItems: "center", justifyContent: "space-between",
           padding: "14px 16px", textAlign: "left", gap: 12, cursor: "pointer", border: "none",
-          backgroundColor: open ? "#F0F5FF" : C.white, transition: "background-color .2s" }}>
-        <span style={{ color: C.primaryBlue, fontSize: 13, fontWeight: 500, lineHeight: 1.5,
-          fontFamily: "'Poppins',sans-serif" }}>{q}</span>
+          backgroundColor: open ? "#F0F5FF" : C.white, transition: "background-color .2s"
+        }}>
+        <span style={{
+          color: C.primaryBlue, fontSize: 13, fontWeight: 500, lineHeight: 1.5,
+          fontFamily: "'Poppins',sans-serif"
+        }}>{q}</span>
         <ChevronDown size={17} color={C.primaryBlue} strokeWidth={2.5}
           style={{ flexShrink: 0, transform: open ? "rotate(180deg)" : "rotate(0deg)", transition: "transform .25s" }} />
       </button>
@@ -177,17 +196,50 @@ const FaqItem = ({ q, a }) => {
   );
 };
 
-// ─── Main ─────────────────────────────────────────────────────────────────────
 export default function Contact() {
   usePoppins();
 
-  const [form, setForm]           = useState({ name:"", email:"", phone:"", subject:"", message:"" });
+  const [form, setForm] = useState({ name: "", email: "", phone: "", subject: "", message: "" });
   const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setSubmitted(true);
-    setTimeout(() => { setSubmitted(false); setForm({ name:"", email:"", phone:"", subject:"", message:"" }); }, 3000);
+
+    try {
+      await emailjs.send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+
+        import.meta.env.VITE_EMAILJS_CONTACT_TEMPLATE_ID,
+
+        {
+          name: form.name,
+          email: form.email,
+          phone: form.phone,
+          subject: form.subject,
+          message: form.message,
+        },
+
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      );
+
+      setSubmitted(true);
+
+      setForm({
+        name: "",
+        email: "",
+        phone: "",
+        subject: "",
+        message: "",
+      });
+
+      setTimeout(() => {
+        setSubmitted(false);
+      }, 3000);
+
+    } catch (error) {
+      console.log(error);
+      alert("Failed to send message");
+    }
   };
 
   const poppins = { fontFamily: "'Poppins',sans-serif" };
@@ -195,10 +247,9 @@ export default function Contact() {
   return (
     <div style={{ ...poppins, backgroundColor: C.white, color: C.primaryBlue, overflowX: "hidden" }}>
 
-      {/* ══ HERO ══════════════════════════════════════════════════════════════ */}
       <section className="relative overflow-hidden" style={{ minHeight: 220 }}>
         <img
-          src="https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1400&q=75"
+          src="https://alliancemgt.org/Alliance%20Images/alliancebg.avif"
           alt="Campus" className="absolute inset-0 w-full h-full object-cover object-center"
         />
         <div className="absolute inset-0"
@@ -221,12 +272,10 @@ export default function Contact() {
         </div>
       </section>
 
-      {/* ══ 3-COLUMN SECTION ══════════════════════════════════════════════════ */}
       <section className="py-12 sm:py-16" style={{ backgroundColor: C.lightGray }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
 
-            {/* FORM */}
             <div className="rounded-2xl p-6 shadow-sm"
               style={{ backgroundColor: C.white, border: `1px solid ${C.borderGray}` }}>
               <h2 className="font-bold mb-5" style={{ color: C.primaryBlue, fontSize: 18 }}>Get In Touch</h2>
@@ -259,8 +308,10 @@ export default function Contact() {
                     <select value={form.subject}
                       onChange={(e) => setForm({ ...form, subject: e.target.value })}
                       required
-                      style={{ ...baseInput, paddingRight: 36, appearance: "none", cursor: "pointer",
-                        color: form.subject ? C.primaryBlue : "#9CA3AF" }}
+                      style={{
+                        ...baseInput, paddingRight: 36, appearance: "none", cursor: "pointer",
+                        color: form.subject ? C.primaryBlue : "#9CA3AF"
+                      }}
                       onFocus={onFocus} onBlur={onBlur}>
                       {subjectOptions.map((s) => (
                         <option key={s} value={s === "Select a subject" ? "" : s}>{s}</option>
@@ -281,12 +332,14 @@ export default function Contact() {
                 </div>
 
                 <button type="submit"
-                  style={{ backgroundColor: submitted ? "#10B981" : C.primaryBlue,
+                  style={{
+                    backgroundColor: submitted ? "#10B981" : C.primaryBlue,
                     color: C.white, fontSize: 14, fontWeight: 600,
                     border: "none", borderRadius: 10, padding: "12px 16px",
                     cursor: "pointer", display: "flex", alignItems: "center",
                     justifyContent: "center", gap: 8, width: "100%",
-                    fontFamily: "'Poppins',sans-serif", transition: "background-color .3s" }}>
+                    fontFamily: "'Poppins',sans-serif", transition: "background-color .3s"
+                  }}>
                   {submitted
                     ? <><CheckCircle size={16} color={C.white} /> Message Sent!</>
                     : <><Send size={15} color={C.white} /> Send Message</>}
@@ -301,121 +354,179 @@ export default function Contact() {
               </form>
             </div>
 
-            {/* CONTACT INFO */}
             <div className="rounded-2xl p-6 shadow-sm"
               style={{ backgroundColor: C.white, border: `1px solid ${C.borderGray}` }}>
               <h2 className="font-bold mb-5" style={{ color: C.primaryBlue, fontSize: 18 }}>Contact Information</h2>
               <div className="flex flex-col gap-5">
-  {contactInfo.map((item, i) => {
-    const CardWrapper = item.link ? "a" : "div";
+                {contactInfo.map((item, i) => {
+                  const CardWrapper = item.link ? "a" : "div";
 
-    return (
-      <CardWrapper
-        key={i}
-        href={item.link || undefined}
-        target={item.link?.startsWith("http") ? "_blank" : undefined}
-        rel={item.link?.startsWith("http") ? "noopener noreferrer" : undefined}
-        className="transition-all duration-300 hover:scale-[1.01] hover:opacity-90"
-        style={{
-          display: "flex",
-          alignItems: "flex-start",
-          gap: 14,
-          textDecoration: "none",
-          cursor: item.link ? "pointer" : "default",
-        }}
-      >
-        <IconBadge
-          Icon={item.Icon}
-          color={item.color}
-          bg={item.bg}
-        />
+                  return (
+                    <CardWrapper
+                      key={i}
+                      href={item.link || undefined}
+                      target={item.link?.startsWith("http") ? "_blank" : undefined}
+                      rel={item.link?.startsWith("http") ? "noopener noreferrer" : undefined}
+                      className="transition-all duration-300 hover:scale-[1.01] hover:opacity-90"
+                      style={{
+                        display: "flex",
+                        alignItems: "flex-start",
+                        gap: 14,
+                        textDecoration: "none",
+                        cursor: item.link ? "pointer" : "default",
+                      }}
+                    >
+                      <IconBadge
+                        Icon={item.Icon}
+                        color={item.color}
+                        bg={item.bg}
+                      />
 
-        <div>
-          <p
-            style={{
-              color: C.primaryBlue,
-              fontSize: 13,
-              fontWeight: 600,
-              margin: "0 0 3px",
-            }}
-          >
-            {item.label}
-          </p>
+                      <div>
+                        <p
+                          style={{
+                            color: C.primaryBlue,
+                            fontSize: 13,
+                            fontWeight: 600,
+                            margin: "0 0 3px",
+                          }}
+                        >
+                          {item.label}
+                        </p>
 
-          <p
-            style={{
-              color: C.grayText,
-              fontSize: 13,
-              lineHeight: 1.65,
-              whiteSpace: "pre-line",
-              margin: 0,
-            }}
-          >
-            {item.value}
-          </p>
-        </div>
-      </CardWrapper>
-    );
-  })}
-</div>
+                        <p
+                          style={{
+                            color: C.grayText,
+                            fontSize: 13,
+                            lineHeight: 1.65,
+                            whiteSpace: "pre-line",
+                            margin: 0,
+                          }}
+                        >
+                          {item.value}
+                        </p>
+                      </div>
+                    </CardWrapper>
+                  );
+                })}
+              </div>
             </div>
 
-            {/* MAP */}
             <div className="rounded-2xl overflow-hidden shadow-sm flex flex-col max-h-50"
               style={{ backgroundColor: C.white, border: `1px solid ${C.borderGray}` }}>
-              <div style={{ padding: "24px 24px 12px", marginBottom:"20px" }}>
+              <div style={{ padding: "24px 24px 12px", marginBottom: "20px" }}>
                 <h2 style={{ color: C.primaryBlue, fontSize: 18, fontWeight: 700, margin: 0 }}>
                   Visit Our Campus
                 </h2>
               </div>
-             <div className="mx-4">
-  <div
-    className="w-full rounded-xl overflow-hidden"
-    style={{ height: 260 }}
-  >
-    <iframe
-      title="Alliance Degree College"
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3800.5!2d83.3149!3d17.7384!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a395b26e0c3fa43%3A0x0!2sAlliance+Degree+College%2C+Visakhapatnam!5e0!3m2!1sen!2sin!4v1620000000000!5m2!1sen!2sin"
-      width="100%"
-      height="260"
-      style={{ border: 0, display: "block" }}
-      allowFullScreen=""
-      loading="lazy"
-      referrerPolicy="no-referrer-when-downgrade"
-    />
-  </div>
-</div>
+              <div className="mx-4">
+                <div
+                  className="w-full rounded-xl overflow-hidden"
+                  style={{ height: 260 }}
+                >
+                  <iframe
+                    title="Alliance College of Hotel Management"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3612.026478973354!2d83.3229508!3d17.742293699999994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a395cb3253abeb7%3A0x394cbd8562610822!2sALLIANCE%20COLLEGE%20OF%20HOTEL%20MANAGEMENT!5e1!3m2!1sen!2sin!4v1779174158687!5m2!1sen!2sin"
+                    width="120%"
+                    height="450"
+                    style={{ border: 0, display: "block" }}
+                    allowFullScreen=""
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                  />
+                </div>
+              </div>
+              <div className="px-4 pb-5">
+                <div className="grid grid-cols-2 gap-3 mt-4">
 
-<div className="px-4 py-3 mt-8">
-  <a
-    href="https://maps.google.com/?q=Alliance+Degree+College+Visakhapatnam"
-    target="_blank"
-    rel="noopener noreferrer"
-    style={{
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "center",
-      gap: 8,
-      backgroundColor: C.primaryBlue,
-      color: C.white,
-      borderRadius: 12,
-      padding: "12px 16px",
-      fontSize: 13,
-      fontWeight: 600,
-      textDecoration: "none",
-      fontFamily: "'Poppins',sans-serif",
-    }}
-  >
-    <Navigation size={15} color={C.white} />
-    Get Directions
-  </a>
-</div>
+                  <div
+                    className="rounded-xl p-4 text-center"
+                    style={{ backgroundColor: "#EFF6FF" }}
+                  >
+                    <Award size={22} color="#062B6B" className="mx-auto mb-2" />
+
+                    <h3
+                      style={{
+                        color: C.primaryBlue,
+                        fontSize: 18,
+                        fontWeight: 700,
+                        margin: 0,
+                      }}
+                    >
+                      23+
+                    </h3>
+
+                    <p
+                      style={{
+                        color: C.grayText,
+                        fontSize: 11,
+                        marginTop: 4,
+                      }}
+                    >
+                      Years Experience
+                    </p>
+                  </div>
+
+                  <div
+                    className="rounded-xl p-4 text-center"
+                    style={{ backgroundColor: "#FEF3C7" }}
+                  >
+                    <Briefcase size={22} color="#062B6B" className="mx-auto mb-2" />
+
+                    <h3
+                      style={{
+                        color: C.primaryBlue,
+                        fontSize: 18,
+                        fontWeight: 700,
+                        margin: 0,
+                      }}
+                    >
+                      100%
+                    </h3>
+
+                    <p
+                      style={{
+                        color: C.grayText,
+                        fontSize: 11,
+                        marginTop: 4,
+                      }}
+                    >
+                      Placement Support
+                    </p>
+                  </div>
+
+
+                </div>
+              </div>
+              <div className="px-4 py-3 mt-8">
+                <a
+                  href="https://maps.google.com/?q=Alliance+Degree+College+Visakhapatnam"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    gap: 8,
+                    backgroundColor: C.primaryBlue,
+                    color: C.white,
+                    borderRadius: 12,
+                    padding: "12px 16px",
+                    fontSize: 13,
+                    fontWeight: 600,
+                    textDecoration: "none",
+                    fontFamily: "'Poppins',sans-serif",
+                  }}
+                >
+                  <Navigation size={15} color={C.white} />
+                  Get Directions
+                </a>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ══ FAQ ═══════════════════════════════════════════════════════════════ */}
       <section className="py-12 sm:py-16 bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="font-bold mb-8"
@@ -428,13 +539,14 @@ export default function Contact() {
         </div>
       </section>
 
-      {/* ══ ASSISTANCE BANNER ════════════════════════════════════════════════ */}
       <section style={{ backgroundColor: C.lightGray, borderTop: `1px solid ${C.borderGray}`, padding: "24px 16px" }}>
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-5">
             <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
-              <div style={{ width: 64, height: 64, borderRadius: "50%", backgroundColor: C.primaryBlue,
-                flexShrink: 0, display: "flex", alignItems: "center", justifyContent: "center" }}>
+              <div style={{
+                width: 64, height: 64, borderRadius: "50%", backgroundColor: C.primaryBlue,
+                flexShrink: 0, display: "flex", alignItems: "center", justifyContent: "center"
+              }}>
                 <HelpCircle size={28} color={C.accentYellow} />
               </div>
               <div>
@@ -447,23 +559,27 @@ export default function Contact() {
               </div>
             </div>
             <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
-               <a href="tel:9848127344">
-              <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-                <div style={{ width: 36, height: 36, borderRadius: "50%", backgroundColor: C.lightBlue,
-                  display: "flex", alignItems: "center", justifyContent: "center" }}>
-                  <PhoneCall size={16} color={C.primaryBlue} />
+              <a href="tel:9848127344">
+                <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+                  <div style={{
+                    width: 36, height: 36, borderRadius: "50%", backgroundColor: C.lightBlue,
+                    display: "flex", alignItems: "center", justifyContent: "center"
+                  }}>
+                    <PhoneCall size={16} color={C.primaryBlue} />
+                  </div>
+                  <div>
+                    <div style={{ color: C.grayText, fontSize: 11, fontWeight: 500 }}>Call Us Now</div>
+                    <div style={{ color: C.primaryBlue, fontSize: 16, fontWeight: 700 }}>9848127344</div>
+                  </div>
                 </div>
-                <div>
-                 <div style={{ color: C.grayText, fontSize: 11, fontWeight: 500 }}>Call Us Now</div>
-                  <div style={{ color: C.primaryBlue, fontSize: 16, fontWeight: 700 }}>9848127344</div> 
-                </div>
-              </div>
               </a>
               <a href="https://wa.me/919848127344" target="_blank" rel="noopener noreferrer"
-                style={{ display: "flex", alignItems: "center", gap: 8,
+                style={{
+                  display: "flex", alignItems: "center", gap: 8,
                   backgroundColor: C.primaryBlue, color: C.white, borderRadius: 12,
                   padding: "12px 20px", fontSize: 14, fontWeight: 600,
-                  textDecoration: "none", fontFamily: "'Poppins',sans-serif", whiteSpace: "nowrap" }}>
+                  textDecoration: "none", fontFamily: "'Poppins',sans-serif", whiteSpace: "nowrap"
+                }}>
                 <MessageCircle size={16} color={C.white} />
                 Chat on WhatsApp
               </a>
@@ -472,7 +588,7 @@ export default function Contact() {
         </div>
       </section>
 
-      
+
     </div>
   );
 }

@@ -33,7 +33,6 @@ import {
 import { useNavigate } from "react-router-dom";
 const NAV_BLUE = "#0F2B5B";
 
-/* ── Social icon SVGs (removed from lucide-react in v0.3+) ── */
 const FacebookIcon = () => (
   <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
     <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
@@ -68,18 +67,15 @@ const GOLD = "#F5A623";
 const LIGHT_BG = "#F5F7FA";
 const ICON_BLUE = "#1B4F9C";
 
-/* ─────────────────────────── HERO ─────────────────────────── */
 function Hero() {
   const navigate = useNavigate()
   return (
     <section className="relative overflow-hidden" style={{ minHeight: 380 }}>
-      {/* Background image */}
       <img
         src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1400&q=80"
         alt="BBA Campus"
         className="absolute inset-0 w-full h-full object-cover object-center"
       />
-      {/* Dark gradient overlay – heavier on left, lighter on right */}
       <div
         className="absolute inset-0"
         style={{
@@ -88,7 +84,6 @@ function Hero() {
         }}
       />
 
-      {/* Student image – positioned right */}
       <div className="absolute right-0 bottom-0 h-full hidden lg:block" style={{ width: "38%" }}>
         <img
           src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=700&q=85"
@@ -101,7 +96,6 @@ function Hero() {
         />
       </div>
 
-      {/* Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="flex flex-col lg:flex-row items-center min-h-[380px] lg:min-h-[400px] py-10 lg:py-0">
           <div className="flex-1 text-white pt-4 lg:pt-0 text-center lg:text-left lg:max-w-[58%]">
@@ -113,10 +107,10 @@ function Hero() {
               className="font-extrabold text-white leading-none mb-1"
               style={{ fontSize: "clamp(2.8rem, 6vw, 4.5rem)" }}
             >
-              BBA
+              BBA(Hons)
             </h1>
             <p className="text-blue-100 mb-6" style={{ fontSize: "clamp(1rem, 2.5vw, 1.3rem)" }}>
-              Bachelor of Business Administration
+              Bachelor of Business Administration(Honours)
             </p>
 
             <div className="flex flex-wrap justify-center lg:justify-start gap-6 mb-8">
@@ -124,7 +118,6 @@ function Hero() {
                 { icon: <Clock size={17} />, label: "Duration", value: "3 Years" },
                 { icon: <Briefcase size={17} />, label: "Mode", value: "Full Time" },
                 { icon: <GraduationCap size={17} />, label: "Eligibility", value: "Graduation" },
-                { icon: <Users size={17} />, label: "Intake", value: "120 Students" },
               ].map(({ icon, label, value }) => (
                 <div key={label} className="flex items-center gap-2">
                   <div className="text-blue-300">{icon}</div>
@@ -164,13 +157,13 @@ function Hero() {
   );
 }
 
-/* ─────────────────────────── ABOUT ─────────────────────────── */
 function AboutBBA() {
   const cards = [
     { icon: <Building2 size={24} color={ICON_BLUE} />, label: "Affiliation", value: "Andhra University" },
-    { icon: <Award size={24} color={ICON_BLUE} />, label: "Approval", value: "AICTE Approved" },
     { icon: <Network size={24} color={ICON_BLUE} />, label: "Industry Exposure", value: "100+ Corporate Tie-ups" },
     { icon: <Target size={24} color={ICON_BLUE} />, label: "Focus", value: "Entrepreneurship & Leadership" },
+              {icon: <Award size={24} color={ICON_BLUE} />,label: "Industry Exposure",value: "Internships & Live Training",},
+    
   ];
 
   return (
@@ -213,13 +206,11 @@ function AboutBBA() {
   );
 }
 
-/* ─────────────────────── PROGRAM OVERVIEW + HIGHLIGHTS ─────────────────────── */
 function ProgramOverviewAndHighlights() {
   const overview = [
     ["Duration", "3 Years"],
     ["Mode", "Full Time"],
     ["Eligibility", "10+2 (Any Stream) with 50% marks"],
-    ["Intake", "120 Students"],
     ["Campus", "Visakhapatnam, Andhra Pradesh"],
   ];
 
@@ -235,7 +226,6 @@ function ProgramOverviewAndHighlights() {
     <section style={{ background: LIGHT_BG }} className="py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
-          {/* Program Overview */}
           <div>
             <h2 className="font-bold mb-5" style={{ color: NAV_BLUE, fontSize: "1.25rem" }}>
               Program Overview
@@ -258,7 +248,6 @@ function ProgramOverviewAndHighlights() {
             </div>
           </div>
 
-          {/* Program Highlights */}
           <div>
             <h2 className="font-bold mb-5" style={{ color: NAV_BLUE, fontSize: "1.25rem" }}>
               Program Highlights
@@ -285,7 +274,6 @@ function ProgramOverviewAndHighlights() {
   );
 }
 
-/* ─────────────────────── CURRICULUM ─────────────────────── */
 const curriculum = {
   "Year 1": [
     {
@@ -350,7 +338,6 @@ function Curriculum() {
           </div>
         </div>
 
-        {/* Semester cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
           {curriculum[activeYear].map(({ sem, subjects }) => (
             <div
@@ -380,7 +367,6 @@ function Curriculum() {
   );
 }
 
-/* ─────────────────────── CAREER + WHY + TESTIMONIALS ─────────────────────── */
 function CareerWhyTestimonials() {
   const [testimonialIdx, setTestimonialIdx] = useState(0);
 
@@ -425,7 +411,6 @@ function CareerWhyTestimonials() {
     <section style={{ background: LIGHT_BG }} className="py-14">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-          {/* Career Opportunities */}
           <div className="bg-white rounded-xl border border-gray-100 p-6 shadow-sm">
             <h3 className="font-bold mb-5" style={{ color: NAV_BLUE, fontSize: "1.05rem" }}>
               Career Opportunities
@@ -448,7 +433,6 @@ function CareerWhyTestimonials() {
             </button>
           </div>
 
-          {/* Why Choose Alliance */}
           <div
             className="rounded-xl p-6 shadow-md"
             style={{ background: NAV_BLUE }}
@@ -466,7 +450,6 @@ function CareerWhyTestimonials() {
             </ul>
           </div>
 
-          {/* Testimonials */}
           <div className="bg-white rounded-xl border border-gray-100 p-6 shadow-sm flex flex-col justify-between">
             <div>
               <h3 className="font-bold mb-3" style={{ color: NAV_BLUE, fontSize: "1.05rem" }}>
@@ -530,27 +513,26 @@ function CareerWhyTestimonials() {
   );
 }
 
-/* ─────────────────────── GALLERY ─────────────────────── */
 const galleryItems = [
   {
     label: "Classroom Learning",
-    img: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=600&q=80",
+    img: "https://alliancemgt.org/Alliance%20Images/Img24.jpeg",
   },
   {
     label: "Group Discussions",
-    img: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&q=80",
+    img: "https://alliancemgt.org/Alliance%20Images/Img31.jpeg",
   },
   {
     label: "Campus Activities",
-    img: "https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=600&q=80",
+    img: "https://alliancemgt.org/Alliance%20Images/foodproductionlab.jpg",
   },
   {
     label: "Industrial Visit",
-    img: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&q=80",
+    img: "https://alliancemgt.org/Alliance%20Images/Img30.jpeg",
   },
   {
     label: "Seminars & Workshops",
-    img: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=600&q=80",
+    img: "https://alliancemgt.org/Alliance%20Images/Img48.jpeg",
   },
 ];
 
@@ -595,14 +577,12 @@ function Gallery() {
         </h2>
 
         <div className="relative">
-          {/* Mobile: horizontal scroll */}
           <div className="flex sm:hidden gap-4 overflow-x-auto pb-4 snap-x snap-mandatory">
             {galleryItems.map(({ label, img }) => (
               <GalleryCard key={label} label={label} img={img} />
             ))}
           </div>
 
-          {/* Tablet + Desktop: 3 items with arrows */}
           <div className="hidden sm:flex items-center gap-3">
             <button
               onClick={prev}
@@ -629,7 +609,6 @@ function Gallery() {
     </section>
   );
 }
-/* ─────────────────────── FAQ ─────────────────────── */
 const faqs = [
   {
     q: "What is the eligibility for BBA?",
@@ -638,10 +617,6 @@ const faqs = [
   {
     q: "What are the career opportunities after BBA?",
     a: "BBA graduates can pursue careers as Business Executives, Marketing Managers, Entrepreneurs, Sales Managers, HR Assistants, and more.",
-  },
-  {
-    q: "Is the BBA program AICTE approved?",
-    a: "Yes, our BBA program is approved by AICTE and affiliated to Andhra University, ensuring nationally recognized credentials.",
   },
   {
     q: "Does the college provide placement support?",
@@ -715,7 +690,6 @@ function FAQ() {
 
 
 
-/* ─────────────────────── ROOT PAGE ─────────────────────── */
 export default function Bba() {
   return (
     <div className="w-full">

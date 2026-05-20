@@ -34,18 +34,15 @@ const InstagramIcon = () => (<svg width="15" height="15" viewBox="0 0 24 24" fil
 const LinkedinIcon = () => (<svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z" /><rect x="2" y="9" width="4" height="12" /><circle cx="4" cy="4" r="2" /></svg>);
 const YoutubeIcon = () => (<svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z" /><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="white" /></svg>);
 
-/* ─────────────────────────── HERO ─────────────────────────── */
 function Hero() {
   const navigate = useNavigate()
   return (
     <section className="relative overflow-hidden" style={{ minHeight: 400 }}>
-      {/* BG image */}
       <img
         src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=1400&q=80"
         alt="MBA Campus"
         className="absolute inset-0 w-full h-full object-cover object-center"
       />
-      {/* Gradient overlay */}
       <div
         className="absolute inset-0"
         style={{
@@ -54,7 +51,6 @@ function Hero() {
         }}
       />
 
-      {/* Student image right */}
       <div className="absolute right-0 bottom-0 h-full hidden lg:block" style={{ width: "38%" }}>
         <img
           src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=700&q=85"
@@ -88,7 +84,6 @@ function Hero() {
                 { icon: <Clock size={17} />, label: "Duration", value: "2 Years" },
                 { icon: <Briefcase size={17} />, label: "Mode", value: "Full Time" },
                 { icon: <GraduationCap size={17} />, label: "Eligibility", value: "Graduation" },
-                { icon: <Users size={17} />, label: "Intake", value: "60 Students" },
               ].map(({ icon, label, value }) => (
                 <div key={label} className="flex items-center gap-2">
                   <div className="text-blue-300">{icon}</div>
@@ -124,12 +119,12 @@ function Hero() {
   );
 }
 
-/* ─────────────────────────── ABOUT ─────────────────────────── */
 function AboutMBA() {
   const cards = [
-    { icon: <Building2 size={26} color={ICON_BLUE} />, label: "Affiliation", value: "Andhra University" },
     { icon: <Award size={26} color={ICON_BLUE} />, label: "Approval", value: "AICTE Approved" },
     { icon: <Network size={26} color={ICON_BLUE} />, label: "Industry Exposure", value: "100+ Corporate Tie-ups" },
+          {icon: <Award size={24} color={ICON_BLUE} />,label: "Industry Exposure",value: "Internships & Live Training",},
+    
   ];
 
   return (
@@ -166,13 +161,11 @@ function AboutMBA() {
   );
 }
 
-/* ─────────────────────── PROGRAM + SPECIALIZATIONS ─────────────────────── */
 function ProgramAndSpec() {
   const overview = [
     ["Duration", "2 Years"],
     ["Mode", "Full Time"],
     ["Eligibility", "Graduation in any stream with 50% marks"],
-    ["Intake", "60 Students"],
     ["Campus", "Visakhapatnam, Andhra Pradesh"],
   ];
 
@@ -187,7 +180,6 @@ function ProgramAndSpec() {
     <section style={{ background: LIGHT_BG }} className="py-14">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
-          {/* Overview */}
           <div>
             <h2 className="font-bold mb-5" style={{ color: NAV_BLUE, fontSize: "1.3rem" }}>Program Overview</h2>
             <div className="bg-white rounded-xl border border-gray-100 overflow-hidden shadow-sm">
@@ -204,7 +196,6 @@ function ProgramAndSpec() {
             </div>
           </div>
 
-          {/* Specializations */}
           <div>
             <h2 className="font-bold mb-2" style={{ color: NAV_BLUE, fontSize: "1.3rem" }}>Specializations</h2>
             <p className="text-gray-500 mb-5" style={{ fontSize: "0.88rem" }}>Choose a specialization in your area of interest.</p>
@@ -226,7 +217,6 @@ function ProgramAndSpec() {
   );
 }
 
-/* ─────────────────────── CURRICULUM ─────────────────────── */
 const curriculum = {
   "Year 1": [
     { sem: "Semester 1", subjects: ["Principles of Management", "Financial Accounting", "Business Economics", "Marketing Management"] },
@@ -280,7 +270,6 @@ function Curriculum() {
   );
 }
 
-/* ─────────────────────── CAREER + WHY + TESTIMONIALS ─────────────────────── */
 function CareerWhyTestimonials() {
   const [testimonialIdx, setTestimonialIdx] = useState(0);
 
@@ -323,7 +312,6 @@ function CareerWhyTestimonials() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
 
-          {/* Career */}
           <div className="bg-white rounded-xl border border-gray-100 p-6 shadow-sm">
             <h3 className="font-bold mb-5" style={{ color: NAV_BLUE, fontSize: "1.1rem" }}>Career Opportunities</h3>
             <div className="grid grid-cols-2 gap-3 mb-5">
@@ -342,7 +330,6 @@ function CareerWhyTestimonials() {
             </button>
           </div>
 
-          {/* Why */}
           <div className="rounded-xl p-6 shadow-md flex flex-col justify-between" style={{ background: NAV_BLUE }}>
             <div>
               <h3 className="font-bold text-white mb-5" style={{ fontSize: "1.1rem" }}>Why Choose Alliance?</h3>
@@ -357,7 +344,6 @@ function CareerWhyTestimonials() {
             </div>
           </div>
 
-          {/* Testimonials */}
           <div className="bg-white rounded-xl border border-gray-100 p-6 shadow-sm flex flex-col justify-between">
             <div>
               <h3 className="font-bold mb-4" style={{ color: NAV_BLUE, fontSize: "1.1rem" }}>Student Testimonials</h3>
@@ -405,13 +391,12 @@ function CareerWhyTestimonials() {
   );
 }
 
-/* ─────────────────────── GALLERY ─────────────────────── */
 const galleryItems = [
-  { label: "Classroom Learning", img: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=700&q=85" },
-  { label: "Group Discussion", img: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=700&q=85" },
-  { label: "Seminars & Workshops", img: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=700&q=85" },
-  { label: "Campus Events", img: "https://images.unsplash.com/photo-1562774053-701939374585?w=700&q=85" },
-  { label: "Placement Drive", img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=700&q=85" },
+  { label: "Classroom Learning", img: "https://alliancemgt.org/Alliance%20Images/Img48.jpeg" },
+  { label: "Group Discussion", img: "https://alliancemgt.org/Alliance%20Images/Img3.jpeg" },
+  { label: "Seminars & Workshops", img: "https://alliancemgt.org/Alliance%20Images/Img24.jpeg" },
+  { label: "Campus Events", img: "https://alliancemgt.org/Alliance%20Images/Img35.jpeg" },
+  { label: "Placement Drive", img: "https://alliancemgt.org/Alliance%20Images/Img60.jpeg" },
 ];
 
 function GalleryCard({ label, img }) {
@@ -454,14 +439,12 @@ function Gallery() {
         </h2>
 
         <div className="relative">
-          {/* Mobile: horizontal scroll */}
           <div className="flex sm:hidden gap-4 overflow-x-auto pb-4 snap-x snap-mandatory">
             {galleryItems.map(({ label, img }) => (
               <GalleryCard key={label} label={label} img={img} />
             ))}
           </div>
 
-          {/* Tablet + Desktop: 3 items with arrows */}
           <div className="hidden sm:flex items-center gap-3">
             <button
               onClick={prev}
@@ -488,7 +471,6 @@ function Gallery() {
     </section>
   );
 }
-/* ─────────────────────── FAQ ─────────────────────── */
 const faqs = [
   {
     q: "What is the eligibility for MBA?",
@@ -553,7 +535,6 @@ function FAQ() {
 }
 
 
-/* ─────────────────────── ROOT ─────────────────────── */
 export default function Mba() {
   return (
     <div className="w-full">

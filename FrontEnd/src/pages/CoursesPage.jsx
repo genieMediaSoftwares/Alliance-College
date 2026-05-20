@@ -1,11 +1,9 @@
-// src/pages/CoursesPage.jsx
 import { useEffect, useState } from "react";
 import HeroBanner   from "../components/courses/HeroBanner";
 import ProgramTabs  from "../components/courses/ProgramsTab";
 import CourseGrid   from "../components/courses/CourseGrid";
 import CounselorCTA from "../components/courses/CounselorCTA";
 
-// Inject Poppins once
 function usePoppins() {
   useEffect(() => {
     if (document.getElementById("poppins-font")) return;
@@ -30,11 +28,9 @@ export default function CoursesPage() {
    
       <HeroBanner />
 
-      {/* ── Explore Our Programs ────────────────────────────────────────── */}
       <section className="py-12 sm:py-16 bg-[#F8FAFC]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-          {/* Section heading */}
           <div className="text-center mb-8">
             <h2
               className="font-bold text-[#111827]"
@@ -44,15 +40,12 @@ export default function CoursesPage() {
             </h2>
           </div>
 
-          {/* Tabs */}
           <div className="mb-7">
             <ProgramTabs active={activeTab} onChange={setActiveTab} />
           </div>
 
-          {/* Course grid */}
           <CourseGrid activeTab={activeTab} />
 
-          {/* CTA */}
           <div className="mt-10">
             <CounselorCTA />
           </div>

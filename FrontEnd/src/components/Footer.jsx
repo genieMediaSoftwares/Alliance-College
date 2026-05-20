@@ -11,10 +11,11 @@ const quickLinks = [
 ];
 
 const courseLinks = [
-  { label: "MBA", path: "/courses/mba" },
+  { label: "BHM", path: "/courses/bhm" },
   { label: "BBA", path: "/courses/bba" },
-  { label: "Hotel Management", path: "/courses/hotel-management" },
-  { label: "Diploma Courses", path: "/courses/diploma" },
+  { label: "MBA", path: "/courses/mba" },
+  { label: "Diploma in Hm", path: "/courses/diploma-hm" },
+  { label: "PGDHM", path: "/courses/pgdhm" },
 ];
 
 const socialLinks = [
@@ -30,22 +31,22 @@ const Footer = () => {
   return (
     <footer className="w-full bg-[#0d1b4b] text-white overflow-x-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 sm:py-10 lg:py-14">
-        <div className="flex flex-col lg:flex-row gap-5 lg:gap-8">
+        <div className="flex flex-col lg:flex-row gap-5 lg:gap-20">
 
           <div className="flex flex-col gap-2 lg:w-[240px] flex-shrink-0">
             <Link to="/" onClick={scrollTop} className="flex items-center gap-2 w-fit">
 
               <img
-                src="Alliance footer.png"
+                src="https://alliancemgt.org/Alliance%20Images/Alliance%20footer.png"
                 alt="Alliance Degree College"
                 className="h-10 sm:h-12 lg:h-14 w-auto object-contain"
               />
-              <div className="flex flex-col leading-tight">
-                <span className="text-sm sm:text-2xl font-black tracking-widest text-white uppercase">
-                  ALLIANCE
+              <div className="flex flex-col leading-[1.3] items-start">
+                <span className="text-[13px] sm:text-[15px] font-black tracking-[0.1em] text-white uppercase whitespace-nowrap">
+                  ALLIANCE COLLEGE
                 </span>
-                <span className="text-[8px] sm:text-xs tracking-[0.2em] text-gray-300 font-medium uppercase">
-                  DEGREE COLLEGE
+                <span className="text-[8.5px] sm:text-[10px] tracking-[0.22em] text-gray-300 font-semibold uppercase whitespace-nowrap">
+                  OF HOTEL MANAGEMENT
                 </span>
               </div>
             </Link>
@@ -133,28 +134,28 @@ const Footer = () => {
                     href="mailto:info@alliancedegreecollege.com"
                     className="text-gray-400 hover:text-white break-all"
                   >
-                    alliancehotelmgt@yahoo.com
+                    alliancesince2003@gmail.com
                   </a>
                 </li>
 
-              <li className="flex items-start gap-2">
-  
-  <MapPin
-    size={12}
-    className="text-[#f5c518] mt-1 flex-shrink-0"
-  />
+                <li className="flex items-start gap-2">
 
-  <a
-    href="https://www.google.com/maps?q=Dr.+V.S,+54-11-40/1,+Krishna+College+Road,+Bhanu+Nagar,+Maddilapalem,+Visakhapatnam,+Andhra+Pradesh+530022"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="text-gray-400 hover:text-white leading-relaxed"
-  >
-    Dr. V.S, 54-11-40/1, Krishna College Road, Bhanu Nagar,
-    Maddilapalem, Visakhapatnam, Andhra Pradesh 530022
-  </a>
+                  <MapPin
+                    size={12}
+                    className="text-[#f5c518] mt-1 flex-shrink-0"
+                  />
 
-</li>
+                  <a
+                    href="https://www.google.com/maps?q=Dr.+V.S,+54-11-40/1,+Krishna+College+Road,+Bhanu+Nagar,+Maddilapalem,+Visakhapatnam,+Andhra+Pradesh+530022"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-400 hover:text-white leading-relaxed"
+                  >
+                    Dr. V.S, 54-11-40/1, Krishna College Road, Bhanu Nagar,
+                    Maddilapalem, Visakhapatnam, Andhra Pradesh 530022
+                  </a>
+
+                </li>
 
               </ul>
             </div>
@@ -166,7 +167,7 @@ const Footer = () => {
       <div className="border-t border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2.5 sm:py-4 flex flex-col sm:flex-row items-center justify-between gap-1 sm:gap-0">
           <p className="text-gray-500 text-[10px] sm:text-xs text-center sm:text-left">
-            © 2024 Alliance Degree College. All Rights Reserved.
+            © 2024 Alliance Degree College. All Rights Reserved.<br />powered by:kkdigitalgrowthsoftwares
           </p>
           <div className="flex items-center gap-3 text-[10px] sm:text-xs text-gray-500">
             <Link to="/privacy-policy" onClick={scrollTop} className="hover:text-white transition-colors duration-200">Privacy Policy</Link>

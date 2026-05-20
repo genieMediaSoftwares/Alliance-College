@@ -16,13 +16,14 @@ import {
   ChevronLeft,
   Images,
   UserCircle2,
+  MapPin,
+  BriefcaseBusiness
 } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { useRef } from "react";
-// ─── DATA ────────────────────────────────────────────────────────────────────
 
 const heroStats = [
-  { icon: Trees, value: "10+", label: "Acres Green Campus" },
+  { icon: MapPin, value: "City Center", label: "Prime Urban Location" },
   { icon: Building2, value: "Modern", label: "Infrastructure" },
   { icon: Users, value: "Advanced", label: "Facilities" },
   { icon: ShieldCheck, value: "Safe & Secure", label: "Environment" },
@@ -34,62 +35,56 @@ const facilities = [
     icon: Monitor,
     title: "Smart Classrooms",
     desc: "Modern classrooms with latest technology and AV systems.",
-    img: "https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=600&q=80",
+    img: "https://alliancemgt.org/Alliance%20Images/Img82.jpeg",
   },
   {
     icon: BookOpen,
     title: "Library",
     desc: "Well-stocked library with a vast collection of books and digital resources.",
-    img: "https://images.unsplash.com/photo-1521587760476-6c12a4b040da?w=600&q=80",
+    img: "https://alliancemgt.org/Alliance%20Images/lib.jpg",
   },
   {
     icon: Computer,
     title: "Computer Labs",
     desc: "Advanced computer labs with high-speed internet and latest software.",
-    img: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=600&q=80",
+    img: "https://alliancemgt.org/Alliance%20Images/comp%20lab.jpg",
   },
   {
     icon: Home,
     title: "Hostels",
     desc: "Comfortable and secure hostel facilities for boys and girls.",
-    img: "https://images.unsplash.com/photo-1555854877-bab0e564b8d5?w=600&q=80",
+    img: "https://alliancemgt.org/Alliance%20Images/hostel.jpg",
   },
-  {
-    icon: Trophy,
-    title: "Sports Complex",
-    desc: "Indoor and outdoor sports facilities for overall development.",
-    img: "https://images.unsplash.com/photo-1546519638-68e109498ffc?w=600&q=80",
-  },
+
   {
     icon: UtensilsCrossed,
-    title: "Cafeteria",
+    title: "Canteen & Cafeteria",
     desc: "Hygienic and spacious cafeteria serving nutritious and delicious food.",
-    img: "https://images.unsplash.com/photo-1567521464027-f127ff144326?w=600&q=80",
+    img: "https://alliancemgt.org/Alliance%20Images/canteen.jpg",
   },
+{
+  icon: BriefcaseBusiness,
+  title: "Board Room",
+  desc: "Modern board room equipped for meetings, presentations, discussions, and corporate training sessions.",
+  img: "https://alliancemgt.org/Alliance%20Images/Img84.jpeg",
+},
   {
-    icon: Mic2,
-    title: "Auditorium",
-    desc: "Spacious auditorium for events, seminars and cultural activities.",
-    img: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=600&q=80",
-  },
-  {
-    icon: HeartPulse,
-    title: "Medical Center",
-    desc: "On-campus healthcare facility with qualified medical professionals.",
-    img: "https://images.unsplash.com/photo-1516549655169-df83a0774514?w=600&q=80",
-  },
+  icon: MapPin,
+  title: "City Center",
+  desc: "Located in the heart of the city with easy access to transport and amenities.",
+  img: "https://alliancemgt.org/Alliance%20Images/citycentre.jpg",
+},
 ];
 
 const galleryImages = [
-  { src: "https://images.unsplash.com/photo-1562774053-701939374585?w=400&q=80", alt: "Campus Building" },
-  { src: "https://i.pinimg.com/736x/9a/91/69/9a91693e48ceab169607be4e6b32d116.jpg", alt: "Students Studying" },
-  { src: "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=400&q=80", alt: "Library" },
-  { src: "https://i.pinimg.com/736x/4b/58/ad/4b58adb755bd21a6a3796e4029e7b17f.jpg", alt: "Sports Court" },
-  { src: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=400&q=80", alt: "Group Study" },
-  { src: "https://images.unsplash.com/photo-1571260899304-425eee4c7efc?w=400&q=80", alt: "Convocation" },
+  { src: "https://alliancemgt.org/Alliance%20Images/Img48.jpeg", alt: "Campus Building" },
+  { src: "https://alliancemgt.org/Alliance%20Images/Img87.jpeg", alt: "Students Studying" },
+  { src: "https://alliancemgt.org/Alliance%20Images/Img8.jpeg", alt: "Library" },
+  { src: "https://alliancemgt.org/Alliance%20Images/g22.jpg", alt: "Sports Court" },
+  { src: "https://alliancemgt.org/Alliance%20Images/Img49.jpeg", alt: "Group Study" },
+  { src: "https://alliancemgt.org/Alliance%20Images/Img82.jpeg", alt: "Convocation" },
 ];
 
-// ─── MAIN PAGE ────────────────────────────────────────────────────────────────
 
 export default function Campus() {
   const galleryRef = useRef(null);
@@ -113,11 +108,10 @@ export default function Campus() {
         .gallery-item:hover .gallery-img { transform: scale(1.06); opacity: 0.88; }
       `}</style>
 
-      {/* ── HERO ──────────────────────────────────────────────────── */}
-      {/* ══ HERO ══════════════════════════════════════════════════════════════ */}
+   
       <section className="relative overflow-hidden" style={{ minHeight: 220 }}>
         <img
-          src="https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1400&q=75"
+          src="https://alliancemgt.org/Alliance%20Images/alliancebg.avif"
           alt="Campus" className="absolute inset-0 w-full h-full object-cover object-center"
         />
         <div className="absolute inset-0"
@@ -145,7 +139,6 @@ export default function Campus() {
         </div>
       </section>
 
-      {/* ── HERO STATS BAR ────────────────────────────────────────── */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-6 z-20 relative">
         <div className="bg-white rounded-2xl shadow-lg border border-gray-100 flex flex-wrap">
           {heroStats.map((s, i) => {
@@ -171,7 +164,6 @@ export default function Campus() {
         </div>
       </section>
 
-      {/* ── CAMPUS FACILITIES ─────────────────────────────────────── */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-12">
         <div className="text-center mb-10">
           <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900">
@@ -190,7 +182,6 @@ export default function Campus() {
                 key={f.title}
                 className="facility-card bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow duration-200 overflow-hidden"
               >
-                {/* Image */}
                 <div className="h-44 overflow-hidden">
                   <img
                     src={f.img}
@@ -198,7 +189,6 @@ export default function Campus() {
                     className="facility-img w-full h-full object-cover"
                   />
                 </div>
-                {/* Content */}
                 <div className="p-4">
                   <div className="flex items-center gap-2 mb-1.5">
                     <Icon className="w-4 h-4 text-blue-600 shrink-0" />
@@ -212,70 +202,64 @@ export default function Campus() {
         </div>
       </section>
 
-      {/* ── CAMPUS GALLERY ────────────────────────────────────────── */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
         <div className="text-center mb-10">
           <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900">
             Campus Gallery
           </h2>
           <p className="text-gray-500 mt-2 text-sm sm:text-base">
-            A glimpse of life at Alliance Degree College
+            A glimpse of life at Alliance College of Hotel Management
           </p>
         </div>
 
-        {/* Gallery grid */}
-     <div className="relative group">
-  {/* Left Arrow — hidden on mobile, shows on hover on desktop */}
-  <button
-    onClick={() => scrollGallery(-1)}
-    className="hidden sm:flex absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-10 
+        <div className="relative group">
+          <button
+            onClick={() => scrollGallery(-1)}
+            className="hidden sm:flex absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-10 
                w-9 h-9 items-center justify-center rounded-full bg-white border border-gray-200 
                shadow-md hover:bg-gray-50 active:scale-95 transition-all
                opacity-0 group-hover:opacity-100"
-  >
-    <ChevronLeft size={18} color="#374151" />
-  </button>
+          >
+            <ChevronLeft size={18} color="#374151" />
+          </button>
 
-  {/* Scrollable Gallery */}
-  <div
-    ref={galleryRef}
-    className="flex gap-3 sm:gap-4 overflow-x-auto pb-3 snap-x snap-mandatory scrollbar-hide 
+          <div
+            ref={galleryRef}
+            className="flex gap-3 sm:gap-4 overflow-x-auto pb-3 snap-x snap-mandatory scrollbar-hide 
                px-1 sm:px-2"
-  >
-    {galleryImages.map((img, i) => (
-      <div
-        key={i}
-        className="gallery-item flex-shrink-0 snap-start rounded-xl overflow-hidden 
+          >
+            {galleryImages.map((img, i) => (
+              <div
+                key={i}
+                className="gallery-item flex-shrink-0 snap-start rounded-xl overflow-hidden 
                    cursor-pointer shadow-sm hover:shadow-md transition-all duration-300
                    w-44 h-36
                    sm:w-60 sm:h-48
                    lg:w-72 lg:h-56"
-      >
-        <img
-          src={img.src}
-          alt={img.alt}
-          className="gallery-img w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-        />
-      </div>
-    ))}
-  </div>
+              >
+                <img
+                  src={img.src}
+                  alt={img.alt}
+                  className="gallery-img w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+            ))}
+          </div>
 
-  {/* Right Arrow */}
-  <button
-    onClick={() => scrollGallery(1)}
-    className="hidden sm:flex absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-10 
+          <button
+            onClick={() => scrollGallery(1)}
+            className="hidden sm:flex absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-10 
                w-9 h-9 items-center justify-center rounded-full bg-white border border-gray-200 
                shadow-md hover:bg-gray-50 active:scale-95 transition-all
                opacity-0 group-hover:opacity-100"
-  >
-    <ChevronRight size={18} color="#374151" />
-  </button>
-</div>
+          >
+            <ChevronRight size={18} color="#374151" />
+          </button>
+        </div>
 
-        {/* View Gallery button */}
         <div className="flex justify-center">
           <button
-            className="flex items-center gap-2 px-8 py-3 rounded-xl text-sm font-semibold text-white shadow-md hover:opacity-90 active:scale-95 transition-all duration-200" onClick={()=>{navigate("/gallery")}}
+            className="flex items-center gap-2 px-8 py-3 rounded-xl text-sm font-semibold text-white shadow-md hover:opacity-90 active:scale-95 transition-all duration-200" onClick={() => { navigate("/gallery") }}
             style={{ background: "linear-gradient(135deg, #0f1f3d, #1b3a6b)" }}
           >
             <Images className="w-4 h-4" />
@@ -284,13 +268,11 @@ export default function Campus() {
         </div>
       </section>
 
-      {/* ── CTA BANNER ────────────────────────────────────────────── */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
         <div
           className="rounded-2xl px-6 sm:px-10 py-7 flex flex-col sm:flex-row items-center gap-5 sm:gap-0 justify-between"
           style={{ background: "linear-gradient(135deg, #0f1f3d 0%, #1b3a6b 100%)" }}
         >
-          {/* Icon + text */}
           <div className="flex items-center gap-5">
             <div
               className="w-14 h-14 rounded-full border-2 flex items-center justify-center shrink-0"
@@ -308,7 +290,6 @@ export default function Campus() {
             </div>
           </div>
 
-          {/* CTA button */}
           <button
             className="shrink-0 px-7 py-3 rounded-xl text-sm font-bold text-gray-900 shadow-lg hover:brightness-105 active:scale-95 transition-all duration-200 whitespace-nowrap" onClick={() => { navigate("/contact") }}
             style={{ background: "linear-gradient(135deg, #f59e0b, #d97706)" }}

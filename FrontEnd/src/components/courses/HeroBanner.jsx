@@ -11,9 +11,8 @@ const stats = [
 export default function HeroBanner() {
   return (
     <section className="relative overflow-hidden" style={{ minHeight: 260 }}>
-      {/* Background */}
       <img
-        src="https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1400&q=75"
+        src="https://alliancemgt.org/Alliance%20Images/alliancebg.avif"
         alt="Campus"
         className="absolute inset-0 w-full h-full object-cover object-center"
       />
@@ -26,7 +25,6 @@ export default function HeroBanner() {
       />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-0">
-        {/* Breadcrumb */}
         <nav className="flex items-center gap-1.5 mb-5 flex-wrap">
           <Home size={13} color="#9CA3AF" />
           <span className="text-gray-400 text-xs">Home</span>
@@ -34,7 +32,6 @@ export default function HeroBanner() {
           <span className="text-gray-300 text-xs">Courses</span>
         </nav>
 
-        {/* Heading + description */}
         <div className="max-w-sm sm:max-w-md">
           <h1 className="font-extrabold text-white mb-3 leading-tight"
             style={{ fontSize: "clamp(2rem,5vw,2.75rem)" }}>
@@ -46,7 +43,6 @@ export default function HeroBanner() {
           </p>
         </div>
 
-        {/* Stats strip */}
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8 pb-6 border-t border-white/10 pt-6 max-w-3xl">
           {stats.map((s, i) => (
             <div key={i} className="flex items-center gap-3">

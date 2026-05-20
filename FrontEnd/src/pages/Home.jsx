@@ -8,6 +8,10 @@ import {
   MdPhone, MdEmail, MdAccessTime, MdVisibility,
   MdMyLocation, MdMenu, MdClose
 } from "react-icons/md";
+import {
+  UtensilsCrossed,
+  ChefHat,
+} from "lucide-react";
 import HeroSection from "./HeroSection";
 
 const GraduationCap = ({ className }) => <MdSchool className={className} />;
@@ -38,29 +42,30 @@ const StarIcon = ({ className }) => <MdStar className={className} />;
 const MenuIcon = ({ className }) => <MdMenu className={className} />;
 const XIcon = ({ className }) => <MdClose className={className} />;
 const IMAGES = {
-  hero: "https://www.alliancemgt.org/img/slider/6.jpg",
-  campus: "https://www.alliancemgt.org/img/Image01.jpg",
-  foodLab: "https://alliancedegreecollege.com/assets/images/foodproductionlab.jpg",
-  bakeryLab: "https://alliancedegreecollege.com/assets/images/g51.jpeg",
-  frontOffice: "https://alliancedegreecollege.com/assets/images/facility3.jpg",
-  housekeeping: "https://alliancedegreecollege.com/assets/images/facility4.jpg",
-  classroom: "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=600&q=80",
-  restaurant: "https://alliancedegreecollege.com/assets/images/f&bservicelab.jpg",
-  faculty1: "https://alliancedegreecollege.com/assets/images/faculty/f1.jpg",
-  faculty2: "https://alliancedegreecollege.com/assets/images/faculty/f2.jpg",
-  faculty3: "https://alliancedegreecollege.com/assets/images/faculty/f3.jpeg",
-  faculty4: "https://alliancedegreecollege.com/assets/images/faculty/f4.jpg",
-  testi1: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&q=80",
-  testi2: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&q=80",
-  testi3: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&q=80",
-  gallery1: "https://alliancedegreecollege.com/assets/images/gallery10.jpg",
-  gallery2: "https://alliancedegreecollege.com/assets/images/g11.jpg",
-  gallery3: "https://alliancedegreecollege.com/assets/images/g13.jpg",
-  gallery4: "https://alliancedegreecollege.com/assets/images/g25.jpg",
-  gallery5: "https://alliancedegreecollege.com/assets/images/g42.jpg",
-  gallery6: "https://alliancedegreecollege.com/assets/images/g40.jpg",
-  gallery7: "https://alliancedegreecollege.com/assets/images/g22.jpg",
-  gallery8: "https://alliancedegreecollege.com/assets/images/g45.jpg"
+  hero: "https://alliancemgt.org/Alliance%20Images/6.jpg",
+  campus: "https://alliancemgt.org/Alliance%20Images/Img1.jpeg",
+  foodLab: "https://alliancemgt.org/Alliance%20Images/foodproductionlab.jpg",
+  bakeryLab: "https://alliancemgt.org/Alliance%20Images/Img13.jpeg",
+  frontOffice: "https://alliancemgt.org/Alliance%20Images/Img12.jpeg",
+  housekeeping: "https://alliancemgt.org/Alliance%20Images/facility4.jpg",
+  classroom: "https://alliancemgt.org/Alliance%20Images/Img95.webp",
+  restaurant: "https://alliancemgt.org/Alliance%20Images/f&bservicelab.jpg",
+  faculty1: "https://alliancemgt.org/Alliance%20Images/f1.jpg",
+  faculty2: "https://alliancemgt.org/Alliance%20Images/f2.jpg",
+  faculty3: "https://alliancemgt.org/Alliance%20Images/f3.jpeg",
+  faculty4: "https://alliancemgt.org/Alliance%20Images/f4.jpg",
+  faculty5: "https://alliancemgt.org/Alliance%20Images/Asrinivas.jpg",
+  testi1: "https://alliancemgt.org/Alliance%20Images/Picture1.jpg",
+  testi2: "https://alliancemgt.org/Alliance%20Images/Picture2.jpg",
+  testi3: "https://alliancemgt.org/Alliance%20Images/Picture3.jpg",
+  gallery1: "https://alliancemgt.org/Alliance%20Images/gallery10.jpg",
+  gallery2: "https://alliancemgt.org/Alliance%20Images/g11.jpg",
+  gallery3: "https://alliancemgt.org/Alliance%20Images/g13.jpg",
+  gallery4: "https://alliancemgt.org/Alliance%20Images/Img4.jpeg",
+  gallery5: "https://alliancemgt.org/Alliance%20Images/g42.jpg",
+  gallery6: "https://alliancemgt.org/Alliance%20Images/g40.jpg",
+  gallery7: "https://alliancemgt.org/Alliance%20Images/g22.jpg",
+  gallery8: "https://alliancemgt.org/Alliance%20Images/g45.jpg"
 };
 
 const heroStats = [
@@ -71,10 +76,49 @@ const heroStats = [
 ];
 
 const courseCards = [
-  { icon: GraduationCap, title: "MBA", subtitle: "Master of Business Administration", duration: "2 Years", type: "Full Time", iconBg: "bg-blue-100", iconColor: "text-blue-600", path: "/courses/mba", },
-  { icon: Users, title: "BBA", subtitle: "Bachelor of Business Administration", duration: "3 Years", type: "Full Time", iconBg: "bg-blue-100", iconColor: "text-blue-500", path: "/courses/bba", },
-  { icon: HotelIcon, title: "Hotel Management", subtitle: "B.Sc in Hotel & Hospitality Management", duration: "3 Years", type: "Full Time", iconBg: "bg-blue-100", iconColor: "text-blue-600", path: "/courses/hotel-management", },
-  { icon: FileText, title: "Diploma Courses", subtitle: "Multiple Diploma Programs", duration: "1-2 Years", type: "Full Time", iconBg: "bg-orange-100", iconColor: "text-orange-500", path: "/courses/diploma", },
+  {
+    icon: UtensilsCrossed,
+    title: "BHM (Hons)",
+    subtitle: "Bachelor of Hotel Management (Honours)",
+    duration: "4 Years",
+    type: "Full Time",
+    iconBg: "bg-pink-100",
+    iconColor: "text-pink-600",
+    path: "/courses/bhm",
+  },
+
+  {
+    icon: Users,
+    title: "BBA (Hons)",
+    subtitle: "Bachelor of Business Administration (Honours)",
+    duration: "3 Years",
+    type: "Full Time",
+    iconBg: "bg-green-100",
+    iconColor: "text-green-600",
+    path: "/courses/bba",
+  },
+
+  {
+    icon: GraduationCap,
+    title: "MBA",
+    subtitle: "Master of Business Administration",
+    duration: "2 Years",
+    type: "Full Time",
+    iconBg: "bg-blue-100",
+    iconColor: "text-blue-600",
+    path: "/courses/mba",
+  },
+
+  {
+    icon: ChefHat,
+    title: "PGDHM",
+    subtitle: "Post Graduate Diploma in Hotel Management",
+    duration: "2 Year",
+    type: "Full Time",
+    iconBg: "bg-orange-100",
+    iconColor: "text-orange-600",
+    path: "/courses/pgdhm",
+  },
 ];
 
 const whyFeatures = [
@@ -98,60 +142,61 @@ const labs = [
   { id: 3, title: "Front Office Lab", desc: "Real-time front office training", image: IMAGES.frontOffice },
   { id: 4, title: "Housekeeping Lab", desc: "Practical housekeeping training", image: IMAGES.housekeeping },
   { id: 5, title: "Smart Classrooms", desc: "Digital classrooms with latest technology", image: IMAGES.classroom },
-  { id: 6, title: "Restaurant Lab", desc: "Fine dining experience & training", image: IMAGES.restaurant },
+  { id: 6, title: "Bar & Restaurant Lab", desc: "Fine dining experience & training", image: IMAGES.restaurant },
 ];
 
 const facultyMembers = [
   { name: "Dr. Kolla Satish Kumar", role: "Secretary & Correspondentr", qual: "", image: IMAGES.faculty1 },
-  { name: "Mr. KARTIKESWAR PANDA", role: "Academic Director", qual: "", image: IMAGES.faculty2 },
-  { name: "B SRINIVASA RAO", role: "Principal", qual: "", image: IMAGES.faculty3 },
+  { name: "Mr. Kartikeswar Panda", role: "Academic Director", qual: "", image: IMAGES.faculty2 },
+  { name: "B Srinivas Rao", role: "Principal", qual: "", image: IMAGES.faculty3 },
   { name: "M Jaya Sree", role: "Vice Principal (Business Management)", qual: "", image: IMAGES.faculty4 },
+  { name: "A Srinivas Rao", role: "Vice Principal", image: IMAGES.faculty5 }
 ];
 
 const placerCompanies = [
   {
     label: "Accor",
     image:
-      "https://alliancedegreecollege.com/assets/images/placement/accor.png",
+      "https://alliancemgt.org/Alliance%20Images/accor.png",
     style: "font-bold text-xl tracking-[3px] text-gray-800",
     serif: true,
   },
   {
     label: "The Park Hotel",
     image:
-      "https://alliancedegreecollege.com/assets/images/placement/park.png",
+      "https://alliancemgt.org/Alliance%20Images/park.png",
     style: "font-bold text-base tracking-widest text-[#c8a050]",
   },
   {
     label: "Grand Mercure",
     image:
-      "https://alliancedegreecollege.com/assets/images/placement/mercure.png",
+      "https://alliancemgt.org/Alliance%20Images/mercure.png",
     style: "font-bold text-base tracking-[2px] text-gray-800",
   },
   {
     label: "Radisson",
     image:
-      "https://alliancedegreecollege.com/assets/images/placement/radi.png",
+      "https://alliancemgt.org/Alliance%20Images/radi.png",
     style: "font-bold text-sm italic text-[#cc0000]",
   },
   {
     label: "NOVOTEL",
     image:
-      "https://alliancedegreecollege.com/assets/images/placement/novo.png",
+      "https://alliancemgt.org/Alliance%20Images/novo.png",
     style: "font-bold text-xs tracking-widest text-[#0055a5]",
   },
   {
     label: "Mariot",
     image:
-      "https://alliancedegreecollege.com/assets/images/placement/mariot.png",
+      "https://alliancemgt.org/Alliance%20Images/mariot.png",
     style: "font-bold text-xs text-[#003580]",
   },
 ];
 
 const testimonials = [
-  { name: "Arjun Varma", role: "Front Office Executive, Taj Hotels", image: IMAGES.testi1, quote: "Alliance Degree College provided me with the right skills and confidence. Today, I'm working with Taj Hotels." },
-  { name: "Priya Sharma", role: "Senior Chef, ITC Hotels", image: IMAGES.testi2, quote: "The culinary labs and industry exposure at Alliance gave me everything I needed to land my dream role." },
-  { name: "Karthik Reddy", role: "Housekeeping Manager, Hyatt", image: IMAGES.testi3, quote: "Practical training and placement support at Alliance is unmatched. I got placed before even graduating!" },
+  { name: "CH. Venkata Sai Ramesh", role: "Marriott-Myrtle Beach", image: IMAGES.testi1, quote: "Alliance helped me build strong hospitality skills and secure an international career opportunity." },
+  { name: "YERISI .SRINIVAS", role: "IKHTIAR GROUP", image: IMAGES.testi2, quote: "The placement training and practical exposure gave me confidence to work in top international hospitality brands." },
+  { name: "Naveen Kunchapu", role: "Dept-production, Maldives", image: IMAGES.testi3, quote: "Practical training and placement support at Alliance is unmatched. I got placed before even graduating!" },
 ];
 
 const placementStats = [
@@ -162,8 +207,8 @@ const placementStats = [
 ];
 
 const admissionCourses = [
-  "Select Course", "MBA", "BBA", "B.Sc Hotel Management",
-  "Diploma in Culinary Arts", "Diploma in Front Office", "Diploma in Housekeeping",
+  "Select Course", "BHM", "MBA", "BBA", "Diploma in HM", "PGDHM"
+
 ];
 
 const vmv = [
@@ -173,9 +218,9 @@ const vmv = [
 ];
 
 const contactDetails = [
-  { icon: MapPinIcon, label: "Address", value: "D.No. 1-51-20, New Resapuvanipalem,\nVisakhapatnam – 530013, A.P., India", link: "https://www.google.com/maps?q=Alliance+Degree+College+Visakhapatnam", type: "link", },
-  { icon: PhoneIcon, label: "Phone", value: "0891-2951555, 94900 89077", link: "tel:08912951555", type: "phone", },
-  { icon: MailIcon, label: "Email", value: "info@alliancedegreecollege.com", link: "mailto:info@alliancedegreecollege.com", type: "email", },
+  { icon: MapPinIcon, label: "Address", value: "Dr. V.S, 54-11-40/1, Krishna College Road, Bhanu Nagar, Maddilapalem, Visakhapatnam, Andhra Pradesh 530022, India", link: "https://www.google.com/maps?q=Alliance+Degree+College+Visakhapatnam", type: "link", },
+  { icon: PhoneIcon, label: "Phone", value: "8885066502, 9848127344", link: "tel:9848127344", type: "phone", },
+  { icon: MailIcon, label: "Email", value: "alliancesince2003@gmail.com", link: "mailto:alliancesince2003@gmail.com", type: "email", },
   { icon: ClockIcon, label: "Working Hours", value: "Mon - Sat: 9:00 AM – 6:00 PM", type: "text", },
 ];
 
@@ -222,14 +267,10 @@ export default function Home() {
   return (
     <div className="font-sans antialiased text-gray-900 bg-white overflow-x-hidden">
 
-      {/* ═══════════════════════════════════════════════════════════
-          SECTION 1 — HERO
-      ═══════════════════════════════════════════════════════════ */}
+
       <HeroSection />
 
-      {/* ═══════════════════════════════════════════════════════════
-          SECTION 2 — POPULAR COURSES
-      ═══════════════════════════════════════════════════════════ */}
+
       <section className="py-12 bg-white">
         <div className="container-main mx-auto px-4 sm:px-6 lg:px-8">
 
@@ -245,7 +286,6 @@ export default function Home() {
                 onClick={() => navigate(c.path)}
                 className="h-full flex flex-col justify-between border border-gray-200 rounded-2xl p-4 sm:p-6 hover:shadow-xl transition-shadow duration-300 group bg-white"
               >
-                {/* Top */}
                 <div className="flex flex-col gap-3">
                   <div className={`w-14 h-14 sm:w-16 sm:h-16 ${c.iconBg} rounded-full flex items-center justify-center`}>
                     <c.icon className={`w-6 h-6 sm:w-8 sm:h-8 ${c.iconColor}`} />
@@ -266,7 +306,6 @@ export default function Home() {
                   </p>
                 </div>
 
-                {/* Bottom */}
                 <button className="mt-3 flex items-center gap-1 text-[#1a6abf] font-semibold text-xs sm:text-sm group-hover:gap-2 transition-all">
                   View Details <ArrowRight className="w-4 h-4" />
                 </button>
@@ -277,9 +316,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ═══════════════════════════════════════════════════════════
-          SECTION 3 — WHY CHOOSE ALLIANCE
-      ═══════════════════════════════════════════════════════════ */}
+
       <section className="bg-[#0D1F3C] py-6 sm:py-8">
         <div className="container-main mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader title="Why Choose Alliance?" subtitle="Everything you need for a world-class career" light />
@@ -296,9 +333,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ═══════════════════════════════════════════════════════════
-          SECTION 4 — YOUR JOURNEY TO SUCCESS
-      ═══════════════════════════════════════════════════════════ */}
+
       <section className="py-6 sm:py-8 bg-white">
         <div className="container-main mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader title="Your Journey to Success" subtitle="A 3-step process to achieve your dream career" />
@@ -328,9 +363,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ═══════════════════════════════════════════════════════════
-          SECTION 5 — WORLD-CLASS INFRASTRUCTURE
-      ═══════════════════════════════════════════════════════════ */}
+
       <section className="py-6 sm:py-8 bg-[#F8FAFF]">
         <div className="container-main mx-auto px-4 sm:px-6 lg:px-8">
 
@@ -402,9 +435,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ═══════════════════════════════════════════════════════════
-          SECTION 6 — EXPERT FACULTY
-      ═══════════════════════════════════════════════════════════ */}
       <section className="py-6 sm:py-8 bg-white">
         <div className="container-main mx-auto px-4 sm:px-6 lg:px-8">
 
@@ -413,28 +443,27 @@ export default function Home() {
             subtitle="Learn from industry experts and experienced educators"
           />
 
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-6">
             {facultyMembers.map((f, i) => (
               <div
                 key={i}
                 className="
-            bg-white border border-gray-200 rounded-xl overflow-hidden
-            hover:shadow-lg transition-shadow duration-300
-            flex flex-col
-          "
+        bg-white border border-gray-200 rounded-xl overflow-hidden
+        hover:shadow-lg transition-shadow duration-300
+        flex flex-col
+      "
               >
-
                 {/* IMAGE */}
                 <div className="w-full aspect-[3/4] overflow-hidden">
                   <img
                     src={f.image}
                     alt={f.name}
                     className="
-      w-full h-full 
-      object-cover 
-      object-top
-      hover:scale-105 transition-transform duration-500
-    "
+            w-full h-full 
+            object-cover 
+            object-top
+            hover:scale-105 transition-transform duration-500
+          "
                     onError={(e) => {
                       e.target.onerror = null;
                       e.target.src = IMAGES.faculty1;
@@ -456,7 +485,6 @@ export default function Home() {
                     {f.qual}
                   </p>
                 </div>
-
               </div>
             ))}
           </div>
@@ -471,13 +499,10 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ═══════════════════════════════════════════════════════════
-          SECTION 7 — PLACEMENTS THAT SPEAK
-      ═══════════════════════════════════════════════════════════ */}
+
       <section className="bg-[#0D1F3C] pt-8 pb-20 sm:pb-24">
         <div className="container-main mx-auto px-4 sm:px-6 lg:px-8">
 
-          {/* HEADER */}
           <div className="text-center mb-6">
             <h2 className="text-white text-xl sm:text-3xl font-extrabold">
               Placements That Speak
@@ -487,7 +512,6 @@ export default function Home() {
             </p>
           </div>
 
-          {/* COMPANY LOGOS */}
           <div className="flex flex-wrap justify-center gap-4 sm:gap-5 mb-6">
             {placerCompanies.map((c, i) => (
               <div
@@ -509,7 +533,6 @@ export default function Home() {
             ))}
           </div>
 
-          {/* TESTIMONIAL */}
           <div className="flex items-center justify-center gap-3 mb-6">
             <button
               onClick={prevTesti}
@@ -546,7 +569,6 @@ export default function Home() {
             </button>
           </div>
 
-          {/* DOTS */}
           <div className="flex justify-center gap-2">
             {testimonials.map((_, i) => (
               <button
@@ -581,9 +603,7 @@ export default function Home() {
 
       </div>
 
-      {/* ═══════════════════════════════════════════════════════════
-          SECTION 8 — ADMISSION FORM
-      ═══════════════════════════════════════════════════════════ */}
+
       <section className="py-4 sm:py-8 bg-white">
         <div className="container-main mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader title="Get Admission Details" subtitle="Fill the form and our expert will contact you" />
@@ -602,7 +622,7 @@ export default function Home() {
                 </select>
                 <ChevronDown className="w-4 h-4 text-gray-400 absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none" />
               </div>
-              <button type="submit" onClick={()=>{navigate("/applynow")}}
+              <button type="submit" onClick={() => { navigate("/applynow") }}
                 className={`px-8 py-3 rounded-lg font-bold text-sm transition-all whitespace-nowrap ${submitted ? "bg-green-500 text-white" : "bg-[#F5A800] hover:bg-[#e09800] text-white"}`}>
                 {submitted ? "✓ Submitted!" : "Apply Now"}
               </button>
@@ -611,9 +631,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ═══════════════════════════════════════════════════════════
-          ABOUT — Hero Banner
-      ═══════════════════════════════════════════════════════════ */}
+
       <div className="relative bg-[#0D1F3C] overflow-hidden">
         <div className="absolute inset-0">
           <img src={IMAGES.campus} alt="Campus" className="w-full h-full object-cover opacity-20" />
@@ -630,15 +648,13 @@ export default function Home() {
         </div>
       </div>
 
-      {/* ═══════════════════════════════════════════════════════════
-          ABOUT — Split Layout
-      ═══════════════════════════════════════════════════════════ */}
+
       <section className="py-6 sm:py-8 bg-white">
         <div className="container-main mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-start">
             <div className="w-full lg:w-[42%] flex-shrink-0">
               <div className="w-full h-52 sm:h-64 lg:h-72 rounded-xl overflow-hidden shadow-sm">
-                <img src={IMAGES.campus} alt="Alliance Degree College Campus"
+                <img src={IMAGES.campus} alt="Alliance College of Hotel Management  Campus"
                   className="w-full h-full object-cover"
                   onError={e => { e.target.onerror = null; e.target.src = IMAGES.campus; }} />
               </div>
@@ -646,7 +662,7 @@ export default function Home() {
             <div className="flex-1">
               <h2 className="text-2xl sm:text-3xl font-extrabold text-[#0D1F3C] mb-4">15+ Years of Excellence</h2>
               <p className="text-gray-600 text-sm sm:text-base leading-relaxed mb-4">
-                Alliance Degree College is a premier institution dedicated to providing quality education in Hotel Management, Business Management and related fields.
+                Alliance College of Hotel Management  is a premier institution dedicated to providing quality education in Hotel Management, Business Management and related fields.
               </p>
               <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
                 Our mission is to groom students into industry-ready professionals with strong theoretical knowledge and practical exposure.
@@ -656,9 +672,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ═══════════════════════════════════════════════════════════
-          VISION · MISSION · VALUES
-      ═══════════════════════════════════════════════════════════ */}
+
       <section className="py-6 sm:py-8 bg-[#F8FAFF]">
         <div className="container-main mx-auto px-4 sm:px-6 lg:px-8">
 
@@ -695,9 +709,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ═══════════════════════════════════════════════════════════
-          LIFE AT ALLIANCE — Photo Gallery
-      ═══════════════════════════════════════════════════════════ */}
+
       <section className="py-4 sm:py-8 bg-white">
         <div className="container-main mx-auto px-4 sm:px-6 lg:px-8">
 
@@ -741,9 +753,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ═══════════════════════════════════════════════════════════
-          GET IN TOUCH — Contact + Map
-      ═══════════════════════════════════════════════════════════ */}
+
       <section className="py-4 sm:py-8 bg-[#F8FAFF]">
         <div className="container-main mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row gap-10 lg:gap-14 items-start">
@@ -787,7 +797,7 @@ export default function Home() {
                   className="block w-full h-full"
                 >
                   <iframe
-                    title="Alliance Degree College Map"
+                    title="Alliance College of Hotel Management  Map"
                     src="https://www.google.com/maps?q=Alliance+Degree+College+Visakhapatnam&output=embed"
                     width="100%"
                     height="100%"

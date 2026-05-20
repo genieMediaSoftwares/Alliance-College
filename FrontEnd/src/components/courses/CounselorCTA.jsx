@@ -9,7 +9,6 @@ export default function CounselorCTA() {
       px-6 py-6 sm:py-7
       flex flex-col sm:flex-row items-center gap-5 sm:gap-6
     ">
-      {/* Icon */}
       <div className="
         w-16 h-16 rounded-full bg-[#062B6B]/10
         flex items-center justify-center flex-shrink-0
@@ -17,7 +16,6 @@ export default function CounselorCTA() {
         <BookOpen size={30} color="#062B6B" strokeWidth={1.7} />
       </div>
 
-      {/* Text */}
       <div className="flex-1 text-center sm:text-left">
         <h3 className="font-bold text-[#111827] text-lg sm:text-xl leading-tight">
           Not Sure Which Course is Right for You?
@@ -27,7 +25,6 @@ export default function CounselorCTA() {
         </p>
       </div>
 
-      {/* Buttons */}
       <div className="flex flex-col sm:flex-row items-center gap-3 w-full sm:w-auto flex-shrink-0">
         <button className="
           flex items-center justify-center gap-2 w-full sm:w-auto
@@ -39,6 +36,7 @@ export default function CounselorCTA() {
           <MessageCircle size={15} strokeWidth={2} />
           Talk to Counselor
         </button>
+          <a href="/Brochure.pdf" download="Brochure.pdf">
         <button className="
           flex items-center justify-center gap-2 w-full sm:w-auto
           bg-[#F4B400] hover:bg-[#e0a500]
@@ -48,6 +46,7 @@ export default function CounselorCTA() {
           <Download size={15} strokeWidth={2.2} />
           Download Brochure
         </button>
+        </a>
       </div>
     </div>
   );

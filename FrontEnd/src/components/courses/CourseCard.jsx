@@ -1,4 +1,3 @@
-// src/components/courses/CourseCard.jsx
 import { ArrowRight, Clock, Monitor } from "lucide-react";
 
 const colorStyles = {
@@ -10,6 +9,7 @@ const colorStyles = {
   cyan:   "bg-cyan-100 text-cyan-700",
   pink:   "bg-pink-100 text-pink-700",
   indigo: "bg-indigo-100 text-indigo-700",
+  teal:   "bg-teal-100 text-teal-700",
 };
 
 const titleColorStyles = {
@@ -21,6 +21,7 @@ const titleColorStyles = {
   cyan:   "text-cyan-700",
   pink:   "text-pink-600",
   indigo: "text-indigo-700",
+  teal:   "text-teal-700",
 };
 
 const linkColorStyles = {
@@ -32,35 +33,38 @@ const linkColorStyles = {
   cyan:   "text-cyan-700 hover:text-cyan-800",
   pink:   "text-pink-600 hover:text-pink-700",
   indigo: "text-indigo-700 hover:text-indigo-800",
+  teal:   "text-teal-700 hover:text-teal-800",
 };
 
 export default function CourseCard({ title, subtitle, description, duration, mode, icon: Icon, color }) {
-  const iconCls  = colorStyles[color]  || colorStyles.blue;
+  const iconCls  = colorStyles[color]      || colorStyles.blue;
   const titleCls = titleColorStyles[color] || "text-[#062B6B]";
   const linkCls  = linkColorStyles[color]  || "text-[#062B6B]";
 
   return (
     <div className="
+      h-full
       bg-white border border-[#E5E7EB] rounded-2xl p-5 sm:p-6
       flex flex-col gap-3
       hover:shadow-lg hover:-translate-y-0.5
       transition-all duration-300 group cursor-pointer
     ">
-      {/* Icon + titles row */}
       <div className="flex items-start gap-3">
         <div className={`w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0 ${iconCls}`}>
           <Icon size={22} strokeWidth={1.9} />
         </div>
         <div className="min-w-0">
           <h3 className={`font-bold text-base leading-tight ${titleCls}`}>{title}</h3>
-          <p className="text-[#6B7280] text-[11px] mt-0.5 leading-snug">{subtitle}</p>
+          <p className="text-[#6B7280] text-[11px] mt-0.5 leading-snug line-clamp-2 min-h-[2rem]">
+            {subtitle}
+          </p>
         </div>
       </div>
 
-      {/* Description */}
-      <p className="text-[#6B7280] text-sm leading-relaxed flex-1">{description}</p>
+      <p className="text-[#6B7280] text-sm leading-relaxed line-clamp-3 flex-1">
+        {description}
+      </p>
 
-      {/* Duration | Mode */}
       <div className="flex items-center gap-2 text-xs text-[#6B7280]">
         <Clock size={12} strokeWidth={2} />
         <span>Duration: {duration}</span>
@@ -69,9 +73,8 @@ export default function CourseCard({ title, subtitle, description, duration, mod
         <span>{mode}</span>
       </div>
 
-      {/* View Details */}
       <button className={`
-        flex items-center gap-1.5 text-sm font-semibold mt-1
+        flex items-center gap-1.5 text-sm font-semibold
         transition-all duration-200 group-hover:gap-2.5
         ${linkCls}
       `}>

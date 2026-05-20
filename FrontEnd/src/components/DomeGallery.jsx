@@ -4,46 +4,68 @@ import './DomeGallery.css';
 
 const DEFAULT_IMAGES = [
   {
-    src: 'https://www.geniemedia.in/Images/Img1.jpeg',
+    src: 'https://alliancemgt.org/Alliance%20Images/Img1.jpeg',
     alt: 'Img1'
   },
   {
-    src: 'https://www.geniemedia.in/Images/Img2.jpeg',
+    src: 'https://alliancemgt.org/Alliance%20Images/Img2.jpeg',
     alt: 'Img2'
   },
   {
-    src: 'https://www.geniemedia.in/Images/Img3.jpeg',
+    src: 'https://alliancemgt.org/Alliance%20Images/Img3.jpeg',
     alt: 'Img3'
   },
   {
-    src: 'https://www.geniemedia.in/Images/Img4.jpeg',
+    src: 'https://alliancemgt.org/Alliance%20Images/Img4.jpeg',
     alt: 'Img4'
   },
   {
-    src: 'https://www.geniemedia.in/Images/Img5.jpeg',
+    src: 'https://alliancemgt.org/Alliance%20Images/Img5.jpeg',
     alt: 'Img5'
   },
   {
-    src: 'https://www.geniemedia.in/Images/Img6.jpeg',
+    src: 'https://alliancemgt.org/Alliance%20Images/Img6.jpeg',
     alt: 'Img6',
   },
-  { src: 'https://www.geniemedia.in/Images/Img7.jpeg', alt: 'Img7' },
-  { src: 'https://www.geniemedia.in/Images/Img8.jpeg', alt: 'Img8' },
-  { src: 'https://www.geniemedia.in/Images/Img9.jpeg', alt: 'Img9' },
-  { src: 'https://www.geniemedia.in/Images/Img10.jpeg', alt: 'Img10' },
-  { src: 'https://www.geniemedia.in/Images/Img11.jpeg', alt: 'Img11' },
-  { src: 'https://www.geniemedia.in/Images/Img12.jpeg', alt: 'Img12' },
-  { src: 'https://www.geniemedia.in/Images/Img13.jpeg', alt: 'Img13' },
-  { src: 'https://www.geniemedia.in/Images/Img14.jpeg', alt: 'Img14' },
-  { src: 'https://www.geniemedia.in/Images/Img15.jpeg', alt: 'Img15' },
-  { src: 'https://www.geniemedia.in/Images/Img16.jpeg', alt: 'Img16' },
-  { src: 'https://www.geniemedia.in/Images/Img17.jpeg', alt: 'Img17' },
-  { src: 'https://www.geniemedia.in/Images/Img18.jpeg', alt: 'Img18' },
-  { src: 'https://www.geniemedia.in/Images/Img19.jpeg', alt: 'Img19' },
-  { src: 'https://www.geniemedia.in/Images/Img20.jpeg', alt: 'Img20' },
-
-
-
+  { src: 'https://alliancemgt.org/Alliance%20Images/Img7.jpeg', alt: 'Img7' },
+  { src: 'https://alliancemgt.org/Alliance%20Images/Img8.jpeg', alt: 'Img8' },
+  { src: 'https://alliancemgt.org/Alliance%20Images/Img9.jpeg', alt: 'Img9' },
+  { src: 'https://alliancemgt.org/Alliance%20Images/Img10.jpeg', alt: 'Img10' },
+  { src: 'https://alliancemgt.org/Alliance%20Images/Img11.jpeg', alt: 'Img11' },
+  { src: 'https://alliancemgt.org/Alliance%20Images/Img12.jpeg', alt: 'Img12' },
+  { src: 'https://alliancemgt.org/Alliance%20Images/Img13.jpeg', alt: 'Img13' },
+  { src: 'https://alliancemgt.org/Alliance%20Images/Img14.jpeg', alt: 'Img14' },
+  { src: 'https://alliancemgt.org/Alliance%20Images/Img15.jpeg', alt: 'Img15' },
+  { src: 'https://alliancemgt.org/Alliance%20Images/Img16.jpeg', alt: 'Img16' },
+  { src: 'https://alliancemgt.org/Alliance%20Images/Img17.jpeg', alt: 'Img17' },
+  { src: 'https://alliancemgt.org/Alliance%20Images/Img18.jpeg', alt: 'Img18' },
+  { src: 'https://alliancemgt.org/Alliance%20Images/Img19.jpeg', alt: 'Img19' },
+  { src: 'https://alliancemgt.org/Alliance%20Images/Img20.jpeg', alt: 'Img20' },
+  { src: 'https://alliancemgt.org/Alliance%20Images/Img21.jpeg', alt: 'Img21' },
+  { src: 'https://alliancemgt.org/Alliance%20Images/Img22.jpeg', alt: 'Img22' },
+  { src: 'https://alliancemgt.org/Alliance%20Images/Img23.jpeg', alt: 'Img23' },
+  { src: 'https://alliancemgt.org/Alliance%20Images/Img24.jpeg', alt: 'Img24' },
+  { src: 'https://alliancemgt.org/Alliance%20Images/Img25.jpeg', alt: 'Img25' },
+  { src: 'https://alliancemgt.org/Alliance%20Images/Img26.jpeg', alt: 'Img26' },
+  { src: 'https://alliancemgt.org/Alliance%20Images/Img27.jpeg', alt: 'Img27' },
+  { src: 'https://alliancemgt.org/Alliance%20Images/Img28.jpeg', alt: 'Img28' },
+  { src: 'https://alliancemgt.org/Alliance%20Images/Img29.jpeg', alt: 'Img29' },
+  { src: 'https://alliancemgt.org/Alliance%20Images/Img30.jpeg', alt: 'Img30' },
+  { src: 'https://alliancemgt.org/Alliance%20Images/Img31.jpeg', alt: 'Img31' },
+  { src: 'https://alliancemgt.org/Alliance%20Images/Img32.jpeg', alt: 'Img32' },
+  { src: 'https://alliancemgt.org/Alliance%20Images/Img33.jpeg', alt: 'Img33' },
+  { src: 'https://alliancemgt.org/Alliance%20Images/Img34.jpeg', alt: 'Img34' },
+  { src: 'https://alliancemgt.org/Alliance%20Images/Img35.jpeg', alt: 'Img35' },
+  { src: 'https://alliancemgt.org/Alliance%20Images/Img36.jpeg', alt: 'Img36' },
+  { src: 'https://alliancemgt.org/Alliance%20Images/Img37.jpeg', alt: 'Img37' },
+  { src: 'https://alliancemgt.org/Alliance%20Images/Img38.jpeg', alt: 'Img38' },
+  { src: 'https://alliancemgt.org/Alliance%20Images/Img43.jpeg', alt: 'Img43' },
+  { src: 'https://alliancemgt.org/Alliance%20Images/Img47.jpeg', alt: 'Img47' },
+  { src: 'https://alliancemgt.org/Alliance%20Images/Img49.jpeg', alt: 'Img49' },
+  { src: 'https://alliancemgt.org/Alliance%20Images/Img55.jpeg', alt: 'Img55' },
+  { src: 'https://alliancemgt.org/Alliance%20Images/Img60.jpeg', alt: 'Img60' },
+  { src: 'https://alliancemgt.org/Alliance%20Images/Img62.jpeg', alt: 'Img62' },
+  { src: 'https://alliancemgt.org/Alliance%20Images/Img92.jpeg', alt: 'Img92' },
 
 ];
 

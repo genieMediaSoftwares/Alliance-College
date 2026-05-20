@@ -54,7 +54,6 @@ Please share admission details.`
   return (
     <div className="fixed bottom-3 right-3 sm:bottom-4 sm:right-4 z-50 flex flex-col items-center gap-1.5">
       
-      {/* Social Icons */}
       <div
         className={`flex flex-col items-center gap-1.5 transition-all duration-300 ${
           open
@@ -92,7 +91,6 @@ Please share admission details.`
         ))}
       </div>
 
-      {/* Toggle Button */}
       <button
         onClick={() => setOpen(!open)}
         className="

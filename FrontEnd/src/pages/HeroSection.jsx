@@ -14,7 +14,7 @@ const stats = [
     { icon: <FaGraduationCap className="text-yellow-400 text-xl sm:text-2xl md:text-3xl" />, value: "5000+", label: "Students Trained" },
     { icon: <FaUsers className="text-yellow-400 text-xl sm:text-2xl md:text-3xl" />, value: "100+", label: "Recruiters" },
     { icon: <FaChartLine className="text-yellow-400 text-xl sm:text-2xl md:text-3xl" />, value: "20 LPA", label: "Highest Package" },
-    { icon: <FaTrophy className="text-yellow-400 text-xl sm:text-2xl md:text-3xl" />, value: "15+", label: "Years of Excellence" },
+    { icon: <FaTrophy className="text-yellow-400 text-xl sm:text-2xl md:text-3xl" />, value: "23+", label: "Years of Excellence" },
 ];
 
 const badges = [
@@ -71,7 +71,6 @@ export default function HeroSection() {
 
             <div className="hidden md:block absolute inset-0">
 
-                {/* Background Image */}
                 <div
                     className="absolute top-0 right-0 w-[58%] h-full bg-cover bg-center"
                     style={{
@@ -80,10 +79,8 @@ export default function HeroSection() {
                     }}
                 />
 
-                {/* Smooth Blend Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-r from-[#f8fbff] via-[#f8fbff]/85 via-35% to-transparent" />
 
-                {/* Soft Blur Blend */}
                 <div className="absolute left-[42%] top-0 h-full w-[18%] bg-white/40 blur-3xl" />
             </div>
 

@@ -1,13 +1,11 @@
-// src/components/courses/ProgramTabs.jsx
-
 const tabs = [
   "All Programs",
-  "Management",
-  "Business",
+  "Business & Management",
+  "Commerce",
   "Hospitality",
   "Computer Applications",
   "Hotel Management",
-  "Arts & Science",
+  "Travel & Tourism",
 ];
 
 export default function ProgramTabs({ active, onChange }) {

@@ -1,7 +1,6 @@
 import { useEffect } from "react";
 import { Flag, BookOpen, Building2, Users, Trophy } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-// ─── Google Fonts injection ──────────────────────────────────────────────────
 function usePoppins() {
   useEffect(() => {
     if (document.getElementById("poppins-font")) return;
@@ -14,7 +13,6 @@ function usePoppins() {
   }, []);
 }
 
-// ─── Design tokens (exact from spec) ─────────────────────────────────────────
 const C = {
   primaryBlue: "#0D1B3D",
   secondaryBlue: "#1E3A8A",
@@ -25,7 +23,6 @@ const C = {
   white: "#FFFFFF",
 };
 
-// ─── SVG icon primitives ─────────────────────────────────────────────────────
 const Icon = ({
   d,
   size = 22,
@@ -195,7 +192,6 @@ const AwardIcon = ({ size, color }) => (
   </Icon>
 );
 
-// ─── Data ─────────────────────────────────────────────────────────────────────
 
 const infoCards = [
   {
@@ -225,13 +221,13 @@ const stats = [
   { Icon: GradCapIcon, value: "5000+", label: "Students Trained" },
   { Icon: UsersIcon, value: "100+", label: "Recruiters" },
   { Icon: AwardIcon, value: "26 LPA", label: "Highest Package" },
-  { Icon: TrophyIcon, value: "22+", label: "Years of Excellence" },
+  { Icon: TrophyIcon, value: "23+", label: "Years of Excellence" },
 ];
 
 const journey = [
   {
-    year: "2004",
-    desc: "Alliance Degree College was established with a vision to deliver quality education.",
+    year: "2003",
+    desc: "Alliance College of Hotel Management was established with a vision to deliver quality education.",
     Icon: Flag,
   },
   {
@@ -279,7 +275,6 @@ const values = [
   },
 ];
 
-// ─── Shared styled components ────────────────────────────────────────────────
 
 const IconCircle = ({ children, bg = C.lightBlue, size = 52 }) => (
   <div
@@ -298,7 +293,6 @@ const IconCircle = ({ children, bg = C.lightBlue, size = 52 }) => (
   </div>
 );
 
-// ─── Main component ───────────────────────────────────────────────────────────
 
 export default function About() {
   const navigate=useNavigate()
@@ -315,17 +309,13 @@ export default function About() {
         overflowX: "hidden",
       }}
     >
-      {/* ══════════════════════════════════════════════════════════════════════
-          1 — HERO BANNER
-      ══════════════════════════════════════════════════════════════════════ */}
+      
       <section className="relative overflow-hidden" style={{ minHeight: 340 }}>
-        {/* Background campus photo */}
         <img
-          src="https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1400&q=80"
+          src="https://alliancemgt.org/Alliance%20Images/alliancebg.avif"
           alt="Campus"
           className="absolute inset-0 w-full h-full object-cover object-center"
         />
-        {/* Dark gradient overlay */}
         <div
           className="absolute inset-0"
           style={{
@@ -335,7 +325,6 @@ export default function About() {
         />
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16">
-          {/* Breadcrumb */}
           <nav className="flex items-center gap-1.5 mb-5">
             <HomeIconSvg />
             <span style={{ color: "#9CA3AF", fontSize: 13 }}>Home</span>
@@ -343,7 +332,6 @@ export default function About() {
             <span style={{ color: "#D1D5DB", fontSize: 13 }}>About Us</span>
           </nav>
 
-          {/* Heading */}
           <h1
             className="font-extrabold mb-3"
             style={{
@@ -355,7 +343,6 @@ export default function About() {
             About Alliance
           </h1>
 
-          {/* Tagline */}
           <p
             className="font-semibold mb-4"
             style={{
@@ -366,39 +353,34 @@ export default function About() {
             Empowering Futures. Enriching Lives.
           </p>
 
-          {/* Description */}
           <p
             className="max-w-lg leading-relaxed align-center"
             style={{ color: "#D1D5DB", fontSize: 15 }}
           >
-            Alliance Degree College is a premier institution dedicated to
+            Alliance College of Hotel Management is a premier institution dedicated to
             providing quality education in Hotel Management, Business Management
             and related fields.
           </p>
         </div>
       </section>
 
-      {/* ══════════════════════════════════════════════════════════════════════
-          2 — OUR STORY
-      ══════════════════════════════════════════════════════════════════════ */}
+    
       <section className="py-14 sm:py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row gap-8 lg:gap-14 items-center">
-            {/* Left — campus photo */}
             <div className="w-full lg:w-[44%] flex-shrink-0">
               <div
                 className="overflow-hidden"
                 style={{ height: "clamp(220px, 30vw, 300px)" }}
               >
                 <img
-                  src="/Alliance college (2).png"
+                  src="https://alliancemgt.org/Alliance%20Images/Alliance%20college%20(2).png"
                   alt="Alliance Campus"
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
                 />
               </div>
             </div>
 
-            {/* Right — text */}
             <div className="flex-1 max-w-[500px] px-3">
               <h2
                 className="font-bold mb-4"
@@ -415,7 +397,7 @@ export default function About() {
                 style={{ color: C.grayText, fontSize: 15 }}
               >
                 Founded with a vision to bridge the gap between education and
-                industry, Alliance Degree College has been at the forefront of
+                industry, Alliance College of Hotel Management has been at the forefront of
                 academic excellence and practical learning.
               </p>
               <p
@@ -443,9 +425,7 @@ export default function About() {
         </div>
       </section>
 
-      {/* ══════════════════════════════════════════════════════════════════════
-          3 — INFO CARDS
-      ══════════════════════════════════════════════════════════════════════ */}
+    
       <section className="pb-14 sm:pb-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
@@ -480,9 +460,7 @@ export default function About() {
         </div>
       </section>
 
-      {/* ══════════════════════════════════════════════════════════════════════
-          4 — STATS BAR
-      ══════════════════════════════════════════════════════════════════════ */}
+   
       <section
         style={{ backgroundColor: C.primaryBlue }}
         className="py-10 sm:py-12"
@@ -517,15 +495,12 @@ export default function About() {
         </div>
       </section>
 
-      {/* ══════════════════════════════════════════════════════════════════════
-          5 — OUR JOURNEY TIMELINE
-      ══════════════════════════════════════════════════════════════════════ */}
+   
       <section
         className="py-14 sm:py-16"
         style={{ backgroundColor: C.lightGray }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Section title */}
           <div className="text-center mb-12">
             <h2
               className="font-bold"
@@ -541,9 +516,7 @@ export default function About() {
             </p>
           </div>
 
-          {/* ── Desktop timeline ─────────────────────────────────────────── */}
           <div className="hidden sm:block relative">
-            {/* Horizontal connector line */}
             <div
               className="absolute"
               style={{
@@ -558,7 +531,6 @@ export default function About() {
             <div className="grid grid-cols-5 gap-2">
               {journey.map((j, i) => (
                 <div key={i} className="flex flex-col items-center text-center">
-                  {/* Dot */}
                   <div
                     style={{
                       width: 74,
@@ -578,7 +550,6 @@ export default function About() {
                     <j.Icon size={28} color={C.primaryBlue} strokeWidth={2.3} />
                   </div>
 
-                  {/* Year */}
                   <div
                     className="font-bold mt-4 mb-2"
                     style={{ color: C.primaryBlue, fontSize: 16 }}
@@ -586,7 +557,6 @@ export default function About() {
                     {j.year}
                   </div>
 
-                  {/* Description */}
                   <p
                     style={{
                       color: C.grayText,
@@ -602,9 +572,7 @@ export default function About() {
             </div>
           </div>
 
-          {/* ── Mobile timeline (vertical) ───────────────────────────────── */}
           <div className="sm:hidden relative pl-8">
-            {/* Vertical line */}
             <div
               className="absolute left-[18px] top-2 bottom-2"
               style={{ width: 2, backgroundColor: "#CBD5E1" }}
@@ -613,7 +581,6 @@ export default function About() {
             <div className="flex flex-col gap-8 ml-2">
               {journey.map((j, i) => (
                 <div key={i} className="relative">
-                  {/* Dot */}
                  <div
                     style={{
                       width: 46,
@@ -658,9 +625,7 @@ export default function About() {
         </div>
       </section>
 
-      {/* ══════════════════════════════════════════════════════════════════════
-          6 — OUR CORE VALUES
-      ══════════════════════════════════════════════════════════════════════ */}
+   
       <section className="py-14 sm:py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10">
@@ -682,7 +647,6 @@ export default function About() {
                 className="flex flex-row sm:flex-col lg:flex-row items-start gap-4 rounded-xl p-4 sm:p-5 border hover:shadow-md transition-shadow duration-300"
                 style={{ borderColor: "#E5E7EB" }}
               >
-                {/* Icon bubble with yellow accent */}
                 <div
                   style={{
                     width: 44,
@@ -717,17 +681,13 @@ export default function About() {
         </div>
       </section>
 
-      {/* ══════════════════════════════════════════════════════════════════════
-          7 — CTA SECTION
-      ══════════════════════════════════════════════════════════════════════ */}
+   
       <section className="relative overflow-hidden" style={{ minHeight: 220 }}>
-        {/* Background image */}
         <img
-          src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1400&q=80"
+          src="https://alliancemgt.org/Alliance%20Images/aboutbtm.avif"
           alt="Students"
           className="absolute inset-0 w-full h-full object-cover object-center"
         />
-        {/* Dark overlay */}
         <div
           className="absolute inset-0"
           style={{

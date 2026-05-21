@@ -38,7 +38,7 @@ function Hero() {
   return (
     <section className="relative overflow-hidden" style={{ minHeight: 390 }}>
       <img
-        src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1400&q=80"
+        src="https://alliancemgt.org/Alliance%20Images/interbg1.jpg"
         alt="Hotel Management Training"
         className="absolute inset-0 w-full h-full object-cover object-center"
       />
@@ -54,7 +54,7 @@ function Hero() {
         style={{ width: "40%" }}
       >
         <img
-          src="https://images.unsplash.com/photo-1607631568010-a87245c0daf8?w=700&q=85"
+          src="https://alliancemgt.org/Alliance%20Images/interbg.jpg"
           alt="Intermediate HM Student"
           className="h-full w-full object-cover object-top"
           style={{

@@ -39,7 +39,7 @@ function Hero() {
   return (
     <section className="relative overflow-hidden" style={{ minHeight: 400 }}>
       <img
-        src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=1400&q=80"
+        src="https://alliancemgt.org/Alliance%20Images/mbabg1.jpg"
         alt="MBA Campus"
         className="absolute inset-0 w-full h-full object-cover object-center"
       />
@@ -53,7 +53,7 @@ function Hero() {
 
       <div className="absolute right-0 bottom-0 h-full hidden lg:block" style={{ width: "38%" }}>
         <img
-          src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=700&q=85"
+          src="https://alliancemgt.org/Alliance%20Images/mbabg.jpg"
           alt="MBA Student"
           className="h-full w-full object-cover object-top"
           style={{

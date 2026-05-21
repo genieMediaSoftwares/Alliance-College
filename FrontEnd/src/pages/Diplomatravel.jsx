@@ -39,7 +39,7 @@ function Hero() {
   return (
     <section className="relative overflow-hidden" style={{ minHeight: 390 }}>
       <img
-        src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=1400&q=80"
+        src="https://alliancemgt.org/Alliance%20Images/travbg1.jpg"
         alt="Travel and Tourism Management"
         className="absolute inset-0 w-full h-full object-cover object-center"
       />
@@ -55,7 +55,7 @@ function Hero() {
         style={{ width: "40%" }}
       >
         <img
-          src="https://images.unsplash.com/photo-1524850011238-e3d235c7d4c9?w=700&q=85"
+          src="https://alliancemgt.org/Alliance%20Images/travbg.jpg"
           alt="Travel Tourism Student"
           className="h-full w-full object-cover object-top"
           style={{
@@ -521,21 +521,21 @@ function PlacementAndTestimonials() {
       name: "Meenakshi Rao",
       batch: "Travel & Tourism Batch 2023",
       role: "Travel Consultant, MakeMyTrip Vizag",
-      photo: "https://images.unsplash.com/photo-1502685104226-ee32379fefbe?w=100&q=80",
+      photo: "https://alliancemgt.org/Alliance%20Images/test.jpg",
     },
     {
       text: "I always wanted to work in aviation. The diploma gave me the industry knowledge and grooming to crack the IndiGo cabin crew selection. The personality development sessions were a real differentiator.",
       name: "Kiran Varma",
       batch: "Travel & Tourism Batch 2023",
       role: "Cabin Crew, IndiGo Airlines",
-      photo: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&q=80",
+      photo: "https://alliancemgt.org/Alliance%20Images/test.jpg",
     },
     {
       text: "The tour package design module helped me start my own boutique travel company within six months of graduating. The curriculum was practical, industry-relevant, and inspiring.",
       name: "Divya Nair",
       batch: "Travel & Tourism Batch 2022",
       role: "Founder, ExploreAP Travel Co.",
-      photo: "https://images.unsplash.com/photo-1607746882042-944635dfe10e?w=100&q=80",
+      photo: "https://alliancemgt.org/Alliance%20Images/test.jpg",
     },
   ];
 

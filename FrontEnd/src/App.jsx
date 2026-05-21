@@ -13,7 +13,7 @@ import Campus from "./pages/Campus";
 import Mba from "./pages/Mba";
 import Bba from "./pages/Bba";
 // import Diploma from "./pages/Diploma";
-import HotelManagement from "./pages/HotelManagement";
+// import HotelManagement from "./pages/HotelManagement";
 import PrivacyPolicy from "./components/PrivacyPolicy";
 import Terms from "./components/Terms";
 import CoursesPage from "./pages/CoursesPage";
@@ -39,7 +39,6 @@ function App() {
         <Route path="/courses" element={<CoursesPage />} />
         {/* <Route path="/gallery" element={<Gallery />} /> */}
         {/* <Route path="/news-events" element={<NewsEvents />} /> */}
-
         <Route path="/applynow" element={<ApplyNow/>} />
         <Route path="/placements" element={<Placements />} />
         <Route path="/campus" element={<Campus />} />
@@ -52,7 +51,7 @@ function App() {
         <Route path="/courses/bba" element={<Bba />} />
         <Route path="/courses/bcom" element={<Bcom/>}/>
         <Route path="/courses/travel-tourism" element={<Diplomatravel/>}/>
-        <Route path="/courses/hotel-management" element={<HotelManagement />} />
+        {/* <Route path="/courses/hotel-management" element={<HotelManagement />} /> */}
         {/* <Route path="/courses/diploma" element={<Diploma />} /> */}
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/terms" element={<Terms />} />

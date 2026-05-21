@@ -72,7 +72,7 @@ function Hero() {
   return (
     <section className="relative overflow-hidden" style={{ minHeight: 380 }}>
       <img
-        src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1400&q=80"
+        src="https://alliancemgt.org/Alliance%20Images/bbabg1.jpg"
         alt="BBA Campus"
         className="absolute inset-0 w-full h-full object-cover object-center"
       />
@@ -86,7 +86,7 @@ function Hero() {
 
       <div className="absolute right-0 bottom-0 h-full hidden lg:block" style={{ width: "38%" }}>
         <img
-          src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=700&q=85"
+          src="https://alliancemgt.org/Alliance%20Images/bbabg.jpg"
           alt="BBA Student"
           className="h-full w-full object-cover object-top"
           style={{
@@ -391,19 +391,19 @@ function CareerWhyTestimonials() {
       text: "BBA at Alliance helped me discover my passion for business and leadership.",
       name: "Neha Kumari",
       batch: "BBA Batch 2023",
-      photo: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=100&q=80",
+      photo: "https://alliancemgt.org/Alliance%20Images/test.jpg",
     },
     {
       text: "The practical approach and internship support gave me a strong head start in my career.",
       name: "Siddharth Rao",
       batch: "BBA Batch 2022",
-      photo: "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=100&q=80",
+      photo: "https://alliancemgt.org/Alliance%20Images/test.jpg",
     },
     {
       text: "Alliance's faculty and industry exposure shaped me into a confident professional.",
       name: "Divya Reddy",
       batch: "BBA Batch 2023",
-      photo: "https://images.unsplash.com/photo-1607746882042-944635dfe10e?w=100&q=80",
+      photo: "https://alliancemgt.org/Alliance%20Images/test.jpg",
     },
   ];
 

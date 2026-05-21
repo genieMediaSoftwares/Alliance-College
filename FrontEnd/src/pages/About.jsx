@@ -408,18 +408,6 @@ export default function About() {
                 with the skills, knowledge and confidence to excel in their
                 careers and make a meaningful impact in the global industry.
               </p>
-
-              <button
-                className="inline-flex items-center gap-2 font-semibold rounded-lg px-6 py-3 transition-all hover:opacity-90 active:scale-95"
-                style={{
-                  backgroundColor: C.primaryBlue,
-                  color: C.white,
-                  fontSize: 14,
-                }}
-              >
-                Know More About Us
-                <ArrowRightIcon size={16} color={C.white} />
-              </button>
             </div>
           </div>
         </div>

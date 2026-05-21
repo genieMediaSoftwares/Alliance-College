@@ -40,7 +40,7 @@ function Hero() {
   return (
     <section className="relative overflow-hidden" style={{ minHeight: 390 }}>
       <img
-        src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=1400&q=80"
+        src="https://alliancemgt.org/Alliance%20Images/bcabg.jpg"
         alt="BCA Computer Applications"
         className="absolute inset-0 w-full h-full object-cover object-center"
       />
@@ -56,7 +56,7 @@ function Hero() {
         style={{ width: "40%" }}
       >
         <img
-          src="https://images.unsplash.com/photo-1571171637578-41bc2dd41cd2?w=700&q=85"
+          src="https://alliancemgt.org/Alliance%20Images/bcabg1.jpg"
           alt="BCA Student"
           className="h-full w-full object-cover object-top"
           style={{
@@ -564,21 +564,21 @@ function PlacementAndTestimonials() {
       name: "Aditya Sharma",
       batch: "BCA Batch 2023",
       role: "Software Engineer, TCS Hyderabad",
-      photo: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&q=80",
+      photo: "https://alliancemgt.org/Alliance%20Images/test.jpg",
     },
     {
       text: "The AI & ML module in Year 3 was a game changer. I built a real machine learning project that became part of my portfolio. I received two offers before my final semester ended.",
       name: "Preethi Suresh",
       batch: "BCA Batch 2023",
       role: "Junior Data Analyst, Infosys Vizag",
-      photo: "https://images.unsplash.com/photo-1502685104226-ee32379fefbe?w=100&q=80",
+      photo: "https://alliancemgt.org/Alliance%20Images/test.jpg",
     },
     {
       text: "I came in with zero coding experience. By the end of Year 1, I was building full websites. The faculty and lab infrastructure here are genuinely world-class. Highly recommend BCA to anyone passionate about tech.",
       name: "Rohan Nair",
       batch: "BCA Batch 2022",
       role: "Full Stack Developer, Wipro Chennai",
-      photo: "https://images.unsplash.com/photo-1607746882042-944635dfe10e?w=100&q=80",
+      photo: "https://alliancemgt.org/Alliance%20Images/test.jpg",
     },
   ];
 

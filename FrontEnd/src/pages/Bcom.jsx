@@ -12,7 +12,7 @@ function Hero() {
   return (
     <section className="relative overflow-hidden" style={{ minHeight: 390 }}>
       <img
-        src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=1400&q=80"
+        src="https://alliancemgt.org/Alliance%20Images/bcombg1.jpg"
         alt="Bachelor of Commerce"
         className="absolute inset-0 w-full h-full object-cover object-center"
       />
@@ -28,7 +28,7 @@ function Hero() {
         style={{ width: "40%" }}
       >
         <img
-          src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=700&q=85"
+          src="https://alliancemgt.org/Alliance%20Images/bcombg.jpg"
           alt="B.Com Student"
           className="h-full w-full object-cover object-top"
           style={{
@@ -534,21 +534,21 @@ function PlacementAndTestimonials() {
       name: "Kavya Reddy",
       batch: "B.Com Batch 2023",
       role: "Tax Associate, Deloitte Hyderabad",
-      photo: "https://images.unsplash.com/photo-1502685104226-ee32379fefbe?w=100&q=80",
+      photo: "https://alliancemgt.org/Alliance%20Images/test.jpg",
     },
     {
       text: "I cleared CA Foundation while studying B.Com here. The faculty was incredibly supportive and the accounting labs made concepts click fast. The dual preparation made me exceptionally well-rounded.",
       name: "Harish Babu",
       batch: "B.Com Batch 2022",
       role: "Article Assistant, KPMG Vizag",
-      photo: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&q=80",
+      photo: "https://alliancemgt.org/Alliance%20Images/test.jpg",
     },
     {
       text: "The Investment Management module in Year 3 sparked my interest in equity research. The placement cell connected me with an internship that converted into a full-time offer at a leading NBFC.",
       name: "Shalini Patro",
       batch: "B.Com Batch 2023",
       role: "Junior Analyst, Bajaj Finance Vizag",
-      photo: "https://images.unsplash.com/photo-1607746882042-944635dfe10e?w=100&q=80",
+      photo: "https://alliancemgt.org/Alliance%20Images/test.jpg",
     },
   ];
 

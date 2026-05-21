@@ -671,12 +671,7 @@ export default function Placements() {
             <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-2 xl:grid-cols-4 gap-3">
               {recruiters.map((r) => <RecruiterLogo key={r.name} {...r} />)}
             </div>
-            <button
-              className="mt-6 px-6 py-2.5 rounded-lg text-sm font-semibold text-white transition-all duration-200 hover:opacity-90 active:scale-95"
-              style={{ background: "linear-gradient(135deg, #1b3a6b, #2563eb)" }}
-            >
-              View All Recruiters
-            </button>
+          
           </div>
 
           <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6 sm:p-8">

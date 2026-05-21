@@ -112,8 +112,8 @@ const contactInfo = [
   {
     Icon: Globe,
     label: "Website",
-    value: "www.alliancedegreecollege.com",
-    link: "https://www.alliancedegreecollege.com",
+    value: "www.alliancemgt.org",
+    link: "https://www.alliancemgt.org/",
     color: "#0D1B3D",
     bg: "#EFF6FF",
   },

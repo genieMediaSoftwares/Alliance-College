@@ -66,6 +66,14 @@ const DEFAULT_IMAGES = [
   { src: 'https://alliancemgt.org/Alliance%20Images/Img60.jpeg', alt: 'Img60' },
   { src: 'https://alliancemgt.org/Alliance%20Images/Img62.jpeg', alt: 'Img62' },
   { src: 'https://alliancemgt.org/Alliance%20Images/Img92.jpeg', alt: 'Img92' },
+    { src: 'https://alliancemgt.org/Alliance%20Images/herosec.png', alt: 'l1' },
+  { src: 'https://alliancemgt.org/Alliance%20Images/l2.jpeg', alt: 'l2' },
+  { src: 'https://alliancemgt.org/Alliance%20Images/l3.jpeg', alt: 'l3' },
+  { src: 'https://alliancemgt.org/Alliance%20Images/l4.jpeg', alt: 'l4' },
+  { src: 'https://alliancemgt.org/Alliance%20Images/l5.jpeg', alt: 'l5' },
+  { src: 'https://alliancemgt.org/Alliance%20Images/l6.jpeg', alt: 'l6' },
+  { src: 'https://alliancemgt.org/Alliance%20Images/l7.jpeg', alt: 'l7' },
+ { src: 'https://alliancemgt.org/Alliance%20Images/l8.jpeg', alt: 'l8' },
 
 ];
 

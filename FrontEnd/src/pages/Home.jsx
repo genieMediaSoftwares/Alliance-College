@@ -50,10 +50,10 @@ const IMAGES = {
   housekeeping: "https://alliancemgt.org/Alliance%20Images/facility4.jpg",
   classroom: "https://alliancemgt.org/Alliance%20Images/Img95.webp",
   restaurant: "https://alliancemgt.org/Alliance%20Images/f&bservicelab.jpg",
-  faculty1: "https://alliancemgt.org/Alliance%20Images/f1.jpg",
-  faculty2: "https://alliancemgt.org/Alliance%20Images/f2.jpg",
-  faculty3: "https://alliancemgt.org/Alliance%20Images/f3.jpeg",
-  faculty4: "https://alliancemgt.org/Alliance%20Images/f4.jpg",
+  faculty1: "https://alliancemgt.org/Alliance%20Images/fac1.png",
+  faculty2: "https://alliancemgt.org/Alliance%20Images/fac22.png",
+  faculty3: "https://alliancemgt.org/Alliance%20Images/fac3..png",
+  faculty4: "https://alliancemgt.org/Alliance%20Images/fac4.png",
   faculty5: "https://alliancemgt.org/Alliance%20Images/Asrinivas.jpg",
   testi1: "https://alliancemgt.org/Alliance%20Images/Picture1.jpg",
   testi2: "https://alliancemgt.org/Alliance%20Images/Picture2.jpg",
@@ -146,11 +146,11 @@ const labs = [
 ];
 
 const facultyMembers = [
-  { name: "Dr. Kolla Satish Kumar", role: "Secretary & Correspondentr", qual: "", image: IMAGES.faculty1 },
+  { name: "Dr. Kolla Satish Kumar", role: "Secretary & Correspondent", qual: "", image: IMAGES.faculty1 },
   { name: "Mr. Kartikeswar Panda", role: "Academic Director", qual: "", image: IMAGES.faculty2 },
   { name: "B Srinivas Rao", role: "Principal", qual: "", image: IMAGES.faculty3 },
   { name: "M Jaya Sree", role: "Vice Principal (Business Management)", qual: "", image: IMAGES.faculty4 },
-  { name: "A Srinivas Rao", role: "Vice Principal", image: IMAGES.faculty5 }
+  { name: "A Srinivas Rao", role: "Vice Principal(Hotel Management)", image: IMAGES.faculty5 }
 ];
 
 const placerCompanies = [

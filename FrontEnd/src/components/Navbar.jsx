@@ -299,7 +299,7 @@ const Navbar = () => {
 
             <div className="sm:hidden pt-2 mt-1 border-t border-gray-100">
               <Link
-                to="/apply"
+                to="/applynow"
                 className="flex items-center justify-center w-full py-3 bg-[#f5c518] text-[#0d1b4b] font-bold text-sm rounded-lg hover:bg-[#e0b300] transition-colors duration-200"
               >
                 Apply Now

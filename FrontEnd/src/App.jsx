@@ -26,6 +26,11 @@ import Pgdhm from "./pages/Pgdhm";
 import Bca from "./pages/Bca";
 import Bcom from "./pages/Bcom";
 import Diplomatravel from "./pages/Diplomatravel";
+import AdminLogin from "./pages/AdminLogin";
+import AdminBlogs from "./pages/AdminBlogs";
+import Blogs from "./pages/Blogs";
+import BlogDetail from "./pages/Blogdetail";
+import ProtectedRoute from "./components/ProtectedRoute";
 function App() {
   return (
     <>
@@ -56,6 +61,18 @@ function App() {
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/terms" element={<Terms />} />
         <Route path="/gallery" element={<Gallery/>}/>
+         <Route path="/admin" element={<AdminLogin />} />
+           <Route
+            path="/admin/blogs"
+            element={
+              <ProtectedRoute>
+                <AdminBlogs />
+              </ProtectedRoute>
+            }
+          />
+
+          <Route path="/blogs" element={<Blogs />} />
+          <Route path="/blog/*" element={<BlogDetail />} /> 
       </Routes>
       <SocialMedia/>
       <Footer />

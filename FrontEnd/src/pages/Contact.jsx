@@ -539,7 +539,7 @@ export default function Contact() {
         </div>
       </section>
 
-      <section style={{ backgroundColor: C.lightGray, borderTop: `1px solid ${C.borderGray}`, padding: "24px 16px" }}>
+      {/* <section style={{ backgroundColor: C.lightGray, borderTop: `1px solid ${C.borderGray}`, padding: "24px 16px" }}>
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-5">
             <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
@@ -586,8 +586,64 @@ export default function Contact() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
+<section style={{ backgroundColor: C.lightGray, borderTop: `1px solid ${C.borderGray}`, padding: "24px 16px" }}>
+  <div className="max-w-6xl mx-auto">
+    <div className="flex flex-col sm:flex-row items-center sm:justify-between gap-4">
 
+      {/* Identity */}
+      <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
+        <div style={{
+          width: 56, height: 56, borderRadius: "50%", backgroundColor: C.primaryBlue,
+          flexShrink: 0, display: "flex", alignItems: "center", justifyContent: "center"
+        }}>
+          <HelpCircle size={26} color={C.accentYellow} />
+        </div>
+        <div>
+          <h3 style={{ color: C.primaryBlue, fontSize: "clamp(.95rem,2.5vw,1.1rem)", fontWeight: 700, margin: "0 0 3px" }}>
+            Need Immediate Assistance?
+          </h3>
+          <p style={{ color: C.grayText, fontSize: 13, margin: 0 }}>
+            Our admission counselors are ready to help you.
+          </p>
+        </div>
+      </div>
+
+      {/* Actions */}
+      <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full sm:w-auto">
+
+        {/* Call */}
+        <a href="tel:9848127344"
+          className="flex items-center gap-3 sm:gap-2.5 rounded-xl sm:rounded-none px-4 py-3 sm:p-0"
+          style={{ backgroundColor: "var(--mobile-card, white)", border: "0.5px solid var(--mobile-border, transparent)", textDecoration: "none" }}>
+          <div style={{
+            width: 36, height: 36, borderRadius: "50%", backgroundColor: C.lightBlue,
+            display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0
+          }}>
+            <PhoneCall size={16} color={C.primaryBlue} />
+          </div>
+          <div>
+            <div style={{ color: C.grayText, fontSize: 11, fontWeight: 500 }}>Call Us Now</div>
+            <div style={{ color: C.primaryBlue, fontSize: 16, fontWeight: 700 }}>9848127344</div>
+          </div>
+        </a>
+
+        {/* WhatsApp */}
+        <a href="https://wa.me/919848127344" target="_blank" rel="noopener noreferrer"
+          style={{
+            display: "flex", alignItems: "center", justifyContent: "center", gap: 8,
+            backgroundColor: C.primaryBlue, color: C.white, borderRadius: 12,
+            padding: "13px 20px", fontSize: 14, fontWeight: 600,
+            textDecoration: "none", fontFamily: "'Poppins',sans-serif", whiteSpace: "nowrap"
+          }}>
+          <MessageCircle size={16} color={C.white} />
+          Chat on WhatsApp
+        </a>
+
+      </div>
+    </div>
+  </div>
+</section>
 
     </div>
   );

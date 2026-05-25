@@ -18,6 +18,7 @@ const app = express();
 const allowedOrigins = [
   "http://localhost:5173",
   "https://www.alliancemgt.org",
+  "https://alliancemgt.org",
 ];
 
 app.use(

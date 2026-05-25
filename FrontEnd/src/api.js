@@ -1,3 +1,2 @@
-// const BASE_URL = "https://geinestudio.onrender.com";
-const BASE_URL = "http://localhost:5000";
+const BASE_URL = "https://alliance-college.onrender.com";
 export default BASE_URL;

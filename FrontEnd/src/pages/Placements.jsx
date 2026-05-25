@@ -32,21 +32,45 @@ const highlights = [
   { icon: Award, value: "100%", label: "Placement Assistance", desc: "End-to-end training and placement support.", color: "orange" },
   { icon: UserCheck, value: "5000+", label: "Students Placed", desc: "Successfully placed students in reputed organizations.", color: "blue" },
 ];
-
 const recruiters = [
   { name: "ACCOR", image: "https://alliancemgt.org/Alliance%20Images/accor.png" },
   { name: "Marriot", image: "https://alliancemgt.org/Alliance%20Images/mariot.png" },
   { name: "Grand Mercure", image: "https://alliancemgt.org/Alliance%20Images/mercure.png" },
   { name: "Novotel", image: "https://alliancemgt.org/Alliance%20Images/novo.png" },
   { name: "The Park Hotel", image: "https://alliancemgt.org/Alliance%20Images/park.png" },
-  { name: "Peerless", image: "https://alliancemgt.org/Alliance%20Images/peerless.png" },
+  { name: "Peerless", image: "https://alliancemgt.org/Alliance%20Images/peerless.jpg",zoom: "scale-150" },
   { name: "Radission", image: "https://alliancemgt.org/Alliance%20Images/radi.png" },
   { name: "The fern", image: "https://alliancemgt.org/Alliance%20Images/pngegg.png" },
-  { name: "Deloitte", image: "https://alliancemgt.org/Alliance%20Images/delolite.jpg" },
-  { name: "Accenture", image: "https://alliancemgt.org/Alliance%20Images/accenture.jpg" },
-  { name: "Ey", image: "https://alliancemgt.org/Alliance%20Images/ey.jpg" },
-  { name: "HDFC", image: "https://alliancemgt.org/Alliance%20Images/hdfc.jpg" },
-  { name: "Amazon", image: "https://alliancemgt.org/Alliance%20Images/amazon.jpg" }
+
+  { 
+    name: "Deloitte",
+    image: "https://alliancemgt.org/Alliance%20Images/delolite.jpg",
+    zoom: "scale-150"
+  },
+
+  { 
+    name: "Accenture",
+    image: "https://alliancemgt.org/Alliance%20Images/accenture.jpg",
+    zoom: "scale-125"
+  },
+
+  { 
+    name: "Ey",
+    image: "https://alliancemgt.org/Alliance%20Images/ey.jpg",
+    zoom: "scale-150"
+  },
+
+  { 
+    name: "HDFC",
+    image: "https://alliancemgt.org/Alliance%20Images/hdfc.jpg",
+    zoom: "scale-150"
+  },
+
+  { 
+    name: "Amazon",
+    image: "https://alliancemgt.org/Alliance%20Images/amazon.jpg",
+    zoom: "scale-150"
+  }
 ];
 
 const processSteps = [
@@ -244,22 +268,35 @@ function HighlightCard({ icon: Icon, value, label, desc, color }) {
   );
 }
 
-function RecruiterLogo({ name, image }) {
+// function RecruiterLogo({ name, image }) {
+//   return (
+//     <div className="flex items-center justify-center h-14 rounded-xl border border-gray-100 bg-white hover:shadow-md hover:border-gray-200 transition-all duration-200 px-4 cursor-default">
+//       <img
+//         src={image} alt={name}
+//         className="max-h-7 max-w-full object-contain" loading="lazy"
+//         onError={(e) => {
+//           e.currentTarget.style.display = "none";
+//           e.currentTarget.nextSibling.style.display = "block";
+//         }}
+//       />
+//       <span className="text-xs font-bold text-gray-600" style={{ display: "none" }}>{name}</span>
+//     </div>
+//   );
+// }
+function RecruiterLogo({ name, image, zoom = "" }) {
   return (
-    <div className="flex items-center justify-center h-14 rounded-xl border border-gray-100 bg-white hover:shadow-md hover:border-gray-200 transition-all duration-200 px-4 cursor-default">
+    <div className="flex items-center justify-center h-14 rounded-xl border border-gray-100 bg-white hover:shadow-md hover:border-gray-200 transition-all duration-200 px-2 overflow-hidden cursor-default">
+
       <img
-        src={image} alt={name}
-        className="max-h-7 max-w-full object-contain" loading="lazy"
-        onError={(e) => {
-          e.currentTarget.style.display = "none";
-          e.currentTarget.nextSibling.style.display = "block";
-        }}
+        src={image}
+        alt={name}
+        className={`h-10 w-full object-contain transition-transform duration-300 ${zoom}`}
+        loading="lazy"
       />
-      <span className="text-xs font-bold text-gray-600" style={{ display: "none" }}>{name}</span>
+
     </div>
   );
 }
-
 function ProcessStep({ icon: Icon, title, desc, isLast }) {
   return (
     <div className="flex items-start flex-1 min-w-0">

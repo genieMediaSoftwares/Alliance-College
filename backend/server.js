@@ -349,15 +349,7 @@ app.delete("/api/blogs/:id", verifyToken, (req, res) => {
   });
 });
 
-// ================= OG SHARE PREVIEW =================
-// When a blog link is shared on WhatsApp / Twitter / LinkedIn / Telegram etc.,
-// social crawlers hit this URL, read the OG meta tags, and render the preview card.
-// Regular human visitors are instantly JS-redirected to the actual React blog page.
-//
-// Share URL format:  https://<your-backend-domain>/share/<permalink>
-// Example:           https://api.geniestudio.in/share/services/my-blog-post
-//
-// In AdminBlogs.jsx the "Copy Share Link" button copies exactly this URL.
+
 
 const escapeHtml = (str) =>
   String(str || "")
@@ -379,8 +371,8 @@ app.use("/share/", (req, res) => {
         return res.redirect("https://www.alliancemgt.org/blog");
       }
       const blog = result[0];
-      const title = escapeHtml(blog.title || "GenieStudio Blog");
-      const description = escapeHtml(blog.metaDescription || "Read this article on GenieStudio");
+      const title = escapeHtml(blog.title || "Alliance College of Hotel Management Blog");
+      const description = escapeHtml(blog.metaDescription || "Read this article on Alliance College of Hotel Management");
       const image = escapeHtml(blog.image || "https://www.alliancemgt.org/og-default.jpg");
       const pageUrl = `https://www.alliancemgt.org/blog/${blog.permalink}`;
 
@@ -398,7 +390,7 @@ app.use("/share/", (req, res) => {
   <meta property="og:image:width"  content="1200" />
   <meta property="og:image:height" content="630" />
   <meta property="og:url"         content="${pageUrl}" />
-  <meta property="og:site_name"   content="GenieStudio" />
+  <meta property="og:site_name"   content="Alliance College of Hotel Management" />
   <meta name="twitter:card"        content="summary_large_image" />
   <meta name="twitter:title"       content="${title}" />
   <meta name="twitter:description" content="${description}" />

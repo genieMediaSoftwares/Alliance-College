@@ -19,8 +19,8 @@ export default function Blogs() {
         // Backend already filters published only, but guard anyway
         const formatted = Array.isArray(data)
           ? data
-              .filter((b) => b.status === "published")
-              .sort((a, b) => b.createdAt - a.createdAt)
+            .filter((b) => b.status === "published")
+            .sort((a, b) => b.createdAt - a.createdAt)
           : [];
         setBlogs(formatted);
       } catch (err) {
@@ -58,12 +58,25 @@ export default function Blogs() {
       ? blogs
       : blogs.filter((b) => b.category === selectedCategory);
 
-  const formatDate = (ts) =>
-    ts
-      ? new Date(Number(ts)).toLocaleDateString("en-US", {
-          year: "numeric", month: "short", day: "numeric",
-        })
-      : "Just now";
+  // const formatDate = (ts) =>
+  //   ts
+  //     ? new Date(Number(ts)).toLocaleDateString("en-US", {
+  //         year: "numeric", month: "short", day: "numeric",
+  //       })
+  //     : "Just now";
+  const formatDate = (ts) => {
+    if (!ts) return "Just now";
+
+    const d = new Date(ts);
+
+    return isNaN(d.getTime())
+      ? "Just now"
+      : d.toLocaleDateString("en-US", {
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+      });
+  };
 
   const handleReadMore = (blog) => {
     if (!blog.permalink) { console.error("Missing permalink", blog); return; }
@@ -76,7 +89,7 @@ export default function Blogs() {
   };
 
   const FALLBACK =
-    "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&q=80";
+    "https://alliancemgt.org/Alliance%20Images/adminbgg.jpg";
 
   return (
     <main className="w-full overflow-x-hidden">
@@ -86,7 +99,7 @@ export default function Blogs() {
           className="absolute inset-0 bg-cover bg-center"
           style={{
             backgroundImage:
-              "url('https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=1200&h=600&fit=crop&auto=format&ixlib=rb-4.1.0')",
+              "url('https://alliancemgt.org/Alliance%20Images/adminbgg.jpg')",
           }}
         />
         <div className="absolute inset-0 bg-black/60" />
@@ -95,7 +108,7 @@ export default function Blogs() {
             Our Blog
           </h1>
           <p className="text-base sm:text-lg md:text-xl text-slate-200 max-w-2xl sm:max-w-3xl mx-auto drop-shadow-md">
-            Insights and creative stories from Genie Studio
+            Insights and creative stories from Alliance College of Hotel Management
           </p>
         </div>
       </section>
@@ -110,11 +123,10 @@ export default function Blogs() {
                   <button
                     key={cat}
                     onClick={() => setSelectedCategory(cat)}
-                    className={`px-4 sm:px-5 md:px-6 py-2 sm:py-2.5 rounded-lg font-semibold text-xs sm:text-sm md:text-base transition-all duration-300 ${
-                      selectedCategory === cat
-                        ? "bg-[#6B4A2D] text-white shadow-lg scale-105"
+                    className={`px-4 sm:px-5 md:px-6 py-2 sm:py-2.5 rounded-lg font-semibold text-xs sm:text-sm md:text-base transition-all duration-300 ${selectedCategory === cat
+                        ? "bg-[#0D1B4B] text-white shadow-lg scale-105"
                         : "bg-[#F7F6F3] text-slate-700 hover:bg-slate-200"
-                    }`}
+                      }`}
                   >
                     {cat}
                   </button>
@@ -126,7 +138,7 @@ export default function Blogs() {
           {loading ? (
             <div className="flex flex-col items-center justify-center py-16 sm:py-20 md:py-24">
               <div className="animate-spin">
-                <svg className="w-12 h-12 sm:w-14 sm:h-14 text-[#6B4A2D]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg className="w-12 h-12 sm:w-14 sm:h-14 text-[#0D1B4B]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <circle cx="12" cy="12" r="10" strokeWidth="2" fill="none" opacity="0.3" />
                   <path d="M12 2a10 10 0 0 1 10 10" strokeWidth="2" />
                 </svg>
@@ -183,7 +195,7 @@ export default function Blogs() {
                         type="button"
                         aria-label="View full image"
                         onClick={(e) => openLightbox(e, imgSrc, blog.title)}
-                        className="absolute bottom-3 right-3 flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-white/90 backdrop-blur-sm text-[#6B4A2D] text-[11px] sm:text-xs font-semibold shadow-md opacity-0 group-hover:opacity-100 translate-y-1 group-hover:translate-y-0 transition-all duration-300 hover:bg-white"
+                        className="absolute bottom-3 right-3 flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-white/90 backdrop-blur-sm text-[#0D1B4B] text-[11px] sm:text-xs font-semibold shadow-md opacity-0 group-hover:opacity-100 translate-y-1 group-hover:translate-y-0 transition-all duration-300 hover:bg-white"
                       >
                         <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.2}>
                           <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" />
@@ -193,7 +205,7 @@ export default function Blogs() {
 
                       {blog.category && (
                         <div className="absolute top-2.5 left-2.5 z-10">
-                          <span className="inline-flex items-center gap-1 px-2.5 py-1 bg-[#6B4A2D] text-white text-[10px] sm:text-xs font-semibold rounded-full shadow">
+                          <span className="inline-flex items-center gap-1 px-2.5 py-1 bg-[#0D1B4B] text-white text-[10px] sm:text-xs font-semibold rounded-full shadow">
                             <Tag className="w-3 h-3" strokeWidth={2} />
                             {blog.category}
                           </span>
@@ -209,7 +221,7 @@ export default function Blogs() {
                         </div>
                       )}
 
-                      <h2 className="text-sm sm:text-base md:text-lg font-bold text-slate-900 group-hover:text-[#6B4A2D] mb-2 sm:mb-3 line-clamp-3 transition-colors duration-300 leading-snug">
+                      <h2 className="text-sm sm:text-base md:text-lg font-bold text-slate-900 group-hover:text-[#0D1B4B] mb-2 sm:mb-3 line-clamp-3 transition-colors duration-300 leading-snug">
                         {blog.title}
                       </h2>
 
@@ -219,7 +231,7 @@ export default function Blogs() {
 
                       <button
                         onClick={(e) => { e.stopPropagation(); handleReadMore(blog); }}
-                        className="self-start flex items-center gap-1.5 text-[#6B4A2D] font-semibold text-xs sm:text-sm group-hover:gap-2.5 transition-all duration-300 hover:text-slate-900"
+                        className="self-start flex items-center gap-1.5 text-[#0D1B4B] font-semibold text-xs sm:text-sm group-hover:gap-2.5 transition-all duration-300 hover:text-slate-900"
                       >
                         <span>Read More</span>
                         <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 group-hover:translate-x-1 transition-transform duration-300" strokeWidth={2.5} />
@@ -227,7 +239,7 @@ export default function Blogs() {
                     </div>
 
                     {/* Corner shimmer */}
-                    <div className="absolute top-0 right-0 w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-bl from-[#6B4A2D]/0 group-hover:from-[#6B4A2D]/8 to-transparent rounded-bl-full transition-all duration-500 pointer-events-none" />
+                    <div className="absolute top-0 right-0 w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-bl from-[#0D1B4B]/0 group-hover:from-[#0D1B4B]/8 to-transparent rounded-bl-full transition-all duration-500 pointer-events-none" />
                   </article>
                 );
               })}
@@ -255,11 +267,10 @@ export default function Blogs() {
               Want to Share Your Story?
             </h2>
             <p className="text-sm sm:text-base md:text-lg lg:text-xl text-slate-600 mb-8 sm:mb-10 md:mb-12 max-w-2xl mx-auto leading-relaxed font-light">
-              Get in touch with us to discuss your project, book a shoot, or collaborate with Genie Studio.
-            </p>
+              “Get in touch with us to learn more about admissions, courses, placements, campus life, or career opportunities at Alliance College of Hotel Management.”            </p>
             <button
               onClick={() => navigate("/contact")}
-              className="inline-flex items-center gap-2 sm:gap-3 px-6 sm:px-8 py-3 sm:py-4 bg-[#6B4A2D] text-white font-semibold text-sm sm:text-base rounded-lg hover:bg-slate-800 transition-all duration-300 shadow-lg hover:shadow-xl group"
+              className="inline-flex items-center gap-2 sm:gap-3 px-6 sm:px-8 py-3 sm:py-4 bg-[#0D1B4B] text-white font-semibold text-sm sm:text-base rounded-lg hover:bg-slate-800 transition-all duration-300 shadow-lg hover:shadow-xl group"
             >
               Get Started
               <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform duration-300" strokeWidth={2} />
@@ -285,7 +296,7 @@ export default function Blogs() {
               type="button"
               aria-label="Close image preview"
               onClick={() => setLightbox(null)}
-              className="absolute -top-3 -right-3 sm:-top-4 sm:-right-4 z-20 flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-white text-slate-800 shadow-xl hover:bg-[#6B4A2D] hover:text-white transition-all duration-200"
+              className="absolute -top-3 -right-3 sm:-top-4 sm:-right-4 z-20 flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-white text-slate-800 shadow-xl hover:bg-[#0D1B4B] hover:text-white transition-all duration-200"
             >
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5}>
                 <path d="M18 6L6 18M6 6l12 12" />

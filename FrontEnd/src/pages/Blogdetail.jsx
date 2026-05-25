@@ -7,7 +7,7 @@ import DOMPurify from "dompurify";
 import BASE_URL from "../api";
 
 const FALLBACK =
-    "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=1200&q=80";
+    "https://alliancemgt.org/Alliance%20Images/adminbgg.jpg";
 
 const cleanSlug = (raw) =>
     raw ? raw.replace(/^\/+/, "").replace(/^blog\//, "") : raw;
@@ -82,14 +82,20 @@ export default function BlogDetail() {
         return () => m.remove();
     }, [blog]);
 
-    const formatDate = (ts) =>
-        ts
-            ? new Date(Number(ts)).toLocaleDateString("en-US", {
+
+    const formatDate = (ts) => {
+        if (!ts) return "Just now";
+
+        const d = new Date(ts);
+
+        return isNaN(d.getTime())
+            ? "Just now"
+            : d.toLocaleDateString("en-US", {
                 year: "numeric",
                 month: "long",
                 day: "numeric",
-            })
-            : "Just now";
+            });
+    };
 
     const copyLink = () => {
         navigator.clipboard.writeText(window.location.href);
@@ -159,7 +165,7 @@ export default function BlogDetail() {
         return (
             <main className="w-full min-h-screen bg-white flex flex-col items-center justify-center gap-4 px-4">
                 <div className="animate-spin">
-                    <svg className="w-12 h-12 text-[#6B4A2D]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg className="w-12 h-12 text-[#0D1B4B]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <circle cx="12" cy="12" r="10" strokeWidth="2" opacity="0.25" />
                         <path d="M12 2a10 10 0 0 1 10 10" strokeWidth="2" />
                     </svg>
@@ -183,7 +189,7 @@ export default function BlogDetail() {
                 </p>
                 <button
                     onClick={() => navigate("/blogs")}
-                    className="mt-3 px-6 py-2.5 bg-[#6B4A2D] hover:bg-[#5a3f25] text-white rounded-lg transition-colors text-sm font-semibold"
+                    className="mt-3 px-6 py-2.5 bg-[#0D1B4B] hover:bg-[#5a3f25] text-white rounded-lg transition-colors text-sm font-semibold"
                 >
                     Back to Blogs
                 </button>
@@ -214,7 +220,7 @@ export default function BlogDetail() {
                     {/* Category badge overlaid bottom-left */}
                     {blog.category && (
                         <div className="absolute bottom-4 left-4 z-10">
-                            <span className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-[#6B4A2D] text-white text-xs font-semibold rounded-full shadow-lg backdrop-blur-sm">
+                            <span className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-[#0D1B4B] text-white text-xs font-semibold rounded-full shadow-lg backdrop-blur-sm">
                                 <Tag className="w-3.5 h-3.5" strokeWidth={2} />
                                 {blog.category}
                             </span>
@@ -232,7 +238,7 @@ export default function BlogDetail() {
                     {/* ── Date + Share row ── */}
                     <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-4 pb-5 border-b-2 border-slate-100">
                         <div className="flex items-center gap-2 text-sm text-slate-500 font-medium">
-                            <Calendar className="w-4 h-4 text-[#6B4A2D] flex-shrink-0" strokeWidth={2} />
+                            <Calendar className="w-4 h-4 text-[#0D1B4B] flex-shrink-0" strokeWidth={2} />
                             <time dateTime={String(blog.createdAt)}>
                                 {formatDate(blog.createdAt)}
                             </time>
@@ -240,7 +246,7 @@ export default function BlogDetail() {
                         <button
                             onClick={copyLink}
                             title="Copy link"
-                            className="flex items-center gap-2 px-4 py-2 bg-[#6B4A2D] hover:bg-[#5a3f25] text-white text-xs sm:text-sm font-semibold rounded-lg transition-colors w-fit"
+                            className="flex items-center gap-2 px-4 py-2 bg-[#0D1B4B] hover:bg-[#5a3f25] text-white text-xs sm:text-sm font-semibold rounded-lg transition-colors w-fit"
                         >
                             {copied ? (
                                 <>
@@ -263,7 +269,7 @@ export default function BlogDetail() {
                             <span className="text-[11px] font-semibold text-slate-400 uppercase tracking-widest flex-shrink-0">
                                 Keyword
                             </span>
-                            <span className="inline-flex items-center gap-1.5 pl-2.5 pr-1.5 py-1.5 bg-[#6B4A2D] text-white text-xs font-bold rounded-full shadow-sm">
+                            <span className="inline-flex items-center gap-1.5 pl-2.5 pr-1.5 py-1.5 bg-[#0D1B4B] text-white text-xs font-bold rounded-full shadow-sm">
                                 <Hash className="w-3 h-3 opacity-60 flex-shrink-0" strokeWidth={2.5} />
                                 <span className="leading-none">{activeKeyword}</span>
                                 <button
@@ -284,7 +290,7 @@ export default function BlogDetail() {
 
                     {/* ── Meta description ── */}
                     {blog.metaDescription && (
-                        <p className="text-base sm:text-lg text-slate-600 leading-relaxed italic pl-4 sm:pl-5 py-3 sm:py-4 mb-8 sm:mb-10 bg-amber-50 border-l-4 border-[#6B4A2D] rounded-r-xl">
+                        <p className="text-base sm:text-lg text-slate-600 leading-relaxed italic pl-4 sm:pl-5 py-3 sm:py-4 mb-8 sm:mb-10 bg-amber-50 border-l-4 border-[#0D1B4B] rounded-r-xl">
                             "{blog.metaDescription}"
                         </p>
                     )}
@@ -315,15 +321,15 @@ export default function BlogDetail() {
               [&_del]:line-through [&_del]:text-slate-400
               [&_strike]:line-through [&_strike]:text-slate-400
               [&_mark]:bg-amber-100 [&_mark]:text-slate-900 [&_mark]:px-1 [&_mark]:rounded-sm
-              [&_a]:text-[#6B4A2D] [&_a]:font-medium [&_a]:underline [&_a]:underline-offset-2
-              [&_a]:decoration-[#6B4A2D]/40 [&_a]:transition-colors
+              [&_a]:text-[#0D1B4B] [&_a]:font-medium [&_a]:underline [&_a]:underline-offset-2
+              [&_a]:decoration-[#0D1B4B]/40 [&_a]:transition-colors
               [&_a:hover]:text-[#9b6a3d] [&_a:hover]:decoration-[#9b6a3d]/60
               [&_blockquote]:my-8 [&_blockquote]:pl-5 [&_blockquote]:pr-4 [&_blockquote]:py-4
-              [&_blockquote]:border-l-4 [&_blockquote]:border-[#6B4A2D]
+              [&_blockquote]:border-l-4 [&_blockquote]:border-[#0D1B4B]
               [&_blockquote]:bg-amber-50 [&_blockquote]:rounded-r-xl
               [&_blockquote]:text-slate-600 [&_blockquote]:italic [&_blockquote]:text-[17px]
               [&_blockquote]:leading-relaxed [&_blockquote_p]:my-0 [&_blockquote_p]:text-slate-600
-              [&_code]:font-mono [&_code]:text-[14px] [&_code]:text-[#6B4A2D]
+              [&_code]:font-mono [&_code]:text-[14px] [&_code]:text-[#0D1B4B]
               [&_code]:bg-slate-100 [&_code]:px-1.5 [&_code]:py-0.5
               [&_code]:rounded [&_code]:border [&_code]:border-slate-200
               [&_pre]:my-6 [&_pre]:bg-slate-900 [&_pre]:text-slate-100
@@ -335,8 +341,8 @@ export default function BlogDetail() {
               [&_ol]:my-5 [&_ol]:pl-6 [&_ol]:list-decimal
               [&_li]:my-2 [&_li]:leading-[1.75] [&_li]:text-slate-700 [&_li]:text-[17px]
               sm:[&_li]:text-[18px]
-              [&_ul_li]:marker:text-[#6B4A2D]
-              [&_ol_li]:marker:text-[#6B4A2D] [&_ol_li]:marker:font-bold
+              [&_ul_li]:marker:text-[#0D1B4B]
+              [&_ol_li]:marker:text-[#0D1B4B] [&_ol_li]:marker:font-bold
               [&_li_ul]:mt-2 [&_li_ul]:mb-1 [&_li_ol]:mt-2 [&_li_ol]:mb-1
               [&_hr]:my-10 [&_hr]:border-0 [&_hr]:border-t-2 [&_hr]:border-slate-100
               [&_img]:max-w-full [&_img]:h-auto [&_img]:rounded-xl [&_img]:shadow-md
@@ -361,7 +367,7 @@ export default function BlogDetail() {
                         <div className="mt-10 mb-8">
                             {/* Header */}
                             <div className="flex items-center gap-2.5 mb-4">
-                                <div className="flex items-center justify-center w-7 h-7 rounded-md bg-[#6B4A2D] flex-shrink-0">
+                                <div className="flex items-center justify-center w-7 h-7 rounded-md bg-[#0D1B4B] flex-shrink-0">
                                     <Hash size={14} className="text-white" strokeWidth={2.5} />
                                 </div>
                                 <span className="text-xs font-bold text-slate-500 tracking-widest uppercase">
@@ -390,10 +396,10 @@ export default function BlogDetail() {
                                                     border transition-all duration-200
                                                     active:scale-95 select-none cursor-pointer
                                                     ${isLoading
-                                                        ? "bg-[#6B4A2D] text-white border-[#6B4A2D] cursor-wait opacity-80"
+                                                        ? "bg-[#0D1B4B] text-white border-[#0D1B4B] cursor-wait opacity-80"
                                                         : isActive
-                                                            ? "bg-[#6B4A2D] text-white border-[#6B4A2D]"
-                                                            : "bg-slate-50 text-slate-500 border-slate-200 hover:border-[#6B4A2D] hover:text-[#6B4A2D] hover:bg-amber-50"
+                                                            ? "bg-[#0D1B4B] text-white border-[#0D1B4B]"
+                                                            : "bg-slate-50 text-slate-500 border-slate-200 hover:border-[#0D1B4B] hover:text-[#0D1B4B] hover:bg-amber-50"
                                                     }
                                                 `}
                                             >
@@ -425,7 +431,7 @@ export default function BlogDetail() {
                         </p>
                         <button
                             onClick={copyLink}
-                            className="inline-flex items-center gap-2 px-6 sm:px-8 py-2.5 sm:py-3 bg-[#6B4A2D] hover:bg-[#5a3f25] text-white font-semibold text-sm sm:text-base rounded-lg transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5"
+                            className="inline-flex items-center gap-2 px-6 sm:px-8 py-2.5 sm:py-3 bg-[#0D1B4B] hover:bg-[#5a3f25] text-white font-semibold text-sm sm:text-base rounded-lg transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5"
                         >
                             <Share2 className="w-4 h-4 sm:w-5 sm:h-5" strokeWidth={2} />
                             {copied ? "Copied to Clipboard!" : "Copy Article Link"}
@@ -446,7 +452,7 @@ export default function BlogDetail() {
                             </h2>
                             <p className="text-sm sm:text-base text-slate-500 max-w-xl mx-auto">
                                 More from the{" "}
-                                <span className="font-bold text-[#6B4A2D]">{blog.category}</span>{" "}
+                                <span className="font-bold text-[#0D1B4B]">{blog.category}</span>{" "}
                                 category
                             </p>
                         </div>
@@ -469,7 +475,7 @@ export default function BlogDetail() {
                                         <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                                         {rb.category && (
                                             <div className="absolute top-3 left-3 z-10">
-                                                <span className="inline-flex items-center gap-1 px-2.5 py-1 bg-[#6B4A2D] text-white text-[10px] sm:text-xs font-semibold rounded-full shadow">
+                                                <span className="inline-flex items-center gap-1 px-2.5 py-1 bg-[#0D1B4B] text-white text-[10px] sm:text-xs font-semibold rounded-full shadow">
                                                     <Tag className="w-3 h-3" strokeWidth={2} />
                                                     {rb.category}
                                                 </span>
@@ -479,18 +485,18 @@ export default function BlogDetail() {
                                     <div className="flex flex-col flex-1 p-4 sm:p-5">
                                         {rb.createdAt && (
                                             <div className="flex items-center gap-1.5 text-[11px] text-slate-400 mb-2">
-                                                <Calendar className="w-3.5 h-3.5 text-[#6B4A2D]" strokeWidth={2} />
+                                                <Calendar className="w-3.5 h-3.5 text-[#0D1B4B]" strokeWidth={2} />
                                                 <time>{formatDate(rb.createdAt)}</time>
                                             </div>
                                         )}
-                                        <h3 className="text-sm sm:text-base font-bold text-slate-900 group-hover:text-[#6B4A2D] mb-2 line-clamp-2 transition-colors duration-300 leading-snug">
+                                        <h3 className="text-sm sm:text-base font-bold text-slate-900 group-hover:text-[#0D1B4B] mb-2 line-clamp-2 transition-colors duration-300 leading-snug">
                                             {rb.title}
                                         </h3>
                                         <p className="text-[11px] sm:text-xs text-slate-400 line-clamp-2 leading-relaxed mb-3 flex-1">
                                             {rb.metaDescription ||
                                                 rb.description?.replace(/<[^>]+>/g, "").substring(0, 100)}
                                         </p>
-                                        <div className="flex items-center gap-1.5 text-[#6B4A2D] font-semibold text-xs sm:text-sm group-hover:gap-2.5 transition-all duration-300">
+                                        <div className="flex items-center gap-1.5 text-[#0D1B4B] font-semibold text-xs sm:text-sm group-hover:gap-2.5 transition-all duration-300">
                                             <span>Read More</span>
                                             <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform duration-300" strokeWidth={2.5} />
                                         </div>
@@ -511,7 +517,7 @@ export default function BlogDetail() {
                         Ready to Create Amazing Visuals?
                     </h2>
                     <p className="text-sm sm:text-base md:text-lg text-slate-500 mb-8 max-w-2xl mx-auto leading-relaxed">
-                        Let's bring your creative vision to life. Contact Genie Studio today.
+                        “Build your future with Alliance College of Hotel Management. Contact us today to explore courses, admissions, and career opportunities.”
                     </p>
                     <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
                         <button
@@ -523,7 +529,7 @@ export default function BlogDetail() {
                         </button>
                         <button
                             onClick={() => navigate("/contact")}
-                            className="inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-2.5 sm:py-3 bg-[#6B4A2D] hover:bg-[#5a3f25] text-white font-semibold text-sm sm:text-base rounded-lg transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5 group"
+                            className="inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-2.5 sm:py-3 bg-[#0D1B4B] hover:bg-[#5a3f25] text-white font-semibold text-sm sm:text-base rounded-lg transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5 group"
                         >
                             Get in Touch
                             <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform duration-300" strokeWidth={2} />

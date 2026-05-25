@@ -8,6 +8,7 @@ const quickLinks = [
   { label: "Placements", path: "/placements" },
   { label: "Campus", path: "/campus" },
   { label: "Contact", path: "/contact" },
+  { label: "Blogs", path: "/blogs" }
 ];
 
 const courseLinks = [

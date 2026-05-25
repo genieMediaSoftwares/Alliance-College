@@ -74,7 +74,7 @@ export default function AdminLogin() {
           className="absolute inset-0 bg-cover bg-center"
           style={{
             backgroundImage:
-              "url('https://images.unsplash.com/39/lIZrwvbeRuuzqOoWJUEn_Photoaday_CSD%20%281%20of%201%29-5.jpg?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')",
+              "url('https://alliancemgt.org/Alliance%20Images/adminbgg.jpg')",
           }}
         />
         <div className="absolute inset-0 bg-black/60" />
@@ -83,7 +83,7 @@ export default function AdminLogin() {
             Admin Portal
           </h1>
           <p className="text-lg md:text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed">
-            Secure access to manage your Genie Studio content and operations
+            Secure access to manage your Alliance College of Hotel Management content and operations
           </p>
         </div>
       </section>
@@ -124,7 +124,7 @@ export default function AdminLogin() {
                   <input
                     id="email"
                     type="email"
-                    placeholder="admin@geniemedia.in"
+                    placeholder="admin@alliancemgt.org"
                     value={email}
                     onChange={(e) => {
                       setEmail(e.target.value);
@@ -219,7 +219,7 @@ export default function AdminLogin() {
             {/* Footer */}
             <div className="mt-6 md:mt-8 pt-4 sm:pt-6 border-t-2 border-gray-200 text-center">
               <p className="text-xs text-gray-600 leading-relaxed font-medium">
-                © 2026 Genie Studio Admin.{" "}
+                © 2026 Alliance College Of Hotel Management Admin.{" "}
                 <br className="sm:hidden" />
                 All rights reserved.{" "}
                 <br />

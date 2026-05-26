@@ -565,6 +565,106 @@ app.get("/sitemap.xml", (req, res) => {
     }
   );
 });
+// ================= DYNAMIC POST XML =================
+app.get("/post.xml", (req, res) => {
+
+  db.query(
+    "SELECT title, permalink, createdAt, updatedAt FROM blogs WHERE status='published' ORDER BY createdAt DESC",
+    (err, results) => {
+
+      if (err) {
+        console.log(err);
+        return res.status(500).send("Server Error");
+      }
+
+      res.header("Content-Type", "application/xml");
+
+      let xml = `<?xml version="1.0" encoding="UTF-8"?>
+<posts>`;
+
+      results.forEach((blog) => {
+
+        xml += `
+  <post>
+    <title><![CDATA[${blog.title}]]></title>
+    <url>https://alliancemgt.org/blog/${blog.permalink}</url>
+    <slug>${blog.permalink}</slug>
+    <publishedDate>${new Date(blog.createdAt).toISOString()}</publishedDate>
+    <updatedDate>${new Date(blog.updatedAt).toISOString()}</updatedDate>
+  </post>`;
+
+      });
+
+      xml += `
+</posts>`;
+
+      res.send(xml);
+
+    }
+  );
+
+});
+// ================= DYNAMIC TAGS XML =================
+app.get("/tags.xml", (req, res) => {
+
+  db.query(
+    "SELECT keywords FROM blogs WHERE status='published'",
+    (err, results) => {
+
+      if (err) {
+        console.log(err);
+        return res.status(500).send("Server Error");
+      }
+
+      // Collect all keywords
+      let allTags = [];
+
+      results.forEach((blog) => {
+
+        if (blog.keywords) {
+
+          const tags = blog.keywords
+            .split(",")
+            .map(tag => tag.trim().toLowerCase())
+            .filter(Boolean);
+
+          allTags.push(...tags);
+        }
+
+      });
+
+      // Remove duplicate tags
+      const uniqueTags = [...new Set(allTags)];
+
+      res.header("Content-Type", "application/xml");
+
+      let xml = `<?xml version="1.0" encoding="UTF-8"?>
+<tags>`;
+
+      uniqueTags.forEach((tag) => {
+
+        const slug = tag
+          .replace(/[^a-z0-9 ]/g, "")
+          .trim()
+          .replace(/\s+/g, "-");
+
+        xml += `
+  <tag>
+    <name><![CDATA[${tag}]]></name>
+    <url>https://alliancemgt.org/tag/${slug}</url>
+  </tag>`;
+
+      });
+
+      xml += `
+</tags>`;
+
+      res.send(xml);
+
+    }
+  );
+
+});
 // ================= START =================
 app.listen(PORT, () => {
   console.log(`🚀 Server running on port ${PORT}`);

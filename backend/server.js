@@ -10,7 +10,8 @@ const path = require("path");
 const fs = require("fs");
 const axios = require("axios");
 const FormData = require("form-data");
-
+const { SitemapStream, streamToPromise } = require("sitemap");
+const { Readable } = require("stream");
 const PORT = process.env.PORT || 5000;
 const app = express();
 
@@ -409,7 +410,161 @@ app.use("/share/", (req, res) => {
     }
   );
 });
+// ================= DYNAMIC SITEMAP =================
+app.get("/sitemap.xml", (req, res) => {
 
+  db.query(
+    "SELECT permalink, updatedAt FROM blogs WHERE status='published'",
+    async (err, results) => {
+
+      if (err) {
+        console.log(err);
+        return res.status(500).end();
+      }
+
+      try {
+
+        const links = [
+
+          // Static Pages
+          {
+            url: "/",
+            changefreq: "daily",
+            priority: 1.0,
+          },
+          {
+            url: "/aboutus",
+            changefreq: "monthly",
+            priority: 0.8,
+          },
+          {
+            url: "/contact",
+            changefreq: "monthly",
+            priority: 0.8,
+          },
+          {
+            url: "/courses",
+            changefreq: "weekly",
+            priority: 0.9,
+          },
+          {
+            url: "/applynow",
+            changefreq: "weekly",
+            priority: 0.9,
+          },
+          {
+            url: "/placements",
+            changefreq: "weekly",
+            priority: 0.8,
+          },
+          {
+            url: "/campus",
+            changefreq: "monthly",
+            priority: 0.8,
+          },
+          {
+            url: "/gallery",
+            changefreq: "weekly",
+            priority: 0.7,
+          },
+          {
+            url: "/blogs",
+            changefreq: "daily",
+            priority: 0.9,
+          },
+
+          // Courses
+          {
+            url: "/courses/mba",
+            changefreq: "monthly",
+            priority: 0.8,
+          },
+          {
+            url: "/courses/bba",
+            changefreq: "monthly",
+            priority: 0.8,
+          },
+          {
+            url: "/courses/bhm",
+            changefreq: "monthly",
+            priority: 0.8,
+          },
+          {
+            url: "/courses/diploma-hm",
+            changefreq: "monthly",
+            priority: 0.7,
+          },
+          {
+            url: "/courses/intermediate-hm",
+            changefreq: "monthly",
+            priority: 0.7,
+          },
+          {
+            url: "/courses/pgdhm",
+            changefreq: "monthly",
+            priority: 0.7,
+          },
+          {
+            url: "/courses/bca",
+            changefreq: "monthly",
+            priority: 0.8,
+          },
+          {
+            url: "/courses/bcom",
+            changefreq: "monthly",
+            priority: 0.8,
+          },
+          {
+            url: "/courses/travel-tourism",
+            changefreq: "monthly",
+            priority: 0.7,
+          },
+
+          // Policies
+          {
+            url: "/privacy-policy",
+            changefreq: "yearly",
+            priority: 0.5,
+          },
+          {
+            url: "/terms",
+            changefreq: "yearly",
+            priority: 0.5,
+          },
+
+        ];
+
+        // ================= DYNAMIC BLOGS =================
+        results.forEach((blog) => {
+
+          links.push({
+            url: `/blog/${blog.permalink}`,
+            lastmod: blog.updatedAt,
+            changefreq: "weekly",
+            priority: 0.8,
+          });
+
+        });
+        const stream = new SitemapStream({
+          hostname: "https://alliancemgt.org",
+        });
+
+        res.header("Content-Type", "application/xml");
+
+        const xmlString = await streamToPromise(
+          Readable.from(links).pipe(stream)
+        ).then((data) => data.toString());
+
+        res.send(xmlString);
+
+      } catch (error) {
+        console.log(error);
+        res.status(500).end();
+      }
+
+    }
+  );
+});
 // ================= START =================
 app.listen(PORT, () => {
   console.log(`🚀 Server running on port ${PORT}`);

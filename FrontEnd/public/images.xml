@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<urlset
+xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <!-- Home Page Logo -->
+  <url>
+    <loc>https://alliancemgt.org/</loc>
+
+    <image:image>
+      <image:loc>
+       https://alliancemgt.org/Alliance%20Images/Alliance%20Logos.png
+      </image:loc>
+    </image:image>
+
+  </url>
+
+  <!-- Gallery -->
+  <url>
+    <loc>https://alliancemgt.org/gallery</loc>
+
+    <image:image>
+      <image:loc>
+        https://alliancemgt.org/Alliance%20Images/Img27.jpeg
+      </image:loc>
+    </image:image>
+
+  </url>
+
+  <!-- MBA Course -->
+  <url>
+    <loc>https://alliancemgt.org/courses/mba</loc>
+
+    <image:image>
+      <image:loc>
+        https://alliancemgt.org/Alliance%20Images/Img3.jpeg
+      </image:loc>
+    </image:image>
+
+  </url>
+
+  <!-- BHM Course -->
+  <url>
+    <loc>https://alliancemgt.org/courses/bhm</loc>
+
+    <image:image>
+      <image:loc>
+       https://alliancemgt.org/Alliance%20Images/foodproductionlab.jpg
+      </image:loc>
+    </image:image>
+
+  </url>
+
+  <!-- Blogs -->
+  <url>
+    <loc>https://alliancemgt.org/blogs</loc>
+
+    <image:image>
+      <image:loc>
+       https://alliancemgt.org/Alliance%20Images/adminbgg.jpg
+      </image:loc>
+    </image:image>
+
+  </url>
+
+</urlset>

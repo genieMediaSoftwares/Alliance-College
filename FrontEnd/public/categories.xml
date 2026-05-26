@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- MBA -->
+  <url>
+    <loc>https://alliancemgt.org/courses/mba</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- BBA -->
+  <url>
+    <loc>https://alliancemgt.org/courses/bba</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- BHM -->
+  <url>
+    <loc>https://alliancemgt.org/courses/bhm</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Diploma HM -->
+  <url>
+    <loc>https://alliancemgt.org/courses/diploma-hm</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Intermediate HM -->
+  <url>
+    <loc>https://alliancemgt.org/courses/intermediate-hm</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- PGDHM -->
+  <url>
+    <loc>https://alliancemgt.org/courses/pgdhm</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- BCA -->
+  <url>
+    <loc>https://alliancemgt.org/courses/bca</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- BCOM -->
+  <url>
+    <loc>https://alliancemgt.org/courses/bcom</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Travel & Tourism -->
+  <url>
+    <loc>https://alliancemgt.org/courses/travel-tourism</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+</urlset>

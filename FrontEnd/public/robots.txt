@@ -1,0 +1,18 @@
+User-agent: *
+
+Allow: /
+
+# Block Admin Pages
+Disallow: /admin/
+Disallow: /admin/blogs/
+Disallow: /login/
+Disallow: /dashboard/
+Disallow: /private/
+
+# Allow Assets
+Allow: /assets/
+Allow: /uploads/
+Allow: /images/
+
+# Sitemap
+Sitemap: https://alliancemgt.org/sitemap.xml

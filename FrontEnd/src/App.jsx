@@ -70,7 +70,6 @@ function App() {
               </ProtectedRoute>
             }
           />
-
           <Route path="/blogs" element={<Blogs />} />
           <Route path="/blog/*" element={<BlogDetail />} /> 
       </Routes>
@@ -79,5 +78,4 @@ function App() {
     </>
   );
 }
-
 export default App;

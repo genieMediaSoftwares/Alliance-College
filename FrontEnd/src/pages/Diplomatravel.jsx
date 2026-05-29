@@ -1,32 +1,5 @@
 import { useState } from "react";
-import {
-  Clock,
-  Briefcase,
-  GraduationCap,
-  Users,
-  Download,
-  ChevronDown,
-  ChevronLeft,
-  ChevronRight,
-  Star,
-  Building2,
-  Award,
-  Globe,
-  ShieldCheck,
-  UserCheck,
-  TrendingUp,
-  BadgePercent,
-  MapPin,
-  Plane,
-  Hotel,
-  Compass,
-  Camera,
-  FileText,
-  Landmark,
-  Handshake,
-  Map,
-  Cpu,
-} from "lucide-react";
+import {Clock,Briefcase,GraduationCap, Users, Download,ChevronDown,ChevronLeft,ChevronRight,Star,Building2, Award, Globe,ShieldCheck,UserCheck,TrendingUp,BadgePercent,MapPin,Plane,Hotel,Compass,Camera,FileText,Landmark,Handshake,Map, Cpu,} from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
 const NAV_BLUE = "#0F2B5B";

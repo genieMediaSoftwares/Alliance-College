@@ -1,19 +1,8 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import {
-  MdSchool, MdPeople, MdTrendingUp, MdEmojiEvents, MdWork,
-  MdMenuBook, MdHotel, MdDescription, MdMonitor, MdStar,
-  MdCheckCircle, MdArrowForward, MdDownload, MdChevronLeft,
-  MdChevronRight, MdExpandMore, MdHome, MdLocationOn,
-  MdPhone, MdEmail, MdAccessTime, MdVisibility,
-  MdMyLocation, MdMenu, MdClose
-} from "react-icons/md";
-import {
-  UtensilsCrossed,
-  ChefHat,
-} from "lucide-react";
+import { MdSchool, MdPeople, MdTrendingUp, MdEmojiEvents, MdWork, MdMenuBook, MdHotel, MdDescription, MdMonitor, MdStar, MdCheckCircle, MdArrowForward, MdDownload, MdChevronLeft, MdChevronRight, MdExpandMore, MdHome, MdLocationOn, MdPhone, MdEmail, MdAccessTime, MdVisibility, MdMyLocation, MdMenu, MdClose } from "react-icons/md";
+import { UtensilsCrossed, ChefHat, } from "lucide-react";
 import HeroSection from "./HeroSection";
-
 const GraduationCap = ({ className }) => <MdSchool className={className} />;
 const Users = ({ className }) => <MdPeople className={className} />;
 const TrendingUp = ({ className }) => <MdTrendingUp className={className} />;
@@ -76,49 +65,10 @@ const heroStats = [
 ];
 
 const courseCards = [
-  {
-    icon: UtensilsCrossed,
-    title: "BHM (Hons)",
-    subtitle: "Bachelor of Hotel Management (Honours)",
-    duration: "4 Years",
-    type: "Full Time",
-    iconBg: "bg-pink-100",
-    iconColor: "text-pink-600",
-    path: "/courses/bhm",
-  },
-
-  {
-    icon: Users,
-    title: "BBA (Hons)",
-    subtitle: "Bachelor of Business Administration (Honours)",
-    duration: "3 Years",
-    type: "Full Time",
-    iconBg: "bg-green-100",
-    iconColor: "text-green-600",
-    path: "/courses/bba",
-  },
-
-  {
-    icon: GraduationCap,
-    title: "MBA",
-    subtitle: "Master of Business Administration",
-    duration: "2 Years",
-    type: "Full Time",
-    iconBg: "bg-blue-100",
-    iconColor: "text-blue-600",
-    path: "/courses/mba",
-  },
-
-  {
-    icon: ChefHat,
-    title: "PGDHM",
-    subtitle: "Post Graduate Diploma in Hotel Management",
-    duration: "2 Year",
-    type: "Full Time",
-    iconBg: "bg-orange-100",
-    iconColor: "text-orange-600",
-    path: "/courses/pgdhm",
-  },
+  { icon: UtensilsCrossed, title: "BHM (Hons)", subtitle: "Bachelor of Hotel Management (Honours)", duration: "4 Years", type: "Full Time", iconBg: "bg-pink-100", iconColor: "text-pink-600", path: "/courses/bhm", },
+  { icon: Users, title: "BBA (Hons)", subtitle: "Bachelor of Business Administration (Honours)", duration: "3 Years", type: "Full Time", iconBg: "bg-green-100", iconColor: "text-green-600", path: "/courses/bba", },
+  { icon: GraduationCap, title: "MBA", subtitle: "Master of Business Administration", duration: "2 Years", type: "Full Time", iconBg: "bg-blue-100", iconColor: "text-blue-600", path: "/courses/mba", },
+  { icon: ChefHat, title: "PGDHM", subtitle: "Post Graduate Diploma in Hotel Management", duration: "2 Year", type: "Full Time", iconBg: "bg-orange-100", iconColor: "text-orange-600", path: "/courses/pgdhm", },
 ];
 
 const whyFeatures = [
@@ -154,43 +104,12 @@ const facultyMembers = [
 ];
 
 const placerCompanies = [
-  {
-    label: "Accor",
-    image:
-      "https://alliancemgt.org/Alliance%20Images/accor.png",
-    style: "font-bold text-xl tracking-[3px] text-gray-800",
-    serif: true,
-  },
-  {
-    label: "The Park Hotel",
-    image:
-      "https://alliancemgt.org/Alliance%20Images/park.png",
-    style: "font-bold text-base tracking-widest text-[#c8a050]",
-  },
-  {
-    label: "Grand Mercure",
-    image:
-      "https://alliancemgt.org/Alliance%20Images/mercure.png",
-    style: "font-bold text-base tracking-[2px] text-gray-800",
-  },
-  {
-    label: "Radisson",
-    image:
-      "https://alliancemgt.org/Alliance%20Images/radi.png",
-    style: "font-bold text-sm italic text-[#cc0000]",
-  },
-  {
-    label: "NOVOTEL",
-    image:
-      "https://alliancemgt.org/Alliance%20Images/novo.png",
-    style: "font-bold text-xs tracking-widest text-[#0055a5]",
-  },
-  {
-    label: "Mariot",
-    image:
-      "https://alliancemgt.org/Alliance%20Images/mariot.png",
-    style: "font-bold text-xs text-[#003580]",
-  },
+  {label: "Accor",image:"https://alliancemgt.org/Alliance%20Images/accor.png", style: "font-bold text-xl tracking-[3px] text-gray-800", serif: true,},
+  {label: "The Park Hotel",image:"https://alliancemgt.org/Alliance%20Images/park.png",style: "font-bold text-base tracking-widest text-[#c8a050]",},
+  {label: "Grand Mercure",image: "https://alliancemgt.org/Alliance%20Images/mercure.png",style: "font-bold text-base tracking-[2px] text-gray-800",},
+  {label: "Radisson",image:"https://alliancemgt.org/Alliance%20Images/radi.png",style: "font-bold text-sm italic text-[#cc0000]",},
+  {label: "NOVOTEL",image:"https://alliancemgt.org/Alliance%20Images/novo.png",style: "font-bold text-xs tracking-widest text-[#0055a5]",},
+  {label: "Mariot",image:"https://alliancemgt.org/Alliance%20Images/mariot.png",style: "font-bold text-xs text-[#003580]",},
 ];
 
 const testimonials = [
@@ -243,19 +162,15 @@ const TrustBadge = ({ icon: Icon, label, sub }) => (
 
 export default function Home() {
   const navigate = useNavigate();
-
   const [testiIdx, setTestiIdx] = useState(0);
   const [form, setForm] = useState({ name: "", phone: "", course: "" });
   const [submitted, setSubmitted] = useState(false);
-
   const prevTesti = () => setTestiIdx(i => (i - 1 + testimonials.length) % testimonials.length);
   const nextTesti = () => setTestiIdx(i => (i + 1) % testimonials.length);
-
   useEffect(() => {
     const t = setInterval(nextTesti, 5000);
     return () => clearInterval(t);
   }, []);
-
   const handleSubmit = (e) => {
     e.preventDefault();
     setSubmitted(true);
@@ -267,25 +182,16 @@ export default function Home() {
   return (
     <div className="font-sans antialiased text-gray-900 bg-white overflow-x-hidden">
 
-
       <HeroSection />
-
 
       <section className="py-12 bg-white">
         <div className="container-main mx-auto px-4 sm:px-6 lg:px-8">
 
-          <SectionHeader
-            title="Our Popular Courses"
-            subtitle="Choose from industry-focused programs designed for your success"
-          />
+          <SectionHeader title="Our Popular Courses" subtitle="Choose from industry-focused programs designed for your success"/>
 
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
             {courseCards.map((c, i) => (
-              <div
-                key={i}
-                onClick={() => navigate(c.path)}
-                className="h-full flex flex-col justify-between border border-gray-200 rounded-2xl p-4 sm:p-6 hover:shadow-xl transition-shadow duration-300 group bg-white"
-              >
+              <div key={i} onClick={() => navigate(c.path)} className="h-full flex flex-col justify-between border border-gray-200 rounded-2xl p-4 sm:p-6 hover:shadow-xl transition-shadow duration-300 group bg-white">
                 <div className="flex flex-col gap-3">
                   <div className={`w-14 h-14 sm:w-16 sm:h-16 ${c.iconBg} rounded-full flex items-center justify-center`}>
                     <c.icon className={`w-6 h-6 sm:w-8 sm:h-8 ${c.iconColor}`} />
@@ -333,7 +239,6 @@ export default function Home() {
         </div>
       </section>
 
-
       <section className="py-6 sm:py-8 bg-white">
         <div className="container-main mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader title="Your Journey to Success" subtitle="A 3-step process to achieve your dream career" />
@@ -362,7 +267,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
 
       <section className="py-6 sm:py-8 bg-[#F8FAFF]">
         <div className="container-main mx-auto px-4 sm:px-6 lg:px-8">
@@ -499,7 +403,6 @@ export default function Home() {
         </div>
       </section>
 
-
       <section className="bg-[#0D1F3C] pt-8 pb-20 sm:pb-24">
         <div className="container-main mx-auto px-4 sm:px-6 lg:px-8">
 
@@ -534,19 +437,12 @@ export default function Home() {
           </div>
 
           <div className="flex items-center justify-center gap-3 mb-6">
-            <button
-              onClick={prevTesti}
-              className="w-9 h-9 rounded-full border border-white/30 bg-white/10 hover:bg-white/20 flex items-center justify-center"
-            >
+            <button onClick={prevTesti} className="w-9 h-9 rounded-full border border-white/30 bg-white/10 hover:bg-white/20 flex items-center justify-center">
               <ChevronLeft className="w-5 h-5 text-white" />
             </button>
 
             <div className="bg-[#1a3258] rounded-2xl px-4 py-4 sm:px-6 sm:py-5 flex items-center gap-4 max-w-[600px] w-full">
-              <img
-                src={testi.image}
-                alt={testi.name}
-                className="w-14 h-14 sm:w-16 sm:h-16 rounded-full object-cover"
-              />
+              <img src={testi.image} alt={testi.name} className="w-14 h-14 sm:w-16 sm:h-16 rounded-full object-cover" />
 
               <div>
                 <p className="text-white text-xs sm:text-sm leading-relaxed">
@@ -561,10 +457,7 @@ export default function Home() {
               </div>
             </div>
 
-            <button
-              onClick={nextTesti}
-              className="w-9 h-9 rounded-full border border-white/30 bg-white/10 hover:bg-white/20 flex items-center justify-center"
-            >
+            <button onClick={nextTesti} className="w-9 h-9 rounded-full border border-white/30 bg-white/10 hover:bg-white/20 flex items-center justify-center">
               <ChevronRight className="w-5 h-5 text-white" />
             </button>
           </div>
@@ -583,7 +476,6 @@ export default function Home() {
         </div>
       </section>
       <div className="container-main mx-auto px-4 sm:px-6 lg:px-8 relative -mt-12 sm:-mt-16 z-10">
-
         <div className="bg-[#F5A800] rounded-2xl grid grid-cols-2 sm:grid-cols-4 overflow-hidden shadow-xl">
           {placementStats.map((s, i) => (
             <div
@@ -609,21 +501,15 @@ export default function Home() {
           <SectionHeader title="Get Admission Details" subtitle="Fill the form and our expert will contact you" />
           <form onSubmit={handleSubmit}>
             <div className="flex flex-col sm:flex-row gap-3">
-              <input type="text" placeholder="Full Name" value={form.name}
-                onChange={e => setForm({ ...form, name: e.target.value })} required
-                className="flex-1 border border-gray-300 rounded-lg px-4 py-3 text-sm text-gray-700 placeholder-gray-400 outline-none focus:border-[#0D1F3C] focus:ring-1 focus:ring-[#0D1F3C] transition bg-white" />
-              <input type="tel" placeholder="Phone Number" value={form.phone}
-                onChange={e => setForm({ ...form, phone: e.target.value })} required
-                className="flex-1 border border-gray-300 rounded-lg px-4 py-3 text-sm text-gray-700 placeholder-gray-400 outline-none focus:border-[#0D1F3C] focus:ring-1 focus:ring-[#0D1F3C] transition bg-white" />
+              <input type="text" placeholder="Full Name" value={form.name} onChange={e => setForm({ ...form, name: e.target.value })} required className="flex-1 border border-gray-300 rounded-lg px-4 py-3 text-sm text-gray-700 placeholder-gray-400 outline-none focus:border-[#0D1F3C] focus:ring-1 focus:ring-[#0D1F3C] transition bg-white" />
+              <input type="tel" placeholder="Phone Number" value={form.phone} onChange={e => setForm({ ...form, phone: e.target.value })} required className="flex-1 border border-gray-300 rounded-lg px-4 py-3 text-sm text-gray-700 placeholder-gray-400 outline-none focus:border-[#0D1F3C] focus:ring-1 focus:ring-[#0D1F3C] transition bg-white" />
               <div className="relative flex-1">
-                <select value={form.course} onChange={e => setForm({ ...form, course: e.target.value })} required
-                  className="w-full appearance-none border border-gray-300 rounded-lg px-4 py-3 text-sm text-gray-500 outline-none focus:border-[#0D1F3C] focus:ring-1 focus:ring-[#0D1F3C] transition bg-white pr-10">
+                <select value={form.course} onChange={e => setForm({ ...form, course: e.target.value })} required className="w-full appearance-none border border-gray-300 rounded-lg px-4 py-3 text-sm text-gray-500 outline-none focus:border-[#0D1F3C] focus:ring-1 focus:ring-[#0D1F3C] transition bg-white pr-10">
                   {admissionCourses.map(c => <option key={c} value={c === "Select Course" ? "" : c}>{c}</option>)}
                 </select>
                 <ChevronDown className="w-4 h-4 text-gray-400 absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none" />
               </div>
-              <button type="submit" onClick={() => { navigate("/applynow") }}
-                className={`px-8 py-3 rounded-lg font-bold text-sm transition-all whitespace-nowrap ${submitted ? "bg-green-500 text-white" : "bg-[#F5A800] hover:bg-[#e09800] text-white"}`}>
+              <button type="submit" onClick={() => { navigate("/applynow") }} className={`px-8 py-3 rounded-lg font-bold text-sm transition-all whitespace-nowrap ${submitted ? "bg-green-500 text-white" : "bg-[#F5A800] hover:bg-[#e09800] text-white"}`}>
                 {submitted ? "✓ Submitted!" : "Apply Now"}
               </button>
             </div>
@@ -678,22 +564,12 @@ export default function Home() {
 
           <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
             {vmv.map((item, i) => (
-              <div
-                key={i}
-                className="
-            bg-white border border-gray-200 rounded-2xl 
-            p-4 sm:p-6 
-            flex flex-col sm:flex-row gap-3 sm:gap-4 
-            items-start 
-            hover:shadow-md transition-shadow duration-300
-          "
-              >
-                {/* ICON */}
+              <div key={i} className="  bg-white border border-gray-200 rounded-2xl  p-4 sm:p-6  flex flex-col sm:flex-row gap-3 sm:gap-4   items-start  hover:shadow-md transition-shadow duration-300 ">
+                
                 <div className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-[#FFF4DB] flex items-center justify-center">
                   <item.icon className="w-5 h-5 sm:w-6 sm:h-6 text-[#F5A800]" />
                 </div>
 
-                {/* TEXT */}
                 <div>
                   <h3 className="font-bold text-[#0D1F3C] text-sm sm:text-base mb-1 leading-tight">
                     {item.title}
@@ -769,12 +645,7 @@ export default function Home() {
                     <div>
                       <p className="font-bold text-[#0D1F3C] text-sm mb-0.5">{c.label}</p>
                       {c.link ? (
-                        <a
-                          href={c.link}
-                          target={c.type === "link" ? "_blank" : "_self"}
-                          rel="noopener noreferrer"
-                          className="text-gray-600 text-sm leading-relaxed whitespace-pre-line hover:text-[#F5A800] transition-colors cursor-pointer"
-                        >
+                        <a href={c.link} target={c.type === "link" ? "_blank" : "_self"} rel="noopener noreferrer" className="text-gray-600 text-sm leading-relaxed whitespace-pre-line hover:text-[#F5A800] transition-colors cursor-pointer">
                           {c.value}
                         </a>
                       ) : (
@@ -790,20 +661,8 @@ export default function Home() {
 
             <div className="w-full lg:w-[52%] flex-shrink-0">
               <div className="w-full h-64 sm:h-80 lg:h-[360px] rounded-2xl overflow-hidden shadow-md border border-gray-200">
-                <a
-                  href="https://www.google.com/maps?q=Alliance+Degree+College+Visakhapatnam"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block w-full h-full"
-                >
-                  <iframe
-                    title="Alliance College of Hotel Management  Map"
-                    src="https://www.google.com/maps?q=Alliance+Degree+College+Visakhapatnam&output=embed"
-                    width="100%"
-                    height="100%"
-                    style={{ border: 0 }}
-                    loading="lazy"
-                  />
+                <a href="https://www.google.com/maps?q=Alliance+Degree+College+Visakhapatnam" target="_blank" rel="noopener noreferrer" className="block w-full h-full">
+                  <iframe title="Alliance College of Hotel Management  Map" src="https://www.google.com/maps?q=Alliance+Degree+College+Visakhapatnam&output=embed" width="100%" height="100%" style={{ border: 0 }} loading="lazy"/>
                 </a>
               </div>
             </div>

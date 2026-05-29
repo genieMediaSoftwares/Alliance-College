@@ -1,31 +1,5 @@
 import { useState } from "react";
-import {
-  Clock,
-  Briefcase,
-  GraduationCap,
-  Users,
-  Download,
-  ChevronDown,
-  ChevronLeft,
-  ChevronRight,
-  Star,
-  Building2,
-  Award,
-  Globe,
-  ShieldCheck,
-  UserCheck,
-  Handshake,
-  UtensilsCrossed,
-  ConciergeBell,
-  BedDouble,
-  Cpu,
-  CakeSlice,
-  TrendingUp,
-  BadgePercent,
-  ClipboardList,
-  CalendarDays,
-  Hotel
-} from "lucide-react";
+import {Clock, Briefcase, GraduationCap, Users, Download, ChevronDown, ChevronLeft, ChevronRight, Star,Building2,Award, Globe, ShieldCheck, UserCheck, Handshake, UtensilsCrossed, ConciergeBell, BedDouble,Cpu,CakeSlice, TrendingUp,BadgePercent,ClipboardList,CalendarDays,Hotel} from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
 const NAV_BLUE = "#0F2B5B";

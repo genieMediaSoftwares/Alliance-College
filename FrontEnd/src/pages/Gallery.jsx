@@ -1,6 +1,5 @@
 import React from 'react'
 import DomeGallery from "../components/DomeGallery";
-
 const Gallery = () => {
   return (
     <div style={{ width: '100vw', height: '100vh', backgroundColor: 'white' }}>
@@ -15,5 +14,4 @@ const Gallery = () => {
     </div>
   )
 }
-
 export default Gallery

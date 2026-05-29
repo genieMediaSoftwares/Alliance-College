@@ -1,20 +1,4 @@
-import {
-  Users,
-  Building2,
-  TrendingUp,
-  Award,
-  CheckCircle2,
-  ClipboardList,
-  MessageSquare,
-  UserCheck,
-  Briefcase,
-  ChevronRight,
-  Star,
-  Home,
-  ArrowRight, UserCircle2,
-  Camera,
-ChevronLeft
-} from "lucide-react";
+import {Users, Building2,TrendingUp, Award, CheckCircle2, ClipboardList, MessageSquare,UserCheck,Briefcase,ChevronRight,Star,Home,ArrowRight, UserCircle2, Camera,ChevronLeft} from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { useRef, useEffect, useState } from "react";
 

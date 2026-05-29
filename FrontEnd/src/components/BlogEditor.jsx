@@ -6,19 +6,8 @@ import Underline from "@tiptap/extension-underline";
 import TextAlign from "@tiptap/extension-text-align";
 import Placeholder from "@tiptap/extension-placeholder";
 
-/* ─── SVG Icon ───────────────────────────────────────────────────────────── */
 const Icon = ({ d, size = 15 }) => (
-  <svg
-    width={size}
-    height={size}
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth={2}
-    strokeLinecap="round"
-    strokeLinejoin="round"
-    aria-hidden="true"
-  >
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
     <path d={d} />
   </svg>
 );
@@ -45,16 +34,9 @@ const icons = {
   paragraph:   "M13 4v16M17 4H9.5a4.5 4.5 0 0 0 0 9H13",
 };
 
-/* ─── ToolBtn ────────────────────────────────────────────────────────────── */
 function ToolBtn({ onClick, active, disabled, title, children }) {
   return (
-    <button
-      type="button"
-      onMouseDown={(e) => { e.preventDefault(); onClick(); }}
-      disabled={disabled}
-      title={title}
-      aria-label={title}
-      aria-pressed={active}
+    <button type="button" onMouseDown={(e) => { e.preventDefault(); onClick(); }} disabled={disabled} title={title} aria-label={title} aria-pressed={active}
       style={{ WebkitTapHighlightColor: "transparent", minWidth: 30 }}
       className={[
         "relative flex items-center justify-center flex-shrink-0",
@@ -76,12 +58,10 @@ function ToolBtn({ onClick, active, disabled, title, children }) {
   );
 }
 
-/* ─── Divider ────────────────────────────────────────────────────────────── */
 const Divider = () => (
   <div className="w-px h-5 bg-gray-200 mx-1 self-center flex-shrink-0" aria-hidden="true" />
 );
 
-/* ─── ToolbarRow — always scrollable horizontally ────────────────────────── */
 function ToolbarRow({ groups }) {
   return (
     <div
@@ -92,13 +72,7 @@ function ToolbarRow({ groups }) {
         <React.Fragment key={gi}>
           {gi > 0 && <Divider />}
           {group.map((btn, bi) => (
-            <ToolBtn
-              key={bi}
-              title={btn.title}
-              onClick={btn.onClick}
-              active={btn.active}
-              disabled={btn.disabled}
-            >
+            <ToolBtn key={bi} title={btn.title} onClick={btn.onClick} active={btn.active} disabled={btn.disabled} >
               {btn.icon}
             </ToolBtn>
           ))}
@@ -108,9 +82,7 @@ function ToolbarRow({ groups }) {
   );
 }
 
-/* ═══════════════════════════════════════════════════════════════════════════
-   MAIN BlogEditor
-═══════════════════════════════════════════════════════════════════════════ */
+
 export default function BlogEditor({ value, onChange }) {
   const [isFocused, setIsFocused] = useState(false);
 
@@ -155,7 +127,6 @@ export default function BlogEditor({ value, onChange }) {
 
   if (!editor) return null;
 
-  /* ── Active states ── */
   const a = {
     bold:        editor.isActive("bold"),
     italic:      editor.isActive("italic"),
@@ -176,7 +147,6 @@ export default function BlogEditor({ value, onChange }) {
     alignRight:  editor.isActive({ textAlign: "right" }),
   };
 
-  /* ── Active format pills ── */
   const activeLabels = [
     a.bold && "Bold", a.italic && "Italic", a.underline && "Underline",
     a.strike && "Strike", a.h1 && "H1", a.h2 && "H2", a.h3 && "H3",
@@ -185,20 +155,11 @@ export default function BlogEditor({ value, onChange }) {
     a.alignCenter && "Center", a.alignRight && "Right",
   ].filter(Boolean);
 
-  /* ── Word / char count ── */
   const charCount = editor.storage.characterCount?.characters?.() ?? editor.getText().length;
   const wordCount = editor.getText().split(/\s+/).filter(Boolean).length;
 
-  /* ══════════════════════════════════════════════════════════════
-     TOOLBAR GROUPS
-     ALL groups shown on BOTH mobile and desktop.
-     Split into 2 rows (each independently scrollable) so that
-     narrow screens never hide any button — just scroll to see all.
-  ══════════════════════════════════════════════════════════════ */
 
-  /* Row 1: History + Inline marks + Code + Link + Clear */
   const row1Groups = [
-    /* History */
     [
       {
         title: "Undo (Ctrl+Z)",
@@ -215,14 +176,12 @@ export default function BlogEditor({ value, onChange }) {
         icon: <Icon d={icons.redo} />,
       },
     ],
-    /* Inline marks */
     [
       { title: "Bold (Ctrl+B)",   onClick: () => editor.chain().focus().toggleBold().run(),      active: a.bold,      icon: <Icon d={icons.bold} /> },
       { title: "Italic (Ctrl+I)", onClick: () => editor.chain().focus().toggleItalic().run(),    active: a.italic,    icon: <Icon d={icons.italic} /> },
       { title: "Underline",       onClick: () => editor.chain().focus().toggleUnderline().run(), active: a.underline, icon: <Icon d={icons.underline} /> },
       { title: "Strikethrough",   onClick: () => editor.chain().focus().toggleStrike().run(),    active: a.strike,    icon: <Icon d={icons.strike} /> },
     ],
-    /* Code + Link + Clear */
     [
       {
         title: "Inline Code",
@@ -245,9 +204,7 @@ export default function BlogEditor({ value, onChange }) {
     ],
   ];
 
-  /* Row 2: Headings + Lists + Blocks + Alignment */
   const row2Groups = [
-    /* Headings + Paragraph */
     [
       {
         title: "Heading 1",
@@ -274,18 +231,15 @@ export default function BlogEditor({ value, onChange }) {
         icon: <Icon d={icons.paragraph} />,
       },
     ],
-    /* Lists */
     [
       { title: "Bullet List",  onClick: () => editor.chain().focus().toggleBulletList().run(),  active: a.ul, icon: <Icon d={icons.ul} /> },
       { title: "Ordered List", onClick: () => editor.chain().focus().toggleOrderedList().run(), active: a.ol, icon: <Icon d={icons.ol} /> },
     ],
-    /* Block-level */
     [
       { title: "Blockquote",      onClick: () => editor.chain().focus().toggleBlockquote().run(),  active: a.blockquote, icon: <Icon d={icons.quote} /> },
       { title: "Code Block",      onClick: () => editor.chain().focus().toggleCodeBlock().run(),   active: a.codeBlock,  icon: <Icon d={icons.codeblock} /> },
       { title: "Horizontal Rule", onClick: () => editor.chain().focus().setHorizontalRule().run(), active: false,        icon: <Icon d={icons.hr} /> },
     ],
-    /* Text Alignment */
     [
       { title: "Align Left",   onClick: () => editor.chain().focus().setTextAlign("left").run(),   active: a.alignLeft,   icon: <Icon d={icons.alignLeft} /> },
       { title: "Align Center", onClick: () => editor.chain().focus().setTextAlign("center").run(), active: a.alignCenter, icon: <Icon d={icons.alignCenter} /> },
@@ -293,68 +247,24 @@ export default function BlogEditor({ value, onChange }) {
     ],
   ];
 
-  /* ─────────────────────────────────────────────────────────── */
   return (
     <>
-      <div
-        className={[
-          "w-full rounded-xl border-2 bg-white",
-          "overflow-y-auto",
-          "max-h-[70vh] sm:max-h-[600px]",
-          "transition-all duration-200 shadow-sm",
-          isFocused
-            ? "border-[#6B4A2D] shadow-[0_0_0_3px_rgba(107,74,45,0.08)]"
-            : "border-gray-200",
-        ].join(" ")}
-      >
+      <div className={[ "w-full rounded-xl border-2 bg-white", "overflow-y-auto", "max-h-[70vh] sm:max-h-[600px]", "transition-all duration-200 shadow-sm", isFocused ? "border-[#6B4A2D] shadow-[0_0_0_3px_rgba(107,74,45,0.08)]" : "border-gray-200", ].join(" ")}>
 
-        {/* ── Sticky Toolbar ── */}
-        <div
-          className={[
-            "sticky top-0 z-20",
-            "bg-white",
-            "border-b border-gray-200",
-            isFocused ? "shadow-[0_1px_12px_rgba(107,74,45,0.10)]" : "",
-          ].join(" ")}
-        >
-          {/* Focus accent line */}
-          <div
-            className="h-[2.5px] w-full transition-opacity duration-300"
-            style={{
-              background: "linear-gradient(90deg,#6B4A2D,#b07d50 50%,rgba(107,74,45,0.08))",
-              opacity: isFocused ? 1 : 0,
-            }}
-          />
-
-          {/*
-            ── ALWAYS show BOTH rows on ALL screen sizes ──
-            Each row is independently horizontally scrollable.
-            This ensures every option (including alignment) is
-            always accessible to the admin on both mobile & desktop.
-          */}
+        <div className={["sticky top-0 z-20","bg-white","border-b border-gray-200",isFocused ? "shadow-[0_1px_12px_rgba(107,74,45,0.10)]" : "",].join(" ")}>
+          <div className="h-[2.5px] w-full transition-opacity duration-300" style={{ background: "linear-gradient(90deg,#6B4A2D,#b07d50 50%,rgba(107,74,45,0.08))", opacity: isFocused ? 1 : 0, }}/>
           <div className="divide-y divide-gray-100">
-            {/* Row 1: Undo/Redo + Inline marks + Code/Link/Clear */}
             <ToolbarRow groups={row1Groups} />
-            {/* Row 2: Headings + Lists + Blocks + Alignment */}
             <ToolbarRow groups={row2Groups} />
           </div>
 
-          {/* Active format pills */}
           {activeLabels.length > 0 && (
-            <div
-              className="flex items-center gap-1 px-3 py-1 bg-[#faf9f7] border-t border-gray-100 overflow-x-auto be-toolbar-scroll"
-              aria-live="polite"
-              aria-label="Active formatting"
-            >
+            <div className="flex items-center gap-1 px-3 py-1 bg-[#faf9f7] border-t border-gray-100 overflow-x-auto be-toolbar-scroll" aria-live="polite" aria-label="Active formatting">
               <span className="text-[9px] text-gray-400 font-semibold uppercase tracking-wider whitespace-nowrap flex-shrink-0 mr-0.5">
                 Active:
               </span>
               {activeLabels.map((label) => (
-                <span
-                  key={label}
-                  className="text-[9px] font-bold px-1.5 py-0.5 rounded-full whitespace-nowrap flex-shrink-0"
-                  style={{ background: "rgba(107,74,45,0.10)", color: "#6B4A2D" }}
-                >
+                <span key={label} className="text-[9px] font-bold px-1.5 py-0.5 rounded-full whitespace-nowrap flex-shrink-0" style={{ background: "rgba(107,74,45,0.10)", color: "#6B4A2D" }}>
                   {label}
                 </span>
               ))}
@@ -362,10 +272,8 @@ export default function BlogEditor({ value, onChange }) {
           )}
         </div>
 
-        {/* ── Editor content ── */}
         <EditorContent editor={editor} />
 
-        {/* ── Sticky footer ── */}
         <div className="sticky bottom-0 z-10 flex items-center justify-between gap-2 px-4 py-2 bg-white/90 backdrop-blur-sm border-t border-gray-100">
           <span className="text-[10px] text-gray-400 font-medium whitespace-nowrap">
             {charCount} chars · {wordCount} words

@@ -1,24 +1,4 @@
-import {
-  Trees,
-  Building2,
-  Users,
-  ShieldCheck,
-  Wifi,
-  Monitor,
-  BookOpen,
-  Computer,
-  Home,
-  Trophy,
-  UtensilsCrossed,
-  Mic2,
-  HeartPulse,
-  ChevronRight,
-  ChevronLeft,
-  Images,
-  UserCircle2,
-  MapPin,
-  BriefcaseBusiness
-} from "lucide-react";
+import {Trees,Building2,Users,ShieldCheck,Wifi,Monitor,BookOpen,Computer,Home,Trophy,UtensilsCrossed,Mic2,HeartPulse,ChevronRight,ChevronLeft, Images,UserCircle2,MapPin, BriefcaseBusiness} from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { useRef } from "react";
 

@@ -5,115 +5,41 @@ function usePoppins() {
   useEffect(() => {
     if (document.getElementById("poppins-font")) return;
     const link = document.createElement("link");
-    link.id = "poppins-font";
-    link.rel = "stylesheet";
-    link.href =
-      "https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap";
-    document.head.appendChild(link);
+    link.id = "poppins-font"; link.rel = "stylesheet";
+    link.href = "https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"; document.head.appendChild(link);
   }, []);
 }
 
-const C = {
-  primaryBlue: "#0D1B3D",
-  secondaryBlue: "#1E3A8A",
-  accentYellow: "#FBBF24",
-  lightBlue: "#EFF6FF",
-  grayText: "#4B5563",
-  lightGray: "#F3F4F6",
-  white: "#FFFFFF",
-};
+const C = {primaryBlue: "#0D1B3D",secondaryBlue: "#1E3A8A",accentYellow: "#FBBF24",lightBlue: "#EFF6FF",grayText: "#4B5563",lightGray: "#F3F4F6",white: "#FFFFFF",};
 
-const Icon = ({
-  d,
-  size = 22,
-  color = C.primaryBlue,
-  viewBox = "0 0 24 24",
-  children,
-  strokeWidth = 1.8,
+const Icon = ({d,size = 22,color = C.primaryBlue,viewBox = "0 0 24 24",children,strokeWidth = 1.8,
 }) => (
-  <svg
-    width={size}
-    height={size}
-    viewBox={viewBox}
-    fill="none"
-    stroke={color}
-    strokeWidth={strokeWidth}
-    strokeLinecap="round"
-    strokeLinejoin="round"
-  >
+  <svg width={size} height={size} viewBox={viewBox} fill="none" stroke={color} strokeWidth={strokeWidth} strokeLinecap="round" strokeLinejoin="round">
     {d ? <path d={d} /> : children}
   </svg>
 );
 
 const GradCapIcon = ({ size = 28, color = "#163B8F" }) => (
-  <svg
-    width={size}
-    height={size}
-    viewBox="0 0 24 24"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-  >
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" >
     <path d="M2 9.5L12 4L22 9.5L12 15L2 9.5Z" fill={color} />
-    <path
-      d="M6 12.5V16C6 16 8 18 12 18C16 18 18 16 18 16V12.5"
-      stroke={color}
-      strokeWidth="1.8"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
-    <path
-      d="M22 9.5V15"
-      stroke={color}
-      strokeWidth="1.8"
-      strokeLinecap="round"
-    />
+    <path d="M6 12.5V16C6 16 8 18 12 18C16 18 18 16 18 16V12.5" stroke={color} strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+    <path d="M22 9.5V15" stroke={color} strokeWidth="1.8" strokeLinecap="round" />
   </svg>
 );
 
 const UsersIcon = ({ size = 28, color = "#D98B00" }) => (
-  <svg
-    width={size}
-    height={size}
-    viewBox="0 0 24 24"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-  >
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
     <circle cx="9" cy="8" r="3" fill={color} />
     <circle cx="17" cy="10" r="2.5" fill={color} />
-
-    <path
-      d="M3.5 18C3.5 15.5 6 14 9 14C12 14 14.5 15.5 14.5 18"
-      stroke={color}
-      strokeWidth="2"
-      strokeLinecap="round"
-    />
-
-    <path
-      d="M14 18C14 16.3 15.7 15 18 15C20.3 15 22 16.3 22 18"
-      stroke={color}
-      strokeWidth="2"
-      strokeLinecap="round"
-    />
+    <path d="M3.5 18C3.5 15.5 6 14 9 14C12 14 14.5 15.5 14.5 18" stroke={color} strokeWidth="2" strokeLinecap="round"/>
+    <path d="M14 18C14 16.3 15.7 15 18 15C20.3 15 22 16.3 22 18" stroke={color} strokeWidth="2" strokeLinecap="round" />
   </svg>
 );
 
 const BriefcaseIcon = ({ size = 28, color = "#163B8F" }) => (
-  <svg
-    width={size}
-    height={size}
-    viewBox="0 0 24 24"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-  >
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" >
     <rect x="3" y="7" width="18" height="12" rx="2" fill={color} />
-
-    <path
-      d="M9 7V5.5C9 4.7 9.7 4 10.5 4H13.5C14.3 4 15 4.7 15 5.5V7"
-      stroke="white"
-      strokeWidth="1.5"
-      strokeLinecap="round"
-    />
-
+    <path d="M9 7V5.5C9 4.7 9.7 4 10.5 4H13.5C14.3 4 15 4.7 15 5.5V7" stroke="white" strokeWidth="1.5" strokeLinecap="round"/>
     <path d="M3 11H21" stroke="white" strokeWidth="1.5" />
   </svg>
 );
@@ -192,29 +118,10 @@ const AwardIcon = ({ size, color }) => (
   </Icon>
 );
 
-
 const infoCards = [
-  {
-    Icon: GradCapIcon,
-    title: "Industry-Focused Education",
-    desc: "Curriculum designed by experts and updated as per industry standards.",
-    iconBg: "#EAF1FF",
-    iconColor: "#163B8F",
-  },
-  {
-    Icon: UsersIcon,
-    title: "Experienced Faculty",
-    desc: "Learn from highly qualified educators with real-world industry experience.",
-    iconBg: "#FFF4DD",
-    iconColor: "#D98B00",
-  },
-  {
-    Icon: BriefcaseIcon,
-    title: "Holistic Development",
-    desc: "Beyond academics – we focus on overall growth, skills and personality.",
-    iconBg: "#EAF1FF",
-    iconColor: "#163B8F",
-  },
+  { Icon: GradCapIcon,title: "Industry-Focused Education",desc: "Curriculum designed by experts and updated as per industry standards.",iconBg: "#EAF1FF", iconColor: "#163B8F",},
+  {Icon: UsersIcon,title: "Experienced Faculty",desc: "Learn from highly qualified educators with real-world industry experience.",iconBg: "#FFF4DD",iconColor: "#D98B00",},
+  {Icon: BriefcaseIcon,title: "Holistic Development",desc: "Beyond academics – we focus on overall growth, skills and personality.",iconBg: "#EAF1FF",iconColor: "#163B8F",},
 ];
 
 const stats = [
@@ -225,105 +132,33 @@ const stats = [
 ];
 
 const journey = [
-  {
-    year: "2003",
-    desc: "Alliance College of Hotel Management was established with a vision to deliver quality education.",
-    Icon: Flag,
-  },
-  {
-    year: "2012",
-    desc: "Introduced industry-oriented programs in Hotel & Business Management.",
-    Icon: BookOpen,
-  },
-  {
-    year: "2016",
-    desc: "Expanded campus facilities and advanced laboratories for practical learning.",
-    Icon: Building2,
-  },
-  {
-    year: "2020",
-    desc: "Strengthened industry tie-ups and placement opportunities for students.",
-    Icon: Users,
-  },
-  {
-    year: "2026",
-    desc: "Continuing our legacy of excellence and shaping future leaders.",
-    Icon: Trophy,
-  },
+  {year: "2003",desc: "Alliance College of Hotel Management was established with a vision to deliver quality education.",Icon: Flag,},
+  {year: "2012",desc: "Introduced industry-oriented programs in Hotel & Business Management.",Icon: BookOpen,},
+  {year: "2016",desc: "Expanded campus facilities and advanced laboratories for practical learning.",Icon: Building2,},
+  {year: "2020",desc: "Strengthened industry tie-ups and placement opportunities for students.",Icon: Users,},
+  {year: "2026",desc: "Continuing our legacy of excellence and shaping future leaders.",Icon: Trophy,},
 ];
 
 const values = [
-  {
-    Icon: StarIcon2,
-    label: "Excellence",
-    desc: "Striving for the highest standards in education.",
-  },
-  {
-    Icon: ShieldIcon,
-    label: "Integrity",
-    desc: "Uphold honesty, transparency and ethical practices.",
-  },
-  {
-    Icon: LightbulbIcon,
-    label: "Innovation",
-    desc: "Encouraging creativity and forward-thinking solutions.",
-  },
-  {
-    Icon: TrophyIcon,
-    label: "Commitment",
-    desc: "Dedicated to student success and community growth.",
-  },
+  {Icon: StarIcon2,label: "Excellence",desc: "Striving for the highest standards in education.",},
+  {Icon: ShieldIcon,label: "Integrity",desc: "Uphold honesty, transparency and ethical practices.",},
+  {Icon: LightbulbIcon,label: "Innovation",desc: "Encouraging creativity and forward-thinking solutions.", },
+  {Icon: TrophyIcon,label: "Commitment",desc: "Dedicated to student success and community growth.", },
 ];
-
-
 const IconCircle = ({ children, bg = C.lightBlue, size = 52 }) => (
-  <div
-    style={{
-      width: size,
-      height: size,
-      borderRadius: "50%",
-      backgroundColor: bg,
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "center",
-      flexShrink: 0,
-    }}
-  >
+  <div style={{ width: size,height: size,borderRadius: "50%",backgroundColor: bg,display: "flex",alignItems: "center",justifyContent: "center",flexShrink: 0,}}>
     {children}
   </div>
 );
-
-
 export default function About() {
   const navigate=useNavigate()
   usePoppins();
-
   const poppins = { fontFamily: "'Poppins', sans-serif" };
-
   return (
-    <div
-      style={{
-        ...poppins,
-        backgroundColor: C.white,
-        color: C.primaryBlue,
-        overflowX: "hidden",
-      }}
-    >
-      
+    <div style={{...poppins, backgroundColor: C.white, color: C.primaryBlue, overflowX: "hidden", }}>
       <section className="relative overflow-hidden" style={{ minHeight: 340 }}>
-        <img
-          src="https://alliancemgt.org/Alliance%20Images/alliancebg.avif"
-          alt="Campus"
-          className="absolute inset-0 w-full h-full object-cover object-center"
-        />
-        <div
-          className="absolute inset-0"
-          style={{
-            background:
-              "linear-gradient(to right, rgba(13,27,61,0.92) 50%, rgba(13,27,61,0.7) 100%)",
-          }}
-        />
-
+        <img src="https://alliancemgt.org/Alliance%20Images/alliancebg.avif" alt="Campus" className="absolute inset-0 w-full h-full object-cover object-center" />
+        <div className="absolute inset-0" style={{ background: "linear-gradient(to right, rgba(13,27,61,0.92) 50%, rgba(13,27,61,0.7) 100%)", }} />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16">
           <nav className="flex items-center gap-1.5 mb-5">
             <HomeIconSvg />
@@ -331,79 +166,37 @@ export default function About() {
             <ChevronRightSvg />
             <span style={{ color: "#D1D5DB", fontSize: 13 }}>About Us</span>
           </nav>
-
-          <h1
-            className="font-extrabold mb-3"
-            style={{
-              color: C.white,
-              fontSize: "clamp(2rem, 5vw, 2.75rem)",
-              lineHeight: 1.15,
-            }}
-          >
+          <h1 className="font-extrabold mb-3" style={{ color: C.white, fontSize: "clamp(2rem, 5vw, 2.75rem)", lineHeight: 1.15, }} >
             About Alliance
           </h1>
-
-          <p
-            className="font-semibold mb-4"
-            style={{
-              color: C.accentYellow,
-              
-            }}
-          >
+          <p className="font-semibold mb-4" style={{ color: C.accentYellow, }} >
             Empowering Futures. Enriching Lives.
           </p>
-
-          <p
-            className="max-w-lg leading-relaxed align-center"
-            style={{ color: "#D1D5DB", fontSize: 15 }}
-          >
+          <p className="max-w-lg leading-relaxed align-center" style={{ color: "#D1D5DB", fontSize: 15 }}>
             Alliance College of Hotel Management is a premier institution dedicated to
             providing quality education in Hotel Management, Business Management
             and related fields.
           </p>
         </div>
       </section>
-
-    
       <section className="py-14 sm:py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row gap-8 lg:gap-14 items-center">
             <div className="w-full lg:w-[44%] flex-shrink-0">
-              <div
-                className="overflow-hidden"
-                style={{ height: "clamp(220px, 30vw, 300px)" }}
-              >
-                <img
-                  src="https://alliancemgt.org/Alliance%20Images/Alliance%20college%20(2).png"
-                  alt="Alliance Campus"
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-                />
+              <div className="overflow-hidden" style={{ height: "clamp(220px, 30vw, 300px)" }}>
+                <img src="https://alliancemgt.org/Alliance%20Images/Alliance%20college%20(2).png" alt="Alliance Campus" className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"/>
               </div>
             </div>
-
             <div className="flex-1 max-w-[500px] px-3">
-              <h2
-                className="font-bold mb-4"
-                style={{
-                  color: C.primaryBlue,
-                  fontSize: "clamp(1.5rem, 3vw, 1.85rem)",
-                }}
-              >
+              <h2 className="font-bold mb-4" style={{ color: C.primaryBlue, fontSize: "clamp(1.5rem, 3vw, 1.85rem)", }}>
                 Our Story
               </h2>
-
-              <p
-                className="leading-relaxed mb-4"
-                style={{ color: C.grayText, fontSize: 15 }}
-              >
+              <p className="leading-relaxed mb-4" style={{ color: C.grayText, fontSize: 15 }} >
                 Founded with a vision to bridge the gap between education and
                 industry, Alliance College of Hotel Management has been at the forefront of
                 academic excellence and practical learning.
               </p>
-              <p
-                className="leading-relaxed mb-6"
-                style={{ color: C.grayText, fontSize: 15 }}
-              >
+              <p className="leading-relaxed mb-6" style={{ color: C.grayText, fontSize: 15 }} >
                 Our industry-focused programs are designed to equip students
                 with the skills, knowledge and confidence to excel in their
                 careers and make a meaningful impact in the global industry.
@@ -412,33 +205,19 @@ export default function About() {
           </div>
         </div>
       </section>
-
-    
       <section className="pb-14 sm:pb-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
             {infoCards.map((card, i) => (
-              <div
-                key={i}
-                className="flex gap-4 items-start rounded-2xl p-5 sm:p-6 border hover:shadow-md transition-shadow duration-300"
-                style={{ borderColor: "#E5E7EB", backgroundColor: C.white }}
-              >
-                <div
-                  className="w-[60px] h-[60px] rounded-full flex items-center justify-center shrink-0"
-                  style={{ backgroundColor: card.iconBg }}
-                >
+              <div key={i} className="flex gap-4 items-start rounded-2xl p-5 sm:p-6 border hover:shadow-md transition-shadow duration-300" style={{ borderColor: "#E5E7EB", backgroundColor: C.white }}>
+                <div className="w-[60px] h-[60px] rounded-full flex items-center justify-center shrink-0"style={{ backgroundColor: card.iconBg }} >
                   <card.Icon size={42} color={card.iconColor} />
                 </div>
                 <div>
-                  <h3
-                    className="font-semibold mb-1.5 leading-tight"
-                    style={{ color: C.primaryBlue, fontSize: 15 }}
-                  >
+                  <h3 className="font-semibold mb-1.5 leading-tight" style={{ color: C.primaryBlue, fontSize: 15 }} >
                     {card.title}
                   </h3>
-                  <p
-                    style={{ color: C.grayText, fontSize: 13, lineHeight: 1.6 }}
-                  >
+                  <p style={{ color: C.grayText, fontSize: 13, lineHeight: 1.6 }}>
                     {card.desc}
                   </p>
                 </div>
@@ -447,30 +226,16 @@ export default function About() {
           </div>
         </div>
       </section>
-
-   
-      <section
-        style={{ backgroundColor: C.primaryBlue }}
-        className="py-10 sm:py-12"
-      >
+      <section style={{ backgroundColor: C.primaryBlue }} className="py-10 sm:py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 sm:gap-4">
             {stats.map((s, i) => (
-              <div
-                key={i}
-                className="flex flex-col sm:flex-row items-center sm:items-center gap-3 text-center sm:text-left"
-              >
+              <div key={i} className="flex flex-col sm:flex-row items-center sm:items-center gap-3 text-center sm:text-left" >
                 <IconCircle bg="rgba(255,255,255,0.1)" size={52}>
                   <s.Icon size={34} color={C.white} />
                 </IconCircle>
                 <div>
-                  <div
-                    className="font-extrabold leading-none"
-                    style={{
-                      color: C.white,
-                      fontSize: "clamp(1.4rem, 2vw, 1.50rem)",
-                    }}
-                  >
+                  <div className="font-extrabold leading-none" style={{ color: C.white, fontSize: "clamp(1.4rem, 2vw, 1.50rem)", }} >
                     {s.value}
                   </div>
                   <div style={{ color: "#9CA3AF", fontSize: 12, marginTop: 2 }}>
@@ -482,127 +247,48 @@ export default function About() {
           </div>
         </div>
       </section>
-
-   
-      <section
-        className="py-14 sm:py-16"
-        style={{ backgroundColor: C.lightGray }}
-      >
+      <section className="py-14 sm:py-16" style={{ backgroundColor: C.lightGray }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2
-              className="font-bold"
-              style={{
-                color: C.primaryBlue,
-                fontSize: "clamp(1.5rem, 3vw, 1.85rem)",
-              }}
-            >
+            <h2 className="font-bold" style={{ color: C.primaryBlue, fontSize: "clamp(1.5rem, 3vw, 1.85rem)",}}>
               Our Journey
             </h2>
             <p style={{ color: C.grayText, fontSize: 14, marginTop: 6 }}>
               Milestones that mark our path of excellence
             </p>
           </div>
-
           <div className="hidden sm:block relative">
-            <div
-              className="absolute"
-              style={{
-                top: 34,
-                left: "calc(10% + 16px)",
-                right: "calc(10% + 16px)",
-                height: 2,
-                backgroundColor: "#CBD5E1",
-              }}
-            />
-
+            <div className="absolute" style={{top: 34, left: "calc(10% + 16px)",right: "calc(10% + 16px)", height: 2, backgroundColor: "#CBD5E1", }} />
             <div className="grid grid-cols-5 gap-2">
               {journey.map((j, i) => (
                 <div key={i} className="flex flex-col items-center text-center">
-                  <div
-                    style={{
-                      width: 74,
-                      height: 74,
-                      borderRadius: "50%",
-                      backgroundColor: "#FFFFFF",
-                      border: "2px solid #E5E7EB",
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      position: "relative",
-                      zIndex: 2,
-                      flexShrink: 0,
-                      boxShadow: "0 1px 3px rgba(0,0,0,0.04)",
-                    }}
-                  >
+                  <div style={{ width: 74,height: 74,borderRadius: "50%",backgroundColor: "#FFFFFF",border: "2px solid #E5E7EB", display: "flex",alignItems: "center",justifyContent: "center", position: "relative",zIndex: 2,flexShrink: 0,boxShadow: "0 1px 3px rgba(0,0,0,0.04)", }}>
                     <j.Icon size={28} color={C.primaryBlue} strokeWidth={2.3} />
                   </div>
-
-                  <div
-                    className="font-bold mt-4 mb-2"
-                    style={{ color: C.primaryBlue, fontSize: 16 }}
-                  >
+                  <div className="font-bold mt-4 mb-2" style={{ color: C.primaryBlue, fontSize: 16 }} >
                     {j.year}
                   </div>
-
-                  <p
-                    style={{
-                      color: C.grayText,
-                      fontSize: 12,
-                      lineHeight: 1.6,
-                      maxWidth: 140,
-                    }}
-                  >
+                  <p style={{ color: C.grayText,fontSize: 12,lineHeight: 1.6,maxWidth: 140, }}>
                     {j.desc}
                   </p>
                 </div>
               ))}
             </div>
           </div>
-
           <div className="sm:hidden relative pl-8">
-            <div
-              className="absolute left-[18px] top-2 bottom-2"
-              style={{ width: 2, backgroundColor: "#CBD5E1" }}
-            />
-
+            <div className="absolute left-[18px] top-2 bottom-2" style={{ width: 2, backgroundColor: "#CBD5E1" }}/>
             <div className="flex flex-col gap-8 ml-2">
               {journey.map((j, i) => (
                 <div key={i} className="relative">
-                 <div
-                    style={{
-                      width: 46,
-                      height: 46,
-                      borderRadius: "50%",
-                      backgroundColor: "#FFFFFF",
-                      border: "2px solid #E5E7EB",
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      position: "relative",
-                      
-                      zIndex: 2,
-                      flexShrink: 0,
-                      boxShadow: "0 1px 3px rgba(0,0,0,0.04)",
-                    }}
-                  >
+                 <div style={{ width: 46, height: 46,borderRadius: "50%",backgroundColor: "#FFFFFF",border: "2px solid #E5E7EB", display: "flex",alignItems: "center",justifyContent: "center", position: "relative", zIndex: 2,flexShrink: 0, boxShadow: "0 1px 3px rgba(0,0,0,0.04)", }} >
                     <j.Icon size={28} color={C.primaryBlue} strokeWidth={2.3} />
                   </div>
 
                   <div className="ml-1">
-                    <div
-                      className="font-bold mb-1"
-                      style={{ color: C.primaryBlue, fontSize: 15 }}
-                    >
+                    <div className="font-bold mb-1"style={{ color: C.primaryBlue, fontSize: 15 }}>
                       {j.year}
                     </div>
-                    <p
-                      style={{
-                        color: C.grayText,
-                        fontSize: 13,
-                        lineHeight: 1.6,
-                      }}
-                    >
+                    <p style={{color: C.grayText, fontSize: 13, lineHeight: 1.6,}} >
                       {j.desc}
                     </p>
                   </div>
@@ -612,54 +298,25 @@ export default function About() {
           </div>
         </div>
       </section>
-
-   
       <section className="py-14 sm:py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10">
-            <h2
-              className="font-bold"
-              style={{
-                color: C.primaryBlue,
-                fontSize: "clamp(1.5rem, 3vw, 1.85rem)",
-              }}
-            >
+            <h2 className="font-bold" style={{ color: C.primaryBlue, fontSize: "clamp(1.5rem, 3vw, 1.85rem)", }} >
               Our Core Values
             </h2>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 max-w-7xl">
             {values.map((v, i) => (
-              <div
-                key={i}
-                className="flex flex-row sm:flex-col lg:flex-row items-start gap-4 rounded-xl p-4 sm:p-5 border hover:shadow-md transition-shadow duration-300"
-                style={{ borderColor: "#E5E7EB" }}
-              >
-                <div
-                  style={{
-                    width: 44,
-                    height: 44,
-                    borderRadius: "50%",
-                    backgroundColor: "#d0cfd1",
-                    flexShrink: 0,
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    border: `1.5px solid ${C.accentYellow}33`,
-                  }}
-                >
+              <div key={i}className="flex flex-row sm:flex-col lg:flex-row items-start gap-4 rounded-xl p-4 sm:p-5 border hover:shadow-md transition-shadow duration-300"style={{ borderColor: "#E5E7EB" }} >
+                <div style={{width: 44, height: 44,borderRadius: "50%",backgroundColor: "#d0cfd1",flexShrink: 0,display: "flex", alignItems: "center",justifyContent: "center",border: `1.5px solid ${C.accentYellow}33`,}} >
                   <v.Icon size={22} color={C.primaryBlue} />
                 </div>
                 <div>
-                  <div
-                    className="font-semibold mb-1"
-                    style={{ color: C.primaryBlue, fontSize: 14 }}
-                  >
+                  <div className="font-semibold mb-1"style={{ color: C.primaryBlue, fontSize: 14 }} >
                     {v.label}
                   </div>
-                  <p
-                    style={{ color: C.grayText, fontSize: 12, lineHeight: 1.6 }}
-                  >
+                  <p style={{ color: C.grayText, fontSize: 12, lineHeight: 1.6 }} >
                     {v.desc}
                   </p>
                 </div>
@@ -668,44 +325,18 @@ export default function About() {
           </div>
         </div>
       </section>
-
-   
       <section className="relative overflow-hidden" style={{ minHeight: 220 }}>
-        <img
-          src="https://alliancemgt.org/Alliance%20Images/aboutbtm.avif"
-          alt="Students"
-          className="absolute inset-0 w-full h-full object-cover object-center"
-        />
-        <div
-          className="absolute inset-0"
-          style={{
-            background:
-              "linear-gradient(to right, rgba(13,27,61,0.92) 55%, rgba(13,27,61,0.6) 100%)",
-          }}
-        />
-
+        <img src="https://alliancemgt.org/Alliance%20Images/aboutbtm.avif" alt="Students"  className="absolute inset-0 w-full h-full object-cover object-center"/>
+        <div className="absolute inset-0"style={{ background:"linear-gradient(to right, rgba(13,27,61,0.92) 55%, rgba(13,27,61,0.6) 100%)", }} />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-16">
           <div className="max-w-lg">
-            <h2
-              className="font-bold mb-3"
-              style={{ color: C.white, fontSize: "clamp(1.5rem, 3.5vw, 2rem)" }}
-            >
+            <h2 className="font-bold mb-3"style={{ color: C.white, fontSize: "clamp(1.5rem, 3.5vw, 2rem)" }} >
               Be a Part of Alliance
             </h2>
-            <p
-              className="mb-7 leading-relaxed"
-              style={{ color: "#D1D5DB", fontSize: 15 }}
-            >
+            <p className="mb-7 leading-relaxed" style={{ color: "#D1D5DB", fontSize: 15 }} >
               Join a community that inspires you to learn, grow and succeed.
             </p>
-            <button
-              className="inline-flex items-center gap-2 font-bold rounded-lg px-8 py-3 transition-all hover:brightness-105 active:scale-95"  onClick={()=>{navigate("/applynow")}}
-              style={{
-                backgroundColor: C.accentYellow,
-                color: C.primaryBlue,
-                fontSize: 14,
-              }}
-            >
+            <button className="inline-flex items-center gap-2 font-bold rounded-lg px-8 py-3 transition-all hover:brightness-105 active:scale-95"  onClick={()=>{navigate("/applynow")}} style={{backgroundColor: C.accentYellow,color: C.primaryBlue, fontSize: 14,}} >
               Apply Now
               <ArrowRightIcon size={16} color={C.primaryBlue} />
             </button>

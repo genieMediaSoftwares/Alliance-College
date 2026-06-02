@@ -301,12 +301,12 @@ function CareerWhyTestimonials() {
                 </div>
               ))}
             </div>
-            <button
+            {/* <button
               className="w-full py-2.5 rounded-lg font-semibold text-white transition-all hover:brightness-110 active:scale-95"
               style={{ background: NAV_BLUE, fontSize: "0.85rem" }}
             >
               View More Opportunities
-            </button>
+            </button> */}
           </div>
 
           <div className="rounded-xl p-6 shadow-md flex flex-col justify-between" style={{ background: NAV_BLUE }}>

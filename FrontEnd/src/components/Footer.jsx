@@ -30,13 +30,16 @@ const Footer = () => {
         <div className="flex flex-col lg:flex-row gap-5 lg:gap-20">
           <div className="flex flex-col gap-2 lg:w-[240px] flex-shrink-0">
             <Link to="/" onClick={scrollTop} className="flex items-center gap-2 w-fit">
-              <img src="https://alliancemgt.org/Alliance%20Images/Alliance%20footer.png" alt="Alliance Degree College" className="h-10 sm:h-12 lg:h-14 w-auto object-contain"/>
+              <img src="https://alliancemgt.org/Alliance%20Images/Alliance%20footer.png" alt="Alliance Degree College" className="h-10 sm:h-12 lg:h-14 w-auto object-contain" />
               <div className="flex flex-col leading-[1.3] items-start">
                 <span className="text-[13px] sm:text-[15px] font-black tracking-[0.1em] text-white uppercase whitespace-nowrap">
                   ALLIANCE COLLEGE
                 </span>
                 <span className="text-[8.5px] sm:text-[10px] tracking-[0.22em] text-gray-300 font-semibold uppercase whitespace-nowrap">
                   OF HOTEL MANAGEMENT
+                </span>
+                <span className="text-[7px] sm:text-[9px] lg:text-[11px] italic text-[#f59e0b] font-medium mt-1">
+                  Right Choice for a Bright Career...
                 </span>
               </div>
             </Link>
@@ -54,7 +57,7 @@ const Footer = () => {
               ))}
             </div>
           </div>
-          <div className="flex-1 grid grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-6">
+          <div className="flex-1 grid grid-cols-2 lg:grid-cols-3 gap-x-16 gap-y-2">
             <div className="flex flex-col gap-1">
               <h3 className="text-white font-semibold text-[9px] sm:text-sm uppercase tracking-wide border-b border-white/10 pb-0.5">
                 Quick Links

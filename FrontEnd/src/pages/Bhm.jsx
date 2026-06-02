@@ -69,7 +69,7 @@ function Hero() {
             </p>
             <div className="flex flex-wrap justify-center lg:justify-start gap-5 mb-8">
               {[
-                { icon: <Clock size={17} />, label: "Duration", value: "4 Years" },
+                { icon: <Clock size={17} />, label: "Duration", value: "3 Years (6 Semesters) +1 Year (Honours)" },
                 { icon: <Briefcase size={17} />, label: "Mode", value: "Full Time" },
                 { icon: <GraduationCap size={17} />, label: "Eligibility", value: "10+2 (50%)" },
               ].map(({ icon, label, value }) => (
@@ -120,7 +120,7 @@ function Hero() {
 function AboutSection() {
   const cards = [
     { icon: <Building2 size={24} color={ICON_BLUE} />, label: "Affiliation", value: "Andhra University" },
-    { icon: <BookOpen size={24} color={ICON_BLUE} />, label: "Research Focus", value: "Honours Dissertation" },
+    { icon: <Award size={26} color={ICON_BLUE} />, label: "Approval", value: "AICTE Approved" },
     { icon: <Globe size={24} color={ICON_BLUE} />, label: "Global Opportunities", value: "International Placements" },
     { icon: <Award size={24} color={ICON_BLUE} />, label: "Industry Exposure", value: "Internships & Live Training", },
   ];
@@ -139,7 +139,7 @@ function AboutSection() {
               className="text-gray-600 leading-relaxed"
               style={{ fontSize: "0.88rem" }}
             >
-              The BHM (Hons) is an advanced 4-year degree programme designed to
+              The BHM (Hons) is an advanced 3 Years (6 Semesters) +1 Year(Honours) degree programme designed to
               produce industry-ready hospitality leaders. Going beyond the standard
               BHM, it integrates research methodology, an Honours dissertation, and
               deeper specialisation in luxury hotel operations, revenue management,
@@ -180,7 +180,7 @@ function AboutSection() {
 function ProgramOverviewAndHighlights() {
   const overview = [
     ["Programme", "BHM (Honours)"],
-    ["Duration", "4 Years (8 Semesters)"],
+    ["Duration", "3 Years (6 Semesters) +1 Year (Honours)"],
     ["Mode", "Full Time"],
     ["Eligibility", "10+2 (Any Stream) with 50% marks"],
     ["Campus", "Visakhapatnam, Andhra Pradesh"],
@@ -280,7 +280,7 @@ const curriculum = {
       sem: "Semester 2",
       subjects: [
         "English",
-        "2Nd Language",
+        "2nd Language",
         "Introduction To Artificial Intelligence",
         "Introduction To Food And Beverage-2",
         "Introduction To Rooms Division-2",
@@ -564,7 +564,7 @@ function PlacementAndTestimonials() {
       photo: "https://alliancemgt.org/Alliance%20Images/Picture1.jpg",
     },
     {
-      text: "The 4-year structure gave me time to specialise in revenue management. My dissertation opened doors to a corporate role I could not have imagined straight out of a 3-year degree.",
+      text: "The 3 Years (6 Semesters) +1 Year(Honours) structure gave me time to specialise in revenue management. My dissertation opened doors to a corporate role I could not have imagined straight out of a 3-year degree.",
       name: "Yerisi Srinivas",
       batch: "BHM (Hons)",
       role: "titile-chef ,IKHTIAR GROUP",
@@ -714,7 +714,7 @@ function PlacementAndTestimonials() {
 const faqs = [
   {
     q: "What is the difference between BHM and BHM (Honours)?",
-    a: "The BHM (Hons) is a 4-year degree compared to the standard 3-year BHM. It includes an additional year of advanced specialisation, research methodology, and an Honours dissertation, positioning graduates for managerial and leadership roles with higher earning potential.",
+    a: "The BHM (Hons) is a 3 Years (6 Semesters) +1 Year(Honours) degree compared to the standard 3-year BHM. It includes an additional year of advanced specialisation, research methodology, and an Honours dissertation, positioning graduates for managerial and leadership roles with higher earning potential.",
   },
   {
     q: "What is the eligibility for BHM (Honours)?",

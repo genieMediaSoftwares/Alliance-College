@@ -31,6 +31,8 @@ import AdminBlogs from "./pages/AdminBlogs";
 import Blogs from "./pages/Blogs";
 import BlogDetail from "./pages/Blogdetail";
 import ProtectedRoute from "./components/ProtectedRoute";
+import Faculty from "./pages/Faculty";
+import Press from "./pages/Press";
 function App() {
   return (
     <>
@@ -72,6 +74,8 @@ function App() {
           />
           <Route path="/blogs" element={<Blogs />} />
           <Route path="/blog/*" element={<BlogDetail />} /> 
+          <Route path="/faculty" element={<Faculty/>}/>
+          <Route path="/press" element={<Press/>}/>
       </Routes>
       <SocialMedia/>
       <Footer />

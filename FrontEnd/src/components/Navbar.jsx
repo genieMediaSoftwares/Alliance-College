@@ -47,7 +47,7 @@ const navLinks = [
   { label: "Campus", path: "/campus", dropdown: null },
   { label: "Faculty", path: "/faculty", dropdown: null },
   { label: "Gallery", path: "/gallery", dropdown: null },
-  { label: "Press Realese", path: "/press", dropdown: null },
+  { label: "Press Release", path: "/press", dropdown: null },
   { label: "Contact", path: "/contact", dropdown: null },
 ];
 

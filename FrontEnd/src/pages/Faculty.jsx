@@ -385,7 +385,7 @@ export default function Faculty() {
             </h1>
             <p className="text-gray-500 text-sm sm:text-[15px] max-w-md leading-relaxed">
               Meet our experienced and dedicated faculty members who guide our
-              students towards a successful career in hospitality.
+              students towards a successful career.
             </p>
           </div>
 

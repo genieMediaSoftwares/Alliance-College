@@ -114,7 +114,7 @@ export default function ApplyNow() {
   const [formData, setFormData] = useState({
     student_name: "",
     student_mobile: "",
-    parent_mobile: "",
+    // parent_mobile: "",
     course: "",
     message: "",
   });
@@ -126,166 +126,66 @@ export default function ApplyNow() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  // const handleSubmit = async (e) => {
-  //   e.preventDefault();
-  //   setLoading(true);
 
-  //   try {
-  //     await emailjs.send(
-  //       import.meta.env.VITE_EMAILJS_SERVICE_ID,
-  //       import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-  //       formData,
-  //       import.meta.env.VITE_EMAILJS_PUBLIC_KEY
-  //     );
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
-  //     toast.success(
-  //       "Application submitted successfully! We'll be in touch soon.",
-  //       {
-  //         position: "top-right",
-  //         autoClose: 4500,
-  //         hideProgressBar: false,
-  //         closeOnClick: true,
-  //         pauseOnHover: true,
-  //         draggable: true,
-  //         style: { fontFamily: "'Poppins',sans-serif", fontSize: 13 },
-  //       }
-  //     );
+    if (loading) return;
 
-  //     setFormData({
-  //       student_name: "",
-  //       student_mobile: "",
-  //       parent_mobile: "",
-  //       course: "",
-  //       message: "",
-  //     });
+    setLoading(true);
 
-  //     setSubmitted(true);
-  //   } catch (error) {
-  //     console.log(error);
-  //     toast.error(
-  //       "Failed to submit. Please try again or call us directly.",
-  //       {
-  //         position: "top-right",
-  //         autoClose: 5000,
-  //         hideProgressBar: false,
-  //         closeOnClick: true,
-  //         pauseOnHover: true,
-  //         draggable: true,
-  //         style: { fontFamily: "'Poppins',sans-serif", fontSize: 13 },
-  //       }
-  //     );
-  //   }
+    try {
 
-  //   setLoading(false);
-  // };
-// const handleSubmit = async (e) => {
-//   e.preventDefault();
-
-//   setLoading(true);
-
-//   try {
-
-//     const response = await fetch(
-//       "https://alliancemgt.org/api/send-application.php",
-//       {
-//         method: "POST",
-//         headers: {
-//           "Content-Type": "application/json",
-//         },
-//         body: JSON.stringify(formData),
-//       }
-//     );
-
-//     const data = await response.json();
-
-//     if (data.success) {
-
-//       toast.success(
-//         "Application submitted successfully!"
-//       );
-
-//       setFormData({
-//         student_name: "",
-//         student_mobile: "",
-//         parent_mobile: "",
-//         course: "",
-//         message: "",
-//       });
-
-//       setSubmitted(true);
-
-//     } else {
-//       toast.error("Submission failed");
-//     }
-
-//   } catch (error) {
-
-//     console.log(error);
-
-//     toast.error("Server error");
-//   }
-
-//   setLoading(false);
-// };
-const handleSubmit = async (e) => {
-  e.preventDefault();
-
-  if (loading) return;
-
-  setLoading(true);
-
-  try {
-
-    const response = await fetch(
-      "https://alliancemgt.org/api/send-application.php",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      }
-    );
-
-    const data = await response.json();
-
-    if (data.success) {
-
-      toast.success(
-        "Application submitted successfully!"
+      const response = await fetch(
+        "https://alliancemgt.org/api/send-application.php",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        }
       );
 
-      setFormData({
-        student_name: "",
-        student_mobile: "",
-        parent_mobile: "",
-        course: "",
-        message: "",
-      });
+      const data = await response.json();
 
-      setSubmitted(true);
+      if (data.success) {
 
-    } else {
+        toast.success(
+          "Application submitted successfully!"
+        );
 
-      toast.error("Submission failed");
+        setFormData({
+          student_name: "",
+          student_mobile: "",
+          // parent_mobile: "",
+          course: "",
+          message: "",
+        });
+
+        setSubmitted(true);
+
+      } else {
+
+        toast.error("Submission failed");
+      }
+
+    } catch (error) {
+
+      console.log(error);
+
+      toast.error("Server error");
+
+    } finally {
+
+      setLoading(false);
     }
-
-  } catch (error) {
-
-    console.log(error);
-
-    toast.error("Server error");
-
-  } finally {
-
-    setLoading(false);
-  }
-};
+  };
   const handleReset = () => {
     setFormData({
       student_name: "",
       student_mobile: "",
-      parent_mobile: "",
+      // parent_mobile: "",
       course: "",
       message: "",
     });
@@ -429,7 +329,7 @@ const handleSubmit = async (e) => {
                     </IconInput>
                   </div>
 
-                  <div>
+                  {/* <div>
                     <label
                       className="block text-[13px] font-semibold mb-2"
                       style={{ color: C.textDark }}
@@ -449,7 +349,7 @@ const handleSubmit = async (e) => {
                         className={`${inputCls} pl-9 pr-4`}
                       />
                     </IconInput>
-                  </div>
+                  </div> */}
                 </div>
 
                 <div>

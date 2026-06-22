@@ -13,7 +13,7 @@ Interested Courses:
 Please share admission details.`
   );
   const socialLinks = [
-    {id: 1,icon: <FaWhatsapp />,link: `https://wa.me/919848127344?text=${whatsappMessage}`,bg: "bg-[#25D366]",},
+    {id: 1,icon: <FaWhatsapp />,link: `https://wa.me/918886013199?text=${whatsappMessage}`,bg: "bg-[#25D366]",},
     {id: 2,icon: <FaInstagram />,link: "https://www.instagram.com/alliancecollegevizag/",bg: "bg-gradient-to-tr from-yellow-400 via-pink-500 to-purple-600",},
     {id: 3,icon: <FaYoutube />,link: "https://www.youtube.com/@alliancecollegevizag639",bg: "bg-[#FF0000]",},
     {id: 4,icon: <FaLinkedin />,link: "https://www.linkedin.com/in/alliance-college-vizag-a451a821a/",bg: "bg-[#0A66C2]",},

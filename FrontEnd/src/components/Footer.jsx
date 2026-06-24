@@ -130,7 +130,17 @@ const Footer = () => {
       <div className="border-t border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2.5 sm:py-4 flex flex-col sm:flex-row items-center justify-between gap-1 sm:gap-0">
           <p className="text-gray-500 text-[10px] sm:text-xs text-center sm:text-left">
-            © 2024 Alliance Degree College. All Rights Reserved.<br />powered by:kkdigitalgrowthsoftwares
+            © 2024 Alliance Degree College. All Rights Reserved.
+            <br />
+            powered by:{" "}
+            <a
+              href="https://kkdigitalgrowth.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-500 hover:text-blue-600 underline"
+            >
+              KK Digital Growth
+            </a>
           </p>
           <div className="flex items-center gap-3 text-[10px] sm:text-xs text-gray-500">
             <Link to="/privacy-policy" onClick={scrollTop} className="hover:text-white transition-colors duration-200">Privacy Policy</Link>

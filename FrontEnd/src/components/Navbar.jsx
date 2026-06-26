@@ -37,6 +37,7 @@ const courseDropdown = [
   { label: "MBA", path: "/courses/mba", desc: "Master of Business Administration" },
   { label: "Diploma in HM", path: "/courses/diploma-hm", desc: "Diploma in Hotel Management" },
   { label: "PGDHM", path: "/courses/pgdhm", desc: "Post Graduate Diploma in Hotel Management" },
+  { label: "Aviation", path: "/courses/aviationmanagementpage", desc: "Build your career in the Aviation, Airport and Airline Industry." },
 ];
 
 const navLinks = [

@@ -33,6 +33,7 @@ import BlogDetail from "./pages/Blogdetail";
 import ProtectedRoute from "./components/ProtectedRoute";
 import Faculty from "./pages/Faculty";
 import Press from "./pages/Press";
+import AviationManagementPage from "./pages/Aviationmanagementpage";
 function App() {
   return (
     <>
@@ -58,6 +59,7 @@ function App() {
         <Route path="/courses/bba" element={<Bba />} />
         <Route path="/courses/bcom" element={<Bcom/>}/>
         <Route path="/courses/travel-tourism" element={<Diplomatravel/>}/>
+        <Route path="/courses/aviationmanagementpage" element={<AviationManagementPage/>}/>
         {/* <Route path="/courses/hotel-management" element={<HotelManagement />} /> */}
         {/* <Route path="/courses/diploma" element={<Diploma />} /> */}
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
